@@ -1,5 +1,4 @@
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 import { checkForRedirect } from '@/posthog/redirect';
 import type { PostHogFlags } from '@/posthog/types';
 // Cookie name for our bootstrap data cache

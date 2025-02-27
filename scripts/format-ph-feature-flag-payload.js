@@ -89,8 +89,8 @@ module.exports = function(data) {
     const directusPayload = data.$trigger;
     const featureFlagPayload = formatFeatureFlagPayload(posthogResponse, directusPayload);
     return {
-      feature_flag_id: posthogResponse.data.feature_flag.id,
-      feature_flag_payload: featureFlagPayload
+      id: posthogResponse.data.feature_flag.id,
+      payload: featureFlagPayload
     };
   }
   catch(error) {
