@@ -25,6 +25,7 @@ export const fetchPageData = async (permalink: string, postPage = 1) => {
 							'sort',
 							'hide_block',
 							{
+								// Grab the experiment and experiment_variant fields
 								experiment: ['*'],
 								experiment_variant: ['*'],
 								item: {

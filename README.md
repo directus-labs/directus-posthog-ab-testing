@@ -212,6 +212,21 @@ The Directus template includes a base schema for managing content. You can exten
 
 2. Deploy to your preferred hosting platform (Vercel, Netlify, etc.).
 
+## Key Components
+
+Here's a callout to the specific items to make this integration work.
+
+### Directus Integration
+- **Experiment Flow**: [`directus/template/src/flows.json`](https://github.com/directus-labs/directus-posthog-ab-testing/blob/main/directus/template/src/flows.json) - Automates experiment creation in PostHog
+- **Transformation Scripts**: [`scripts/format-ph-experiment-payload.js`](https://github.com/directus-labs/directus-posthog-ab-testing/blob/main/scripts/format-ph-experiment-payload.js) and [`scripts/format-ph-feature-flag-payload.js`](https://github.com/directus-labs/directus-posthog-ab-testing/blob/main/scripts/format-ph-feature-flag-payload.js) - Convert Directus data to PostHog format. Used in the Directus Flow.
+- **Global Settings**: Configure PostHog project ID and API key in Directus settings
+
+### Next.js Integration
+- **Directus Data Fetching**: [`nextjs/src/lib/directus/fetchers.ts`](https://github.com/directus-labs/directus-posthog-ab-testing/blob/main/nextjs/src/lib/directus/fetchers.ts) - Add the experiment and experiment variants collections when fetching pages
+- **Middleware**: [`nextjs/src/middleware.ts`](https://github.com/directus-labs/directus-posthog-ab-testing/blob/main/nextjs/src/middleware.ts) - Handles redirects based on feature flags
+- **PostHog Provider**: [`nextjs/src/posthog/PostHogProvider.tsx`](https://github.com/directus-labs/directus-posthog-ab-testing/blob/main/nextjs/src/posthog/PostHogProvider.tsx) - Initializes PostHog on the client
+- **API Routes**: [`nextjs/src/app/api/flags/route.ts`](https://github.com/directus-labs/directus-posthog-ab-testing/blob/main/nextjs/src/app/api/flags/route.ts) - Server-side feature flag fetching
+- **Redirect Logic**: [`nextjs/src/posthog/redirect.ts`](https://github.com/directus-labs/directus-posthog-ab-testing/blob/main/nextjs/src/posthog/redirect.ts) - Determines when to redirect users
 
 ## Contributing
 

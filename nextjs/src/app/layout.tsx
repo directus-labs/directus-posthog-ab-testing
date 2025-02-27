@@ -33,7 +33,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function RootLayout({ children }: { children: ReactNode }) {
 	const { globals, headerNavigation, footerNavigation } = await fetchSiteData();
 
-	// Get PostHog bootstrap data from headers set in middleware
+	// Get PostHog bootstrap data from headers set in middleware. This will help us avoid flashing the control variant on the first page load.
 	const headersList = await headers();
 	const bootstrap = headersList.get('x-posthog-bootstrap');
 
