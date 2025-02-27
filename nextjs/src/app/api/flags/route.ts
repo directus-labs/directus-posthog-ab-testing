@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import PostHogClient from '@/posthog/posthog-server';
+import type { PostHogFlags } from '@/posthog/types';
 
 // Set cache revalidation time to 60 seconds
 export const revalidate = 60;
@@ -13,13 +14,12 @@ async function fetchPostHogBootstrapData(distinctId: string) {
     const posthog = PostHogClient();
 
     // Use the feature flag endpoint from the PostHog Node client
-    const featureFlags = await posthog.getAllFlags(distinctId);
+    const featureFlags = await posthog.getAllFlagsAndPayloads(distinctId) as unknown as PostHogFlags;
 
     // Create a bootstrap-like response format
     const bootstrapData = {
       distinctId,
-      featureFlags,
-      // Add any additional data you need in the bootstrap response
+      ...featureFlags,
     };
 
     // Close the PostHog connection to prevent hanging requests

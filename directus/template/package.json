@@ -5,7 +5,7 @@
   "files": [
     "src"
   ],
-  "name": "directus-template-simple-website-cms",
-  "templateName": "CMS",
+  "name": "directus-template-posthog-ab-testing",
+  "templateName": "PostHog AB Testing",
   "version": "1.0.0"
 }

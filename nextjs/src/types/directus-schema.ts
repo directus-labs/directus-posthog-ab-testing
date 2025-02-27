@@ -59,7 +59,7 @@ export interface BlockGallery {
 	/** @description Smaller copy shown above the headline to label a section or add extra context. */
 	tagline?: string | null;
 	/** @description Images to include in the image gallery. */
-	items?: BlockGalleryItem[] | string[] | null;
+	items?: DirectusFile[] | string[] | null;
 }
 
 export interface BlockGalleryItem {
@@ -68,7 +68,7 @@ export interface BlockGalleryItem {
 	/** @description The id of the gallery block this item belongs to. */
 	block_gallery?: BlockGallery | string | null;
 	/** @description The id of the file included in the gallery. */
-	directus_file?: DirectusFile | string | null;
+	directus_file?: BlockGalleryItem | string | null;
 	sort?: number | null;
 }
 
@@ -154,23 +154,32 @@ export interface Experiment {
 	created_at?: string | null;
 	updated_by?: DirectusUser | string | null;
 	updated_at?: string | null;
-	name?: string | null;
+	/** @description Title of the experiment @required */
+	name: string;
+	/** @description Short description of what you're testing and your hypothesis. */
 	description?: string | null;
-	test_type?: string | null;
+	/** @required */
+	test_type: string;
 	posthog_experiment_id?: string | null;
-	start_date?: string | null;
-	end_date?: string | null;
-	feature_flag_key?: string | null;
-	variants?: ExperimentVariant[] | string[];
+	/** @description Unique identifier for the experiment. No spaces allowed. @required */
+	feature_flag_key: string;
+	/** @required */
+	variants: ExperimentVariant[] | string[];
 }
 
 export interface ExperimentVariant {
 	/** @required */
 	id: string;
-	key?: string | null;
+	/** @description Identifier for the variant. No spaces allowed. **Each experiement has to have a `control` variant**. @required */
+	key: string;
 	description?: string | null;
-	name?: string | null;
 	experiment?: Experiment | string | null;
+	/** @description If doing a Page (Redirect) test you need to set a URL to redirect to. This can be a relative url (/resources/matt-is-cool) or a full url (https://docs.directus.io/blog) as long as it has PostHog installed. */
+	url?: string | null;
+	/** @description What type of link is this? Page and Post allow you to link to internal content. URL is other links or other sites where you have PostHog installed.  */
+	url_type?: 'page' | 'post' | 'url' | null;
+	page?: Page | string | null;
+	post?: Post | string | null;
 }
 
 export interface FormField {
@@ -224,8 +233,8 @@ export interface Form {
 }
 
 export interface FormSubmission {
-	/** @description Unique ID for this specific form submission */
-	id?: string;
+	/** @description Unique ID for this specific form submission @required */
+	id: string;
 	/** @description Form submission date and time. */
 	timestamp?: string | null;
 	/** @description Associated form for this submission. */
@@ -271,6 +280,8 @@ export interface Globals {
 	logo_dark_mode?: DirectusFile | string | null;
 	/** @description Accent color for the website (used on buttons, links, etc). */
 	accent_color?: string | null;
+	posthog_project_id?: string | null;
+	posthog_private_api_key?: string | null;
 }
 
 export interface Navigation {
@@ -320,7 +331,9 @@ export interface PageBlock {
 	hide_block?: boolean | null;
 	/** @description Background color for the block to create contrast. Does not control dark or light mode for the entire site. */
 	background?: 'light' | 'dark' | null;
+	/** @description Add this block to a PostHog A/B experiment. */
 	experiment?: Experiment | string | null;
+	/** @description The experiment variant linked to this block. Will display this block if a visitor or user matches this variant. */
 	experiment_variant?: ExperimentVariant | string | null;
 }
 
@@ -597,7 +610,7 @@ export interface DirectusSettings {
 	public_background?: DirectusFile | string | null;
 	public_note?: string | null;
 	auth_login_attempts?: number | null;
-	auth_password_policy?: null | `/^.{8,}$/` | `/(?=^.{8,}$)(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{';'?>.<,])(?!.*\\s).*$/` | null;
+	auth_password_policy?: null | `/^.{8,}$/` | `/(?=^.{8,}$)(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{\';\'?>.<,])(?!.*\\s).*$/` | null;
 	storage_asset_transform?: 'all' | 'none' | 'presets' | null;
 	storage_asset_presets?: Array<{ key: string; fit: 'contain' | 'cover' | 'inside' | 'outside'; width: number; height: number; quality: number; withoutEnlargement: boolean; format: 'auto' | 'jpeg' | 'png' | 'webp' | 'tiff' | 'avif'; transforms: any }> | null;
 	custom_css?: string | null;

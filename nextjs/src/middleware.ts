@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { checkForRedirect, type PostHogFlags } from './posthog/redirect';
-
+import { checkForRedirect } from '@/posthog/redirect';
+import type { PostHogFlags } from '@/posthog/types';
 // Cookie name for our bootstrap data cache
 const BOOTSTRAP_CACHE_COOKIE = 'ph_bootstrap_cache';
 // Cookie TTL in seconds (60 seconds)
@@ -18,10 +18,10 @@ export function getPostHogCookieName(): string {
  */
 function getDistinctId(request: NextRequest): string {
 	// Get the PostHog cookie name based on the API key
-	const phCookieName = getPostHogCookieName();
+	const phKey = process.env.NEXT_PUBLIC_POSTHOG_KEY as string;
 
 	// Get the PostHog cookie
-	const phCookie = request.cookies.get(phCookieName);
+	const phCookie = request.cookies.get(`ph_${phKey}_posthog`);
 
 	// If the cookie exists, parse it and get the distinct_id
 	if (phCookie?.value) {
