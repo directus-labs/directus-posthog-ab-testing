@@ -1,5 +1,28 @@
 [
   {
+    "id": "1f777e78-d089-4b8a-95a7-07fa8182030e",
+    "name": "[PostHog] Create Experiment",
+    "icon": "labs",
+    "color": null,
+    "description": "Creates experiments inside PostHog. Finish setup inside PostHog.",
+    "status": "active",
+    "trigger": "event",
+    "accountability": "all",
+    "options": {
+      "type": "filter",
+      "scope": [
+        "items.create"
+      ],
+      "collections": [
+        "experiments"
+      ]
+    },
+    "operation": "b28d64ae-dffc-447e-9f90-0eafda30a406",
+    "date_created": "2025-02-21T14:56:23.902Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2",
+    "operations": null
+  },
+  {
     "id": "52fa6db4-a8ec-4bfc-9b36-d52f5a189620",
     "name": "Utils -> Duplicate Block",
     "icon": "file_copy",
@@ -17,8 +40,8 @@
       "requireConfirmation": true
     },
     "operation": "0255b0b8-3817-402f-a577-0d63328bada7",
-    "date_created": "2025-02-20T22:00:37.422Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0",
+    "date_created": "2025-02-21T14:38:19.792Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2",
     "operations": null
   },
   {
@@ -34,8 +57,8 @@
       "return": "$last"
     },
     "operation": "c846f644-e7c1-43c9-8bb7-81181de0cd60",
-    "date_created": "2024-09-25T13:14:24.304Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0",
+    "date_created": "2025-02-21T14:38:19.892Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2",
     "operations": null
   },
   {
@@ -85,8 +108,8 @@
       "location": "item"
     },
     "operation": "5d667ac5-2594-4f16-a863-3847d8917caa",
-    "date_created": "2024-09-12T21:27:14.184Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0",
+    "date_created": "2025-02-21T14:38:19.995Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2",
     "operations": null
   },
   {
@@ -108,8 +131,8 @@
       ]
     },
     "operation": "599b80e4-7c74-4496-b243-da198c8613d9",
-    "date_created": "2024-09-13T03:26:25.396Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0",
+    "date_created": "2025-02-21T14:38:20.103Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2",
     "operations": null
   },
   {
@@ -125,8 +148,8 @@
       "return": "$last"
     },
     "operation": "bb1b1e3f-032e-48b7-b260-1cf3af4a116c",
-    "date_created": "2024-02-26T13:03:37.631Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0",
+    "date_created": "2025-02-21T14:38:20.181Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2",
     "operations": null
   },
   {
@@ -142,8 +165,8 @@
       "return": "$last"
     },
     "operation": "6efe1572-6cdd-4c80-a063-eb71b7f1e519",
-    "date_created": "2024-09-13T04:57:48.054Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0",
+    "date_created": "2025-02-21T14:38:20.280Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2",
     "operations": null
   },
   {
@@ -276,8 +299,8 @@
       "location": "item"
     },
     "operation": "0cf30253-f9ed-413f-ac27-7a0ecffa9ee4",
-    "date_created": "2024-09-12T21:34:20.685Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0",
+    "date_created": "2025-02-21T14:38:20.382Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2",
     "operations": null
   }
 ]

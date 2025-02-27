@@ -6,7 +6,9 @@
     "item": "6392a07f-124c-4ae7-a0af-0f228d75e442",
     "collection": "block_hero",
     "hide_block": false,
-    "background": "light"
+    "background": "light",
+    "experiment": null,
+    "experiment_variant": null
   },
   {
     "id": "b4d48d5a-0450-4e8c-8c5b-198e7063a10f",
@@ -15,16 +17,9 @@
     "item": "d81ab264-b2be-4077-84e7-b1406e74d9c3",
     "collection": "block_hero",
     "hide_block": false,
-    "background": "light"
-  },
-  {
-    "id": "7fbc3a13-852d-4120-86ad-0b2c674e2407",
-    "sort": 1,
-    "page": "636dc283-e634-4d5d-aada-e6743db46036",
-    "item": "a588c925-f5d1-44d9-add9-173d9d9bc428",
-    "collection": "block_hero",
-    "hide_block": false,
-    "background": "light"
+    "background": "light",
+    "experiment": null,
+    "experiment_variant": null
   },
   {
     "id": "30afde11-bbc7-42a6-9a85-3a9149079427",
@@ -33,7 +28,9 @@
     "item": "f04ad32a-0665-4a49-bb22-c4055d097854",
     "collection": "block_hero",
     "hide_block": false,
-    "background": "light"
+    "background": "light",
+    "experiment": null,
+    "experiment_variant": null
   },
   {
     "id": "45227f61-5ff1-431c-8dee-1a50d369325f",
@@ -42,7 +39,9 @@
     "item": "060b632d-d70d-4db1-8b95-4fbab7a52ae8",
     "collection": "block_posts",
     "hide_block": false,
-    "background": "light"
+    "background": "light",
+    "experiment": null,
+    "experiment_variant": null
   },
   {
     "id": "fedb7437-dbf5-4b19-ad99-ff2c8f8aece3",
@@ -51,7 +50,9 @@
     "item": "d8f1af11-252c-47eb-9d50-fc4b156a63f6",
     "collection": "block_hero",
     "hide_block": false,
-    "background": "light"
+    "background": "light",
+    "experiment": null,
+    "experiment_variant": null
   },
   {
     "id": "4af158f9-fcec-4c11-a7e2-675ef62b2616",
@@ -60,7 +61,9 @@
     "item": "70909385-4dd4-4960-8c4f-26b7d242eb41",
     "collection": "block_hero",
     "hide_block": false,
-    "background": "light"
+    "background": "light",
+    "experiment": null,
+    "experiment_variant": null
   },
   {
     "id": "a0982134-428a-4fc5-b48b-9ef9f4f3183e",
@@ -69,7 +72,9 @@
     "item": "0e09d473-7f86-4e70-a199-e81e6c04c3c6",
     "collection": "block_hero",
     "hide_block": false,
-    "background": "light"
+    "background": "light",
+    "experiment": null,
+    "experiment_variant": null
   },
   {
     "id": "bc826e30-4988-4035-98bd-5ffc4799e5fc",
@@ -78,7 +83,9 @@
     "item": "a6275645-16b7-4994-8100-8c43ca07ab06",
     "collection": "block_richtext",
     "hide_block": false,
-    "background": "light"
+    "background": "light",
+    "experiment": null,
+    "experiment_variant": null
   },
   {
     "id": "1f774f44-3e33-4b0f-93f4-fdd6df898438",
@@ -87,7 +94,42 @@
     "item": "185eca12-4af1-4a1c-bfd7-4bc2fab52097",
     "collection": "block_form",
     "hide_block": false,
-    "background": "light"
+    "background": "light",
+    "experiment": null,
+    "experiment_variant": null
+  },
+  {
+    "id": "7fbc3a13-852d-4120-86ad-0b2c674e2407",
+    "sort": 1,
+    "page": "636dc283-e634-4d5d-aada-e6743db46036",
+    "item": "a588c925-f5d1-44d9-add9-173d9d9bc428",
+    "collection": "block_hero",
+    "hide_block": false,
+    "background": "light",
+    "experiment": "3404df5b-1456-40ef-b34d-ebbd4f1e7567",
+    "experiment_variant": "3626e60b-1cda-438e-9280-bb0c58507a42"
+  },
+  {
+    "id": "5add93ba-0116-4d76-8769-aceb4fd697b2",
+    "sort": 1,
+    "page": "4f17a015-882f-4951-bc37-abcf2b1e8ff5",
+    "item": "9928e992-f48f-4012-a4f2-538312fae345",
+    "collection": "block_pricing",
+    "hide_block": false,
+    "background": "light",
+    "experiment": null,
+    "experiment_variant": null
+  },
+  {
+    "id": "1c814caf-cf0a-4b4e-bbe0-d46b09d2b23a",
+    "sort": 1,
+    "page": "fb64c7ed-a556-4921-a827-fada59045079",
+    "item": "c24cf458-a8c9-4173-84d0-b562901caf78",
+    "collection": "block_pricing",
+    "hide_block": false,
+    "background": "light",
+    "experiment": null,
+    "experiment_variant": null
   },
   {
     "id": "2b017efb-ce7c-4b90-9f59-a39236ffe571",
@@ -96,7 +138,20 @@
     "item": "3e262b2d-48fc-4816-b5e8-c991817d56fc",
     "collection": "block_form",
     "hide_block": false,
-    "background": "light"
+    "background": "light",
+    "experiment": null,
+    "experiment_variant": null
+  },
+  {
+    "id": "14687355-5d62-4221-ab5a-fab11085d0fb",
+    "sort": 2,
+    "page": "636dc283-e634-4d5d-aada-e6743db46036",
+    "item": "fea037ed-b36e-4748-8e5a-44acb4d16471",
+    "collection": "block_hero",
+    "hide_block": false,
+    "background": "light",
+    "experiment": "3404df5b-1456-40ef-b34d-ebbd4f1e7567",
+    "experiment_variant": "50204e9d-201a-4660-8b27-90e12d77a612"
   },
   {
     "id": "0ff1d6c4-ff77-46c6-ad02-f9ae31484505",
@@ -105,7 +160,9 @@
     "item": "1134799b-3fd1-47ea-963f-13d8ac1b9e3a",
     "collection": "block_richtext",
     "hide_block": false,
-    "background": "light"
+    "background": "light",
+    "experiment": null,
+    "experiment_variant": null
   },
   {
     "id": "25dba1ec-f943-41e2-9a5b-26de4655c826",
@@ -114,25 +171,9 @@
     "item": "c9cb3076-1409-4b97-be55-62e7e3ed3c1d",
     "collection": "block_richtext",
     "hide_block": false,
-    "background": "light"
-  },
-  {
-    "id": "2d9abe8f-a7ad-480d-8fc7-603c712e2f40",
-    "sort": 2,
-    "page": "636dc283-e634-4d5d-aada-e6743db46036",
-    "item": "129625db-433f-4104-9922-3b803ba4599d",
-    "collection": "block_richtext",
-    "hide_block": false,
-    "background": "light"
-  },
-  {
-    "id": "529e6408-7372-4195-b82d-e444c06ac492",
-    "sort": 3,
-    "page": "636dc283-e634-4d5d-aada-e6743db46036",
-    "item": "34fdcf0e-cc5d-4c40-b61f-4f0a5e167306",
-    "collection": "block_gallery",
-    "hide_block": false,
-    "background": "dark"
+    "background": "light",
+    "experiment": null,
+    "experiment_variant": null
   },
   {
     "id": "606089aa-82ca-4c0e-9f91-8a7510cd19ae",
@@ -141,7 +182,31 @@
     "item": "6a29344b-8c14-4a8f-89c4-27703311578f",
     "collection": "block_gallery",
     "hide_block": false,
-    "background": "dark"
+    "background": "dark",
+    "experiment": null,
+    "experiment_variant": null
+  },
+  {
+    "id": "2d9abe8f-a7ad-480d-8fc7-603c712e2f40",
+    "sort": 3,
+    "page": "636dc283-e634-4d5d-aada-e6743db46036",
+    "item": "129625db-433f-4104-9922-3b803ba4599d",
+    "collection": "block_richtext",
+    "hide_block": false,
+    "background": "light",
+    "experiment": null,
+    "experiment_variant": null
+  },
+  {
+    "id": "529e6408-7372-4195-b82d-e444c06ac492",
+    "sort": 4,
+    "page": "636dc283-e634-4d5d-aada-e6743db46036",
+    "item": "34fdcf0e-cc5d-4c40-b61f-4f0a5e167306",
+    "collection": "block_gallery",
+    "hide_block": false,
+    "background": "dark",
+    "experiment": null,
+    "experiment_variant": null
   },
   {
     "id": "cd6ac66a-c362-4d38-a4f6-0347e67c47b3",
@@ -150,25 +215,20 @@
     "item": "a15ef6f7-4f44-4705-820e-5fc76e9489f1",
     "collection": "block_pricing",
     "hide_block": false,
-    "background": "light"
+    "background": "light",
+    "experiment": null,
+    "experiment_variant": null
   },
   {
     "id": "39d02b18-18d2-4c29-9268-038f72ea05fe",
-    "sort": 4,
+    "sort": 5,
     "page": "636dc283-e634-4d5d-aada-e6743db46036",
     "item": "48cf2543-15e0-454f-9b31-cbf3c2406712",
     "collection": "block_pricing",
     "hide_block": false,
-    "background": "light"
-  },
-  {
-    "id": "7e1ce212-3f8a-43b4-aff7-131bf4241e30",
-    "sort": 5,
-    "page": "636dc283-e634-4d5d-aada-e6743db46036",
-    "item": "1419faec-e263-431c-bd5f-a57f394c39f6",
-    "collection": "block_form",
-    "hide_block": false,
-    "background": "light"
+    "background": "light",
+    "experiment": null,
+    "experiment_variant": null
   },
   {
     "id": "34a6712a-95b5-4427-9955-1bff1cee0180",
@@ -177,6 +237,19 @@
     "item": "388fb972-bb44-4eac-a2d6-89c99927a4cb",
     "collection": "block_form",
     "hide_block": false,
-    "background": "light"
+    "background": "light",
+    "experiment": null,
+    "experiment_variant": null
+  },
+  {
+    "id": "7e1ce212-3f8a-43b4-aff7-131bf4241e30",
+    "sort": 6,
+    "page": "636dc283-e634-4d5d-aada-e6743db46036",
+    "item": "1419faec-e263-431c-bd5f-a57f394c39f6",
+    "collection": "block_form",
+    "hide_block": false,
+    "background": "light",
+    "experiment": null,
+    "experiment_variant": null
   }
 ]

@@ -6,6 +6,6 @@
     "src"
   ],
   "name": "directus-template-posthog-ab-testing",
-  "templateName": "PostHog AB Testing",
+  "templateName": "PostHog A/B Testing",
   "version": "1.0.0"
 }

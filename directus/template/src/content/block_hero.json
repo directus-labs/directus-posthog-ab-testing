@@ -59,7 +59,7 @@
     "image": "ea743e20-e6e9-4be8-a949-3771cd182810",
     "button_group": "8b7b84a1-07e5-4bb9-a00e-7dc310a068f6",
     "description": "Directus gives you a backend that is perfect for Headless CMS use cases but also everything beyond. Authentication, user permissions.",
-    "tagline": "Backend + CMS",
+    "tagline": "This is 100 Apps",
     "layout": null
   },
   {
@@ -88,5 +88,14 @@
     "description": "Directus gives you a backend that is perfect for Headless CMS use cases but also everything beyond. Authentication, user permissions.",
     "tagline": "Backend + CMS",
     "layout": null
+  },
+  {
+    "headline": "New Headline",
+    "id": "fea037ed-b36e-4748-8e5a-44acb4d16471",
+    "image": "ea743e20-e6e9-4be8-a949-3771cd182810",
+    "button_group": null,
+    "description": "New Description",
+    "tagline": "New Tagline",
+    "layout": "image_left"
   }
 ]

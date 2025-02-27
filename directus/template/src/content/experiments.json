@@ -1,0 +1,34 @@
+[
+  {
+    "id": "3404df5b-1456-40ef-b34d-ebbd4f1e7567",
+    "created_by": "59715078-e712-41b8-a761-45606e5d1ab2",
+    "created_at": "2025-02-27T03:28:01.202Z",
+    "updated_by": "59715078-e712-41b8-a761-45606e5d1ab2",
+    "updated_at": "2025-02-27T13:25:03.363Z",
+    "name": "Homepage Headline",
+    "description": "See which headline on the homepage converts better",
+    "test_type": "block",
+    "posthog_experiment_id": "90057",
+    "feature_flag_key": "homepage-headline",
+    "variants": [
+      "3626e60b-1cda-438e-9280-bb0c58507a42",
+      "50204e9d-201a-4660-8b27-90e12d77a612"
+    ]
+  },
+  {
+    "id": "a8bfcdfc-3134-4d85-a976-30303eee9b75",
+    "created_by": "59715078-e712-41b8-a761-45606e5d1ab2",
+    "created_at": "2025-02-27T05:03:03.760Z",
+    "updated_by": "59715078-e712-41b8-a761-45606e5d1ab2",
+    "updated_at": "2025-02-27T12:50:59.663Z",
+    "name": "Pricing Page",
+    "description": "See if our new pricing converts higher",
+    "test_type": "page",
+    "posthog_experiment_id": "90060",
+    "feature_flag_key": "new-pricing-page",
+    "variants": [
+      "9a4cf9fc-5c72-4ae1-830c-25d8426e01d0",
+      "ed73d424-7075-4af4-81fe-3f6b647cf744"
+    ]
+  }
+]

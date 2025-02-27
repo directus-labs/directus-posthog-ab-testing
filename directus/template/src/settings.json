@@ -1,10 +1,10 @@
 {
   "id": 1,
-  "project_name": "CMS",
+  "project_name": "Directus + PostHog  🧪",
   "project_url": null,
-  "project_color": "#6644FF",
-  "project_logo": null,
-  "public_foreground": null,
+  "project_color": "#F54D00",
+  "project_logo": "50ffb6f5-47a4-4731-b75e-85734ba1d0ed",
+  "public_foreground": "15254f14-cbd4-4944-86e8-e3e49b9a2d1e",
   "public_background": null,
   "public_note": null,
   "auth_login_attempts": 25,
@@ -31,7 +31,7 @@
       "transforms": []
     }
   ],
-  "custom_css": ".v-divider.inlineTitle.large.add-margin-top {\n    margin-top: 0 !important;\n}\n\n#sidebar .v-divider.inlineTitle {\n    background-color: var(--theme--background) !important;\n    box-shadow: none !important;\n}\n\nbody {\n    font-size: 16px !important;\n}\n\n.drawer-item-content {\n   --theme--form--row-gap: 18px;\n   --theme--form--column-gap: 32px;\n}\n\n.v-workspace-tile {\n    background: var(--theme--background) !important;\n}",
+  "custom_css": ".v-divider.inlineTitle.large.add-margin-top {\n    margin-top: 0 !important;\n}\n\n#sidebar .v-divider.inlineTitle {\n    background-color: var(--theme--background) !important;\n    box-shadow: none !important;\n}\n\n.public-view .logo {\n    background-color: #fff !important;\n    border: var(--theme--border-color);\n    border-width: 1px;\n}\n\nbody {\n    font-size: 16px !important;\n}\n\n.drawer-item-content {\n   --theme--form--row-gap: 18px;\n   --theme--form--column-gap: 32px;\n}\n\n.v-workspace-tile {\n    background: var(--theme--background) !important;\n}\n\n.module-bar-logo {\n    background: transparent !important;\n}\n\n#navigation > div.resize-wrapper.transition > div.module-nav.alt-colors > div.module-nav-content > ul > a.router-link-active.router-link-exact-active.v-list-item.active.link {\n    border: 1px solid var(--theme--border-color) !important;\n}\n\n",
   "storage_default_folder": null,
   "basemaps": null,
   "mapbox_key": null,
@@ -79,7 +79,7 @@
   "project_descriptor": null,
   "default_language": "en-US",
   "custom_aspect_ratios": null,
-  "public_favicon": null,
+  "public_favicon": "50ffb6f5-47a4-4731-b75e-85734ba1d0ed",
   "default_appearance": "auto",
   "default_theme_light": "Directus Default",
   "theme_light_overrides": {
@@ -88,19 +88,21 @@
       "field": {
         "input": {
           "height": "48px",
-          "background": "var(--theme--background)"
+          "background": "#fff"
         }
       }
     },
     "borderWidth": "1px",
     "navigation": {
       "modules": {
-        "background": "color-mix(in srgb, var(--theme--foreground), var(--theme--primary) 80%)",
+        "background": "#EFF0EB",
         "button": {
-          "foreground": "color-mix(in srgb, var(--theme--background), var(--theme--primary) 20%)",
-          "foregroundActive": "var(--theme--primary)",
-          "backgroundActive": "var(--theme--background)"
-        }
+          "backgroundActive": "#fff",
+          "foreground": "#4d4d4d",
+          "foregroundHover": "var(--theme--primary)"
+        },
+        "borderColor": "#ccc",
+        "borderWidth": "1px"
       },
       "background": "var(--theme--background)",
       "project": {
@@ -112,17 +114,18 @@
         "divider": {
           "borderColor": "var(--theme--border-color-subdued)"
         },
-        "backgroundHover": "color-mix(in srgb, var(--theme--background), var(--theme--primary) 10%)",
-        "backgroundActive": "color-mix(in srgb, var(--theme--background), var(--theme--primary) 15%)"
+        "backgroundHover": "var(--theme--background-subdued)",
+        "fontFamily": "var(--theme--fonts--display--font-family)",
+        "backgroundActive": "#fff"
       }
     },
     "fonts": {
       "display": {
-        "fontFamily": "\"Space Grotesk\", system-ui",
+        "fontFamily": "\"Atikinson Hyperlegible Next\", system-ui",
         "fontWeight": "600"
       },
       "sans": {
-        "fontFamily": "\"DM Sans\", system-ui"
+        "fontFamily": "-apple-system,BlinkMacSystemFont,Inter,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol"
       }
     },
     "borderRadius": "6px",
@@ -145,7 +148,19 @@
         }
       }
     },
-    "backgroundAccent": "color-mix(in srgb, var(--theme--background), var(--theme--primary) 15%)"
+    "background": "#F3F4F1",
+    "borderColor": "#dbded4",
+    "backgroundSubdued": "#e5e7df",
+    "borderColorSubdued": "#dbded4",
+    "borderColorAccent": "#dbded4",
+    "header": {
+      "borderColor": "var(--theme--border-color)"
+    },
+    "primarySubdued": "#fff",
+    "backgroundAccent": "#cfd0c8",
+    "primaryBackground": "#e5e7df",
+    "backgroundNormal": "#e6e6e6",
+    "foregroundSubdued": "color-mix(in srgb, var(--theme--foreground), transparent 40%)"
   },
   "default_theme_dark": "Directus Default",
   "theme_dark_overrides": {

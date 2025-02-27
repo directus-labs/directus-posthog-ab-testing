@@ -1,5 +1,20 @@
 [
   {
+    "id": "369eaa2a-cfc0-46f7-b3c7-e8c8028847d6",
+    "title": "Fancy Plan",
+    "description": null,
+    "price": "$199 / month",
+    "badge": "Most Popular",
+    "features": [
+      "Even more amazing",
+      "More amazing-er"
+    ],
+    "button": null,
+    "pricing": "9928e992-f48f-4012-a4f2-538312fae345",
+    "is_highlighted": true,
+    "sort": 2
+  },
+  {
     "id": "388404db-1703-4b10-b12b-e5d4385f1530",
     "title": "Starter Plan",
     "description": "Perfect for your small busines",
@@ -14,6 +29,36 @@
     "pricing": "48cf2543-15e0-454f-9b31-cbf3c2406712",
     "is_highlighted": false,
     "sort": null
+  },
+  {
+    "id": "45c11cb5-91fb-4f34-90c8-39ba0b067b52",
+    "title": "Sky High-er Plan",
+    "description": null,
+    "price": "$1999 / month",
+    "badge": "Most Popular",
+    "features": [
+      "Even more amazing",
+      "More amazing-er"
+    ],
+    "button": null,
+    "pricing": "c24cf458-a8c9-4173-84d0-b562901caf78",
+    "is_highlighted": true,
+    "sort": 2
+  },
+  {
+    "id": "4b336470-b2d2-40b3-bdc0-1d6b9ecc3331",
+    "title": "Starter Plan",
+    "description": null,
+    "price": "$99 / month",
+    "badge": null,
+    "features": [
+      "Amazing",
+      "More Amazing"
+    ],
+    "button": null,
+    "pricing": "9928e992-f48f-4012-a4f2-538312fae345",
+    "is_highlighted": false,
+    "sort": 1
   },
   {
     "id": "669231a6-e55f-4621-ae6a-4f73ba87ea28",
@@ -44,6 +89,21 @@
     "pricing": "48cf2543-15e0-454f-9b31-cbf3c2406712",
     "is_highlighted": true,
     "sort": null
+  },
+  {
+    "id": "e0b2469b-8c2c-423b-befd-9bd503bd2111",
+    "title": "Sky High Plan",
+    "description": null,
+    "price": "$999 / month",
+    "badge": null,
+    "features": [
+      "Amazing",
+      "More Amazing"
+    ],
+    "button": null,
+    "pricing": "c24cf458-a8c9-4173-84d0-b562901caf78",
+    "is_highlighted": false,
+    "sort": 1
   },
   {
     "id": "e0c23526-eb4e-44b7-8267-2c451b34dac6",

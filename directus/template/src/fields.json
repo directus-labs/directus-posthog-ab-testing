@@ -2699,6 +2699,780 @@
     }
   },
   {
+    "collection": "experiment_variants",
+    "field": "id",
+    "type": "uuid",
+    "schema": {
+      "name": "id",
+      "table": "experiment_variants",
+      "data_type": "uuid",
+      "default_value": null,
+      "generation_expression": null,
+      "max_length": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "is_generated": false,
+      "is_nullable": false,
+      "is_unique": true,
+      "is_indexed": false,
+      "is_primary_key": true,
+      "has_auto_increment": false,
+      "foreign_key_schema": null,
+      "foreign_key_table": null,
+      "foreign_key_column": null,
+      "comment": null
+    },
+    "meta": {
+      "collection": "experiment_variants",
+      "field": "id",
+      "special": [
+        "uuid"
+      ],
+      "interface": "input",
+      "options": null,
+      "display": null,
+      "display_options": null,
+      "readonly": true,
+      "hidden": true,
+      "sort": 1,
+      "width": "full",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "experiment_variants",
+    "field": "key",
+    "type": "string",
+    "schema": {
+      "name": "key",
+      "table": "experiment_variants",
+      "data_type": "character varying",
+      "default_value": null,
+      "generation_expression": null,
+      "max_length": 255,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "is_generated": false,
+      "is_nullable": true,
+      "is_unique": false,
+      "is_indexed": false,
+      "is_primary_key": false,
+      "has_auto_increment": false,
+      "foreign_key_schema": null,
+      "foreign_key_table": null,
+      "foreign_key_column": null,
+      "comment": null
+    },
+    "meta": {
+      "collection": "experiment_variants",
+      "field": "key",
+      "special": null,
+      "interface": "input",
+      "options": {
+        "slug": true,
+        "placeholder": "control",
+        "font": "monospace",
+        "template": null
+      },
+      "display": "formatted-value",
+      "display_options": {
+        "font": "monospace"
+      },
+      "readonly": false,
+      "hidden": false,
+      "sort": 3,
+      "width": "half",
+      "translations": null,
+      "note": "Identifier for the variant. No spaces allowed. **Each experiement has to have a `control` variant**.",
+      "conditions": null,
+      "required": true,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "experiment_variants",
+    "field": "description",
+    "type": "text",
+    "schema": {
+      "name": "description",
+      "table": "experiment_variants",
+      "data_type": "text",
+      "default_value": null,
+      "generation_expression": null,
+      "max_length": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "is_generated": false,
+      "is_nullable": true,
+      "is_unique": false,
+      "is_indexed": false,
+      "is_primary_key": false,
+      "has_auto_increment": false,
+      "foreign_key_schema": null,
+      "foreign_key_table": null,
+      "foreign_key_column": null,
+      "comment": null
+    },
+    "meta": {
+      "collection": "experiment_variants",
+      "field": "description",
+      "special": null,
+      "interface": "input-multiline",
+      "options": null,
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 4,
+      "width": "full",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "experiment_variants",
+    "field": "experiment",
+    "type": "uuid",
+    "schema": {
+      "name": "experiment",
+      "table": "experiment_variants",
+      "data_type": "uuid",
+      "default_value": null,
+      "generation_expression": null,
+      "max_length": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "is_generated": false,
+      "is_nullable": true,
+      "is_unique": false,
+      "is_indexed": false,
+      "is_primary_key": false,
+      "has_auto_increment": false,
+      "foreign_key_schema": "public",
+      "foreign_key_table": "experiments",
+      "foreign_key_column": "id",
+      "comment": null
+    },
+    "meta": {
+      "collection": "experiment_variants",
+      "field": "experiment",
+      "special": null,
+      "interface": "select-dropdown-m2o",
+      "options": null,
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": true,
+      "sort": 5,
+      "width": "full",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "experiment_variants",
+    "field": "url",
+    "type": "string",
+    "schema": {
+      "name": "url",
+      "table": "experiment_variants",
+      "data_type": "character varying",
+      "default_value": null,
+      "generation_expression": null,
+      "max_length": 255,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "is_generated": false,
+      "is_nullable": true,
+      "is_unique": false,
+      "is_indexed": false,
+      "is_primary_key": false,
+      "has_auto_increment": false,
+      "foreign_key_schema": null,
+      "foreign_key_table": null,
+      "foreign_key_column": null,
+      "comment": null
+    },
+    "meta": {
+      "collection": "experiment_variants",
+      "field": "url",
+      "special": null,
+      "interface": "input",
+      "options": {
+        "font": "monospace"
+      },
+      "display": "raw",
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 7,
+      "width": "half",
+      "translations": null,
+      "note": "If doing a Page (Redirect) test you need to set a URL to redirect to. This can be a relative url (/resources/matt-is-cool) or a full url (https://docs.directus.io/blog) as long as it has PostHog installed.",
+      "conditions": [
+        {
+          "name": "Show If URL",
+          "rule": {
+            "_and": [
+              {
+                "url_type": {
+                  "_eq": "url"
+                }
+              }
+            ]
+          },
+          "hidden": false,
+          "options": {
+            "font": "sans-serif",
+            "trim": false,
+            "masked": false,
+            "clear": false,
+            "slug": false
+          }
+        }
+      ],
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "experiments",
+    "field": "id",
+    "type": "uuid",
+    "schema": {
+      "name": "id",
+      "table": "experiments",
+      "data_type": "uuid",
+      "default_value": null,
+      "generation_expression": null,
+      "max_length": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "is_generated": false,
+      "is_nullable": false,
+      "is_unique": true,
+      "is_indexed": false,
+      "is_primary_key": true,
+      "has_auto_increment": false,
+      "foreign_key_schema": null,
+      "foreign_key_table": null,
+      "foreign_key_column": null,
+      "comment": null
+    },
+    "meta": {
+      "collection": "experiments",
+      "field": "id",
+      "special": [
+        "uuid"
+      ],
+      "interface": "input",
+      "options": null,
+      "display": null,
+      "display_options": null,
+      "readonly": true,
+      "hidden": true,
+      "sort": 1,
+      "width": "full",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "experiments",
+    "field": "created_by",
+    "type": "uuid",
+    "schema": {
+      "name": "created_by",
+      "table": "experiments",
+      "data_type": "uuid",
+      "default_value": null,
+      "generation_expression": null,
+      "max_length": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "is_generated": false,
+      "is_nullable": true,
+      "is_unique": false,
+      "is_indexed": false,
+      "is_primary_key": false,
+      "has_auto_increment": false,
+      "foreign_key_schema": "public",
+      "foreign_key_table": "directus_users",
+      "foreign_key_column": "id",
+      "comment": null
+    },
+    "meta": {
+      "collection": "experiments",
+      "field": "created_by",
+      "special": [
+        "user-created"
+      ],
+      "interface": "select-dropdown-m2o",
+      "options": {
+        "template": "{{avatar}} {{first_name}} {{last_name}}"
+      },
+      "display": "user",
+      "display_options": null,
+      "readonly": true,
+      "hidden": true,
+      "sort": 2,
+      "width": "half",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "experiments",
+    "field": "created_at",
+    "type": "timestamp",
+    "schema": {
+      "name": "created_at",
+      "table": "experiments",
+      "data_type": "timestamp with time zone",
+      "default_value": null,
+      "generation_expression": null,
+      "max_length": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "is_generated": false,
+      "is_nullable": true,
+      "is_unique": false,
+      "is_indexed": false,
+      "is_primary_key": false,
+      "has_auto_increment": false,
+      "foreign_key_schema": null,
+      "foreign_key_table": null,
+      "foreign_key_column": null,
+      "comment": null
+    },
+    "meta": {
+      "collection": "experiments",
+      "field": "created_at",
+      "special": [
+        "date-created"
+      ],
+      "interface": "datetime",
+      "options": {
+        "relative": true
+      },
+      "display": "datetime",
+      "display_options": {
+        "relative": true
+      },
+      "readonly": true,
+      "hidden": true,
+      "sort": 3,
+      "width": "half",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "experiments",
+    "field": "updated_by",
+    "type": "uuid",
+    "schema": {
+      "name": "updated_by",
+      "table": "experiments",
+      "data_type": "uuid",
+      "default_value": null,
+      "generation_expression": null,
+      "max_length": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "is_generated": false,
+      "is_nullable": true,
+      "is_unique": false,
+      "is_indexed": false,
+      "is_primary_key": false,
+      "has_auto_increment": false,
+      "foreign_key_schema": "public",
+      "foreign_key_table": "directus_users",
+      "foreign_key_column": "id",
+      "comment": null
+    },
+    "meta": {
+      "collection": "experiments",
+      "field": "updated_by",
+      "special": [
+        "user-updated"
+      ],
+      "interface": "select-dropdown-m2o",
+      "options": {
+        "template": "{{avatar}} {{first_name}} {{last_name}}"
+      },
+      "display": "user",
+      "display_options": null,
+      "readonly": true,
+      "hidden": true,
+      "sort": 4,
+      "width": "half",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "experiments",
+    "field": "updated_at",
+    "type": "timestamp",
+    "schema": {
+      "name": "updated_at",
+      "table": "experiments",
+      "data_type": "timestamp with time zone",
+      "default_value": null,
+      "generation_expression": null,
+      "max_length": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "is_generated": false,
+      "is_nullable": true,
+      "is_unique": false,
+      "is_indexed": false,
+      "is_primary_key": false,
+      "has_auto_increment": false,
+      "foreign_key_schema": null,
+      "foreign_key_table": null,
+      "foreign_key_column": null,
+      "comment": null
+    },
+    "meta": {
+      "collection": "experiments",
+      "field": "updated_at",
+      "special": [
+        "date-updated"
+      ],
+      "interface": "datetime",
+      "options": null,
+      "display": "datetime",
+      "display_options": {
+        "relative": true
+      },
+      "readonly": true,
+      "hidden": true,
+      "sort": 5,
+      "width": "half",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "experiments",
+    "field": "name",
+    "type": "string",
+    "schema": {
+      "name": "name",
+      "table": "experiments",
+      "data_type": "character varying",
+      "default_value": null,
+      "generation_expression": null,
+      "max_length": 255,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "is_generated": false,
+      "is_nullable": true,
+      "is_unique": false,
+      "is_indexed": false,
+      "is_primary_key": false,
+      "has_auto_increment": false,
+      "foreign_key_schema": null,
+      "foreign_key_table": null,
+      "foreign_key_column": null,
+      "comment": null
+    },
+    "meta": {
+      "collection": "experiments",
+      "field": "name",
+      "special": null,
+      "interface": "input",
+      "options": null,
+      "display": "raw",
+      "display_options": {
+        "prefix": "A/B",
+        "border": true,
+        "color": "#FFA439"
+      },
+      "readonly": false,
+      "hidden": false,
+      "sort": 7,
+      "width": "half",
+      "translations": null,
+      "note": "Title of the experiment",
+      "conditions": null,
+      "required": true,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "experiments",
+    "field": "description",
+    "type": "text",
+    "schema": {
+      "name": "description",
+      "table": "experiments",
+      "data_type": "text",
+      "default_value": null,
+      "generation_expression": null,
+      "max_length": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "is_generated": false,
+      "is_nullable": true,
+      "is_unique": false,
+      "is_indexed": false,
+      "is_primary_key": false,
+      "has_auto_increment": false,
+      "foreign_key_schema": null,
+      "foreign_key_table": null,
+      "foreign_key_column": null,
+      "comment": null
+    },
+    "meta": {
+      "collection": "experiments",
+      "field": "description",
+      "special": null,
+      "interface": "input-multiline",
+      "options": {
+        "placeholder": "The goal of this experiment is..."
+      },
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 11,
+      "width": "full",
+      "translations": null,
+      "note": "Short description of what you're testing and your hypothesis.",
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "experiments",
+    "field": "test_type",
+    "type": "string",
+    "schema": {
+      "name": "test_type",
+      "table": "experiments",
+      "data_type": "character varying",
+      "default_value": null,
+      "generation_expression": null,
+      "max_length": 255,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "is_generated": false,
+      "is_nullable": true,
+      "is_unique": false,
+      "is_indexed": false,
+      "is_primary_key": false,
+      "has_auto_increment": false,
+      "foreign_key_schema": null,
+      "foreign_key_table": null,
+      "foreign_key_column": null,
+      "comment": null
+    },
+    "meta": {
+      "collection": "experiments",
+      "field": "test_type",
+      "special": null,
+      "interface": "radio-cards-interface",
+      "options": {
+        "choices": [
+          {
+            "text": "Page (Redirect)",
+            "value": "page",
+            "description": "Test traffic to different urls",
+            "icon_type": "icon",
+            "icon": "directions"
+          },
+          {
+            "text": "Block",
+            "value": "block",
+            "description": "Test different blocks within one single page",
+            "icon_type": "icon",
+            "icon": "code_blocks"
+          }
+        ],
+        "gridSize": 2
+      },
+      "display": "labels",
+      "display_options": {
+        "choices": [
+          {
+            "text": "Page (Redirect)",
+            "value": "page",
+            "description": "Test traffic to different urls",
+            "icon_type": "icon",
+            "icon": "directions"
+          },
+          {
+            "text": "Block",
+            "value": "block",
+            "description": "Test different blocks within one single page",
+            "icon_type": "icon",
+            "icon": "code_blocks"
+          }
+        ]
+      },
+      "readonly": false,
+      "hidden": false,
+      "sort": 13,
+      "width": "half",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": true,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "experiments",
+    "field": "posthog_experiment_id",
+    "type": "string",
+    "schema": {
+      "name": "posthog_experiment_id",
+      "table": "experiments",
+      "data_type": "character varying",
+      "default_value": null,
+      "generation_expression": null,
+      "max_length": 255,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "is_generated": false,
+      "is_nullable": true,
+      "is_unique": false,
+      "is_indexed": false,
+      "is_primary_key": false,
+      "has_auto_increment": false,
+      "foreign_key_schema": null,
+      "foreign_key_table": null,
+      "foreign_key_column": null,
+      "comment": null
+    },
+    "meta": {
+      "collection": "experiments",
+      "field": "posthog_experiment_id",
+      "special": null,
+      "interface": "input",
+      "options": null,
+      "display": null,
+      "display_options": null,
+      "readonly": true,
+      "hidden": true,
+      "sort": 18,
+      "width": "half",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "experiments",
+    "field": "feature_flag_key",
+    "type": "string",
+    "schema": {
+      "name": "feature_flag_key",
+      "table": "experiments",
+      "data_type": "character varying",
+      "default_value": null,
+      "generation_expression": null,
+      "max_length": 255,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "is_generated": false,
+      "is_nullable": true,
+      "is_unique": true,
+      "is_indexed": false,
+      "is_primary_key": false,
+      "has_auto_increment": false,
+      "foreign_key_schema": null,
+      "foreign_key_table": null,
+      "foreign_key_column": null,
+      "comment": null
+    },
+    "meta": {
+      "collection": "experiments",
+      "field": "feature_flag_key",
+      "special": null,
+      "interface": "input",
+      "options": {
+        "slug": true,
+        "font": "monospace",
+        "template": "{{name}}"
+      },
+      "display": "formatted-value",
+      "display_options": {
+        "font": "monospace"
+      },
+      "readonly": false,
+      "hidden": false,
+      "sort": 8,
+      "width": "half",
+      "translations": null,
+      "note": "Unique identifier for the experiment. No spaces allowed.",
+      "conditions": null,
+      "required": true,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
     "collection": "form_fields",
     "field": "id",
     "type": "uuid",
@@ -5020,7 +5794,7 @@
       },
       "readonly": false,
       "hidden": false,
-      "sort": 2,
+      "sort": 4,
       "width": "half",
       "translations": null,
       "note": "Secret OpenAI API key. Don't share with anyone outside your team.",
@@ -5065,7 +5839,7 @@
       "display_options": null,
       "readonly": false,
       "hidden": false,
-      "sort": 3,
+      "sort": 5,
       "width": "half",
       "translations": null,
       "note": "The public URL for this Directus instance. Used in Flows.",
@@ -5172,6 +5946,96 @@
       "conditions": null,
       "required": false,
       "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "globals",
+    "field": "posthog_project_id",
+    "type": "string",
+    "schema": {
+      "name": "posthog_project_id",
+      "table": "globals",
+      "data_type": "character varying",
+      "default_value": null,
+      "generation_expression": null,
+      "max_length": 255,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "is_generated": false,
+      "is_nullable": true,
+      "is_unique": false,
+      "is_indexed": false,
+      "is_primary_key": false,
+      "has_auto_increment": false,
+      "foreign_key_schema": null,
+      "foreign_key_table": null,
+      "foreign_key_column": null,
+      "comment": null
+    },
+    "meta": {
+      "collection": "globals",
+      "field": "posthog_project_id",
+      "special": null,
+      "interface": "input",
+      "options": null,
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 2,
+      "width": "half",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": "meta_credentials",
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "globals",
+    "field": "posthog_private_api_key",
+    "type": "string",
+    "schema": {
+      "name": "posthog_private_api_key",
+      "table": "globals",
+      "data_type": "character varying",
+      "default_value": null,
+      "generation_expression": null,
+      "max_length": 255,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "is_generated": false,
+      "is_nullable": true,
+      "is_unique": false,
+      "is_indexed": false,
+      "is_primary_key": false,
+      "has_auto_increment": false,
+      "foreign_key_schema": null,
+      "foreign_key_table": null,
+      "foreign_key_column": null,
+      "comment": null
+    },
+    "meta": {
+      "collection": "globals",
+      "field": "posthog_private_api_key",
+      "special": null,
+      "interface": "input",
+      "options": null,
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 3,
+      "width": "half",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": "meta_credentials",
       "validation": null,
       "validation_message": null
     }
@@ -6115,9 +6979,9 @@
       "collection": "page_blocks",
       "field": "collection",
       "special": null,
-      "interface": null,
+      "interface": "input",
       "options": null,
-      "display": "labels",
+      "display": "formatted-value",
       "display_options": {
         "format": true,
         "color": "#18222F",
@@ -6172,7 +7036,7 @@
       "display_options": null,
       "readonly": false,
       "hidden": false,
-      "sort": 7,
+      "sort": 6,
       "width": "half",
       "translations": null,
       "note": "Temporarily hide this block on the website without having to remove it from your page.",
@@ -6230,10 +7094,141 @@
       "display_options": null,
       "readonly": false,
       "hidden": false,
-      "sort": 8,
+      "sort": 7,
       "width": "half",
       "translations": null,
       "note": "Background color for the block to create contrast. Does not control dark or light mode for the entire site.",
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "page_blocks",
+    "field": "experiment",
+    "type": "uuid",
+    "schema": {
+      "name": "experiment",
+      "table": "page_blocks",
+      "data_type": "uuid",
+      "default_value": null,
+      "generation_expression": null,
+      "max_length": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "is_generated": false,
+      "is_nullable": true,
+      "is_unique": false,
+      "is_indexed": false,
+      "is_primary_key": false,
+      "has_auto_increment": false,
+      "foreign_key_schema": "public",
+      "foreign_key_table": "experiments",
+      "foreign_key_column": "id",
+      "comment": null
+    },
+    "meta": {
+      "collection": "page_blocks",
+      "field": "experiment",
+      "special": [
+        "m2o"
+      ],
+      "interface": "select-dropdown-m2o",
+      "options": {
+        "template": "{{name}}",
+        "enableLink": true,
+        "filter": {
+          "_and": [
+            {
+              "test_type": {
+                "_eq": "block"
+              }
+            }
+          ]
+        }
+      },
+      "display": "related-values",
+      "display_options": {
+        "template": "{{name}}"
+      },
+      "readonly": false,
+      "hidden": false,
+      "sort": 9,
+      "width": "half",
+      "translations": null,
+      "note": "Add this block to a PostHog A/B experiment.",
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "page_blocks",
+    "field": "experiment_variant",
+    "type": "uuid",
+    "schema": {
+      "name": "experiment_variant",
+      "table": "page_blocks",
+      "data_type": "uuid",
+      "default_value": null,
+      "generation_expression": null,
+      "max_length": null,
+      "numeric_precision": null,
+      "numeric_scale": null,
+      "is_generated": false,
+      "is_nullable": true,
+      "is_unique": false,
+      "is_indexed": false,
+      "is_primary_key": false,
+      "has_auto_increment": false,
+      "foreign_key_schema": "public",
+      "foreign_key_table": "experiment_variants",
+      "foreign_key_column": "id",
+      "comment": null
+    },
+    "meta": {
+      "collection": "page_blocks",
+      "field": "experiment_variant",
+      "special": [
+        "m2o"
+      ],
+      "interface": "select-dropdown-m2o",
+      "options": {
+        "enableLink": true,
+        "filter": {
+          "_and": [
+            {
+              "experiment": {
+                "id": {
+                  "_eq": "{{experiment}}"
+                }
+              }
+            },
+            {
+              "experiment": {
+                "test_type": {
+                  "_eq": "block"
+                }
+              }
+            }
+          ]
+        },
+        "template": "{{key}}"
+      },
+      "display": "related-values",
+      "display_options": {
+        "template": "{{key}}"
+      },
+      "readonly": false,
+      "hidden": false,
+      "sort": 10,
+      "width": "half",
+      "translations": null,
+      "note": "The experiment variant linked to this block. Will display this block if a visitor or user matches this variant.",
       "conditions": null,
       "required": false,
       "group": null,
@@ -7293,22 +8288,52 @@
     }
   },
   {
-    "collection": "pages",
-    "field": "meta_divider_content",
+    "collection": "block_form",
+    "field": "meta_header_block_form",
     "type": "alias",
     "schema": null,
     "meta": {
-      "collection": "pages",
-      "field": "meta_divider_content",
+      "collection": "block_form",
+      "field": "meta_header_block_form",
       "special": [
         "alias",
         "no-data"
       ],
-      "interface": "presentation-divider",
+      "interface": "super-header",
       "options": {
-        "icon": "format_paragraph",
-        "color": "#A2B5CD",
-        "inlineTitle": true
+        "title": "Form Block",
+        "help": "<p>Embed interactive forms to collect information from your visitors. Great for:</p>\n<ul>\n<li>Contact forms</li>\n<li>Newsletter signups</li>\n<li>Event registrations</li>\n<li>Feedback collection</li>\n<li>Lead generation</li>\n</ul>\n<p>When adding a form:</p>\n<ul>\n<li>Choose from your pre-configured form templates</li>\n<li>Add a clear headline explaining the form's purpose</li>\n<li>Consider adding a tagline with extra context or instructions</li>\n<li>Ensure all required fields are clearly marked</li>\n</ul>\n<p>You can create or edit forms outside of this block in the <a href=\"/admin/content/forms\">Forms collection.</a></p>",
+        "icon": "format_shapes"
+      },
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 2,
+      "width": "full",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "block_gallery",
+    "field": "items",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "block_gallery",
+      "field": "items",
+      "special": [
+        "files"
+      ],
+      "interface": "files",
+      "options": {
+        "folder": "ece7bab9-5433-4a63-b9f7-bde8b517d6d9"
       },
       "display": null,
       "display_options": null,
@@ -7317,10 +8342,142 @@
       "sort": 5,
       "width": "full",
       "translations": null,
+      "note": "Images to include in the image gallery.",
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "block_gallery",
+    "field": "meta_header_block_gallery",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "block_gallery",
+      "field": "meta_header_block_gallery",
+      "special": [
+        "alias",
+        "no-data"
+      ],
+      "interface": "super-header",
+      "options": {
+        "title": "Gallery Block",
+        "icon": "grid_view",
+        "help": "<p>Create visual showcases with multiple images. Ideal for:</p>\n<ul>\n<li>Product portfolios</li>\n<li>Project showcases</li>\n<li>Event photo collections</li>\n<li>Team member galleries</li>\n<li>Before/after demonstrations</li>\n</ul>\n<p>Tips for great galleries:</p>\n<ul>\n<li>Use consistently sized images for the best presentation</li>\n<li>Add descriptive headlines to provide context</li>\n<li>Consider a tagline to explain what visitors are seeing</li>\n<li>Organize images in a logical sequence</li>\n</ul>"
+      },
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 2,
+      "width": "full",
+      "translations": null,
       "note": null,
       "conditions": null,
       "required": false,
-      "group": "meta_content",
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "block_hero",
+    "field": "meta_divider_block_here",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "block_hero",
+      "field": "meta_divider_block_here",
+      "special": [
+        "alias",
+        "no-data"
+      ],
+      "interface": "presentation-divider",
+      "options": {
+        "inlineTitle": true,
+        "icon": "image",
+        "color": "#A2B5CD"
+      },
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 7,
+      "width": "full",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "block_hero",
+    "field": "meta_header_block_hero",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "block_hero",
+      "field": "meta_header_block_hero",
+      "special": [
+        "alias",
+        "no-data"
+      ],
+      "interface": "super-header",
+      "options": {
+        "title": "Hero Block",
+        "icon": "aspect_ratio",
+        "help": "<p>Creates a prominent section at the top of your page that immediately captures attention. Ideal for:</p>\n<ul>\n<li>Main page headers with impactful headlines</li>\n<li>Showcasing key messages with supporting text</li>\n<li>Featuring high-quality images that support your message</li>\n<li>Adding clear call-to-action buttons</li>\n</ul>\n<p>Tips for effective heroes:</p>\n<ul>\n<li>Keep headlines clear and concise (recommended 2-8 words)</li>\n<li>Use high-resolution images that work well with overlay text</li>\n<li>Consider image placement (left/center/right) based on your headline length</li>\n<li>Add a succinct tagline to provide additional context</li>\n</ul>"
+      },
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 2,
+      "width": "full",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "block_posts",
+    "field": "meta_header_block_posts",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "block_posts",
+      "field": "meta_header_block_posts",
+      "special": [
+        "alias",
+        "no-data"
+      ],
+      "interface": "super-header",
+      "options": {
+        "title": "Posts Block",
+        "help": "<p>Automatically displays your most recent blog posts in chronological order. Perfect for:</p>\n<ul>\n<li>Showing latest articles on your homepage</li>\n<li>Keeping your content fresh and up-to-date</li>\n<li>Creating dynamic content sections</li>\n<li>Showcasing your recent writing</li>\n</ul>\n<p>You can:</p>\n<ul>\n<li>Set the number of posts to display</li>\n<li>Add a custom headline and tagline to label the section</li>\n<li>Trust the system to automatically keep your content current</li>\n</ul>\n<p>The posts will automatically update as you publish new content, ensuring your pages always show your latest articles.</p>",
+        "icon": "signpost"
+      },
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 2,
+      "width": "full",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": null,
       "validation": null,
       "validation_message": null
     }
@@ -7356,28 +8513,61 @@
     }
   },
   {
-    "collection": "globals",
-    "field": "divider_logo",
+    "collection": "block_pricing",
+    "field": "meta_header_block_pricing",
     "type": "alias",
     "schema": null,
     "meta": {
-      "collection": "globals",
-      "field": "divider_logo",
+      "collection": "block_pricing",
+      "field": "meta_header_block_pricing",
       "special": [
         "alias",
         "no-data"
       ],
-      "interface": "presentation-divider",
+      "interface": "super-header",
       "options": {
-        "color": "#A2B5CD",
-        "icon": "imagesmode",
-        "inlineTitle": true
+        "help": "<p>Display your product or service pricing options in a clear, comparative format. Use this when:</p>\n<ul>\n<li>Showcasing different service tiers</li>\n<li>Highlighting feature differences between plans</li>\n<li>Promoting special offers or featured plans</li>\n<li>Presenting subscription options</li>\n</ul>\n<p>Best practices:</p>\n<ul>\n<li>Use clear, benefit-focused plan names</li>\n<li>Highlight your recommended or most popular option</li>\n<li>Keep feature lists scannable and easy to compare</li>\n<li>Include clear call-to-action buttons for each plan</li>\n</ul>",
+        "title": "Pricing Block",
+        "icon": "attach_money"
       },
       "display": null,
       "display_options": null,
       "readonly": false,
       "hidden": false,
-      "sort": 6,
+      "sort": 2,
+      "width": "full",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "block_richtext",
+    "field": "meta_header_block_richtext",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "block_richtext",
+      "field": "meta_header_block_richtext",
+      "special": [
+        "alias",
+        "no-data"
+      ],
+      "interface": "super-header",
+      "options": {
+        "title": "Rich Text Block",
+        "help": "<p>Perfect for creating formatted text content with headings, paragraphs, and lists. Use this block when you need to:</p>\n<ul>\n<li>Write longer form content with multiple paragraphs</li>\n<li>Create structured content with headings and subheadings</li>\n<li>Include inline formatting like bold, italic, or links</li>\n<li>Add bulleted or numbered lists</li>\n</ul>",
+        "icon": "format_color_text"
+      },
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 2,
       "width": "full",
       "translations": null,
       "note": null,
@@ -7428,6 +8618,74 @@
   },
   {
     "collection": "forms",
+    "field": "meta_tabs",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "forms",
+      "field": "meta_tabs",
+      "special": [
+        "alias",
+        "no-data",
+        "group"
+      ],
+      "interface": "group-tabs",
+      "options": null,
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 6,
+      "width": "full",
+      "translations": [
+        {
+          "language": "en-US",
+          "translation": "Tabs"
+        }
+      ],
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "forms",
+    "field": "meta_header_forms",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "forms",
+      "field": "meta_header_forms",
+      "special": [
+        "alias",
+        "no-data"
+      ],
+      "interface": "super-header",
+      "options": {
+        "title": "{{title}}",
+        "help": "<h2>Understanding Forms</h2>\n<p>Forms are reusable components that you create once and can place anywhere on your site using Form blocks. Think of the Forms collection as your form template library - you build the forms here, then use Form blocks to display them on your pages.</p>\n<h3>The Forms &amp; Form Blocks Relationship</h3>\n<ol>\n<li>First, create and configure your form in the Forms collection</li>\n<li>Then, add a Form block to any page where you want the form to appear</li>\n<li>Select your form from the dropdown in the Form block settings</li>\n<li>Customize the block's headline and tagline to match your page context</li>\n</ol>\n<p>This approach lets you:</p>\n<ul>\n<li>Reuse the same form across multiple pages</li>\n<li>Update the form once to change it everywhere</li>\n<li>Maintain consistent data collection</li>\n<li>Track submissions from all instances of the form</li>\n</ul>\n<h2>Creating Forms</h2>\n<h3>Basic Settings</h3>\n<h4>Form Title</h4>\n<p>Internal name to identify your form in the admin panel. Choose something descriptive like:</p>\n<ul>\n<li>\"Newsletter Signup 2024\"</li>\n<li>\"Contact Form - Main\"</li>\n<li>\"Event Registration Form\"</li>\n</ul>\n<h4>Submit Button</h4>\n<p>Customize the text on your submit button. Use action-oriented phrases like:</p>\n<ul>\n<li>\"Send Message\"</li>\n<li>\"Sign Up Now\"</li>\n<li>\"Register Today\"</li>\n</ul>\n<h4>Success Handling</h4>\n<p>Choose what happens after submission:</p>\n<p><strong>Show Message</strong></p>\n<ul>\n<li>Display a custom thank you message</li>\n<li>Confirm the submission was received</li>\n<li>Set expectations for next steps</li>\n</ul>\n<p><strong>Redirect</strong></p>\n<ul>\n<li>Send users to a specific thank you page</li>\n<li>Guide them to relevant content</li>\n<li>Start the next step in their journey</li>\n</ul>\n<h4>Email Notifications</h4>\n<p>Configure automated emails for form submissions:</p>\n<ul>\n<li>Add multiple recipient email addresses</li>\n<li>Customize subject lines and messages</li>\n<li>Include form submission details in the email</li>\n</ul>\n<h4>Active Status</h4>\n<p>Control form availability:</p>\n<ul>\n<li>Enable/disable without deleting</li>\n<li>Temporarily pause data collection</li>\n<li>Test before making public</li>\n</ul>\n<h3>Building Your Form</h3>\n<h4>Available Field Types</h4>\n<ul>\n<li><strong>Text</strong>: Single line text input</li>\n<li><strong>Textarea</strong>: Multi-line text input</li>\n<li><strong>Checkbox</strong>: Single yes/no option</li>\n<li><strong>Checkbox Group</strong>: Multiple selectable options</li>\n<li><strong>Radio</strong>: Single choice from options</li>\n<li><strong>Select</strong>: Dropdown menu</li>\n<li><strong>File</strong>: File upload capability</li>\n<li><strong>Hidden</strong>: Invisible fields for tracking</li>\n</ul>\n<h4>Field Configuration</h4>\n<p><strong>Label</strong> The visible field name shown to users</p>\n<p><strong>Placeholder</strong> Optional hint text inside empty fields</p>\n<p><strong>Help Text</strong> Additional instructions below the field</p>\n<p><strong>Required Fields</strong> Mark essential fields that must be filled out</p>\n<p><strong>Width Options</strong> Control field layout:</p>\n<ul>\n<li>Full width (100%)</li>\n<li>Two-thirds (67%)</li>\n<li>Half (50%)</li>\n<li>One-third (33%)</li>\n</ul>\n<p><strong>Validation:</strong> Here's the available rules</p>\n<ul>\n<li>Email format: <code>email</code></li>\n<li>URL format: <code>url</code></li>\n<li>Minimum length: <code>min:5</code> (replace 5 with desired length)</li>\n<li>Maximum length: <code>max:20</code> (replace 20 with desired length)</li>\n<li>Exact length: <code>length:10</code> (replace 10 with desired length)</li>\n<li>Required fields: Set \"Required\" toggle to true</li>\n</ul>\n<p>You can combine rules with pipes: <code>email|max:255</code></p>\n<h2>Using Forms with Form Blocks</h2>\n<h3>Adding Forms to Pages</h3>\n<ol>\n<li>Add a Form block to your page</li>\n<li>Select your form from the dropdown</li>\n<li>Add an optional headline and tagline</li>\n<li>Preview to check the layout</li>\n</ol>\n<h3>Form Block Customization</h3>\n<ul>\n<li>Add context with a headline</li>\n<li>Provide instructions in the tagline</li>\n<li>Match the form to your page content</li>\n<li>Ensure the form fits your layout</li>\n</ul>\n<h2>Best Practices</h2>\n<h3>Form Design &amp; Experience</h3>\n<ul>\n<li>Keep forms as short as possible - only include essential fields</li>\n<li>Group related fields together logically</li>\n<li>Use clear labels and mark required fields</li>\n<li>Ensure error messages are helpful and specific</li>\n<li>Test on both desktop and mobile devices</li>\n</ul>\n<h3>Data Collection</h3>\n<ul>\n<li>Only collect information you'll actually use</li>\n<li>Follow data protection guidelines</li>\n<li>Review submissions regularly</li>\n</ul>\n<h2>Managing Form Submissions</h2>\n<p>All submissions are stored in the <a href=\"/admin/content/form_submissions\">Form Submissions collection</a>.</p>\n<ul>\n<li>Export data as needed</li>\n<li>Configure email notifications</li>\n<li>Track submission sources</li>\n<li>Monitor submission trends</li>\n</ul>",
+        "actions": []
+      },
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 3,
+      "width": "full",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "forms",
     "field": "fields",
     "type": "alias",
     "schema": null,
@@ -7461,35 +8719,242 @@
     }
   },
   {
-    "collection": "globals",
-    "field": "meta_divider_globals",
+    "collection": "forms",
+    "field": "meta_notice_form_fields",
     "type": "alias",
     "schema": null,
     "meta": {
-      "collection": "globals",
-      "field": "meta_divider_globals",
+      "collection": "forms",
+      "field": "meta_notice_form_fields",
       "special": [
         "alias",
         "no-data"
       ],
-      "interface": "presentation-divider",
+      "interface": "presentation-notice",
       "options": {
-        "inlineTitle": true,
-        "icon": "link",
-        "title": null,
-        "color": "#A2B5CD"
+        "text": " Create custom forms by adding and configuring your desired input fields below. No coding required."
       },
       "display": null,
       "display_options": null,
       "readonly": false,
       "hidden": false,
-      "sort": 13,
+      "sort": 1,
       "width": "full",
       "translations": null,
       "note": null,
       "conditions": null,
       "required": false,
-      "group": null,
+      "group": "meta_fields",
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "forms",
+    "field": "meta_notice_form_emails",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "forms",
+      "field": "meta_notice_form_emails",
+      "special": [
+        "alias",
+        "no-data"
+      ],
+      "interface": "presentation-notice",
+      "options": {
+        "text": "Set up automatic emails to notify your team members when forms are submitted, or send confirmation receipts to people who complete your forms."
+      },
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 1,
+      "width": "full",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": "meta_emails",
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "forms",
+    "field": "submissions",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "forms",
+      "field": "submissions",
+      "special": [
+        "o2m"
+      ],
+      "interface": "list-o2m",
+      "options": {
+        "layout": "table",
+        "fields": [
+          "timestamp",
+          "values.value",
+          "values.field.name"
+        ],
+        "sort": "timestamp",
+        "enableCreate": false,
+        "enableSelect": false,
+        "limit": 25,
+        "enableSearchFilter": true,
+        "enableLink": true
+      },
+      "display": "related-values",
+      "display_options": {
+        "template": "{{values.value}}"
+      },
+      "readonly": true,
+      "hidden": false,
+      "sort": 2,
+      "width": "fill",
+      "translations": null,
+      "note": "Received form responses.",
+      "conditions": null,
+      "required": false,
+      "group": "meta_submissions",
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "forms",
+    "field": "meta_notice_form_responses",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "forms",
+      "field": "meta_notice_form_responses",
+      "special": [
+        "alias",
+        "no-data"
+      ],
+      "interface": "presentation-notice",
+      "options": {
+        "text": "This table displays all responses submitted through this form. Each entry includes the submission timestamp and the values for each form field."
+      },
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 1,
+      "width": "full",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": "meta_submissions",
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "forms",
+    "field": "meta_fields",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "forms",
+      "field": "meta_fields",
+      "special": [
+        "alias",
+        "no-data",
+        "group"
+      ],
+      "interface": "group-raw",
+      "options": null,
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 1,
+      "width": "full",
+      "translations": [
+        {
+          "language": "en-US",
+          "translation": "Form Fields"
+        }
+      ],
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": "meta_tabs",
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "forms",
+    "field": "meta_emails",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "forms",
+      "field": "meta_emails",
+      "special": [
+        "alias",
+        "no-data",
+        "group"
+      ],
+      "interface": "group-raw",
+      "options": null,
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 3,
+      "width": "full",
+      "translations": [
+        {
+          "language": "en-US",
+          "translation": "Emails"
+        }
+      ],
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": "meta_tabs",
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "forms",
+    "field": "meta_submissions",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "forms",
+      "field": "meta_submissions",
+      "special": [
+        "alias",
+        "no-data",
+        "group"
+      ],
+      "interface": "group-raw",
+      "options": null,
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 2,
+      "width": "full",
+      "translations": [
+        {
+          "language": "en-US",
+          "translation": "Submissions"
+        }
+      ],
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": "meta_tabs",
       "validation": null,
       "validation_message": null
     }
@@ -7550,174 +9015,28 @@
     }
   },
   {
-    "collection": "posts",
-    "field": "meta_divider_info",
+    "collection": "form_submissions",
+    "field": "meta_notice_submissions",
     "type": "alias",
     "schema": null,
     "meta": {
-      "collection": "posts",
-      "field": "meta_divider_info",
+      "collection": "form_submissions",
+      "field": "meta_notice_submissions",
       "special": [
         "alias",
         "no-data"
       ],
-      "interface": "presentation-divider",
+      "interface": "presentation-notice",
       "options": {
-        "icon": "calendar_month",
-        "color": "#A2B5CD",
-        "inlineTitle": true
+        "text": "Form submissions are configured to be read-only for data integrity reasons. But they are a great candidate for use in [Flows](/admin/settings/flows). Directus Flows is a drag and drop, low-code automation builder to simplify tasks like automatic notifications or sending incoming requests to third party services. <a href=\"https://directus.io/docs/guides/automate/flows?ref=simple_website_cms\" target=\"_blank\">Learn more about Flows.</a>"
       },
-      "display": null,
-      "display_options": null,
-      "readonly": false,
-      "hidden": false,
-      "sort": 3,
-      "width": "full",
-      "translations": null,
-      "note": null,
-      "conditions": null,
-      "required": false,
-      "group": "meta_content",
-      "validation": null,
-      "validation_message": null
-    }
-  },
-  {
-    "collection": "pages",
-    "field": "meta_m2a_button",
-    "type": "alias",
-    "schema": null,
-    "meta": {
-      "collection": "pages",
-      "field": "meta_m2a_button",
-      "special": [
-        "alias",
-        "no-data"
-      ],
-      "interface": "directus-labs-experimental-m2a-interface",
-      "options": {
-        "target": "above"
-      },
-      "display": null,
-      "display_options": null,
-      "readonly": false,
-      "hidden": false,
-      "sort": 8,
-      "width": "full",
-      "translations": null,
-      "note": null,
-      "conditions": null,
-      "required": false,
-      "group": "meta_content",
-      "validation": null,
-      "validation_message": null
-    }
-  },
-  {
-    "collection": "forms",
-    "field": "submissions",
-    "type": "alias",
-    "schema": null,
-    "meta": {
-      "collection": "forms",
-      "field": "submissions",
-      "special": [
-        "o2m"
-      ],
-      "interface": "list-o2m",
-      "options": {
-        "layout": "table",
-        "fields": [
-          "timestamp",
-          "values.value",
-          "values.field.name"
-        ],
-        "sort": "timestamp",
-        "enableCreate": false,
-        "enableSelect": false,
-        "limit": 25,
-        "enableSearchFilter": true,
-        "enableLink": true
-      },
-      "display": "related-values",
-      "display_options": {
-        "template": "{{values.value}}"
-      },
-      "readonly": true,
-      "hidden": false,
-      "sort": 2,
-      "width": "fill",
-      "translations": null,
-      "note": "Received form responses.",
-      "conditions": null,
-      "required": false,
-      "group": "meta_submissions",
-      "validation": null,
-      "validation_message": null
-    }
-  },
-  {
-    "collection": "forms",
-    "field": "meta_fields",
-    "type": "alias",
-    "schema": null,
-    "meta": {
-      "collection": "forms",
-      "field": "meta_fields",
-      "special": [
-        "alias",
-        "no-data",
-        "group"
-      ],
-      "interface": "group-raw",
-      "options": null,
-      "display": null,
-      "display_options": null,
-      "readonly": false,
-      "hidden": false,
-      "sort": 1,
-      "width": "full",
-      "translations": [
-        {
-          "language": "en-US",
-          "translation": "Form Fields"
-        }
-      ],
-      "note": null,
-      "conditions": null,
-      "required": false,
-      "group": "meta_tabs",
-      "validation": null,
-      "validation_message": null
-    }
-  },
-  {
-    "collection": "forms",
-    "field": "meta_tabs",
-    "type": "alias",
-    "schema": null,
-    "meta": {
-      "collection": "forms",
-      "field": "meta_tabs",
-      "special": [
-        "alias",
-        "no-data",
-        "group"
-      ],
-      "interface": "group-tabs",
-      "options": null,
       "display": null,
       "display_options": null,
       "readonly": false,
       "hidden": false,
       "sort": 6,
       "width": "full",
-      "translations": [
-        {
-          "language": "en-US",
-          "translation": "Tabs"
-        }
-      ],
+      "translations": null,
       "note": null,
       "conditions": null,
       "required": false,
@@ -7727,53 +9046,55 @@
     }
   },
   {
-    "collection": "pages",
-    "field": "blocks",
+    "collection": "form_submissions",
+    "field": "meta_header_form_submissions",
     "type": "alias",
     "schema": null,
     "meta": {
-      "collection": "pages",
-      "field": "blocks",
+      "collection": "form_submissions",
+      "field": "meta_header_form_submissions",
       "special": [
-        "m2a"
+        "alias",
+        "no-data"
       ],
-      "interface": "list-m2a",
+      "interface": "super-header",
       "options": {
-        "enableSelect": false,
-        "prefix": null
+        "title": "Form Submission",
+        "subtitle": "Submitted at: {{timestamp}}",
+        "help": "<h2>Form Submissions</h2>\n<p>Form submissions are read-only records of responses received through your site's forms. This ensures data integrity and provides a reliable audit trail of all submitted information.</p>\n<h3>Understanding Submissions</h3>\n<p>Each submission contains:</p>\n<ul>\n<li>Unique submission ID</li>\n<li>Timestamp of submission</li>\n<li>Reference to the parent form</li>\n<li>All submitted field values</li>\n</ul>\n<h3>Automating with Flows</h3>\n<p>While submissions are read-only, you can use Flows to automate actions when new submissions arrive:</p>\n<ul>\n<li>Send custom email notifications</li>\n<li>Push data to external services</li>\n<li>Create records in other collections</li>\n<li>Trigger webhooks</li>\n<li>Format and transform submission data</li>\n</ul>\n<p>Think of Flows as your automation toolkit - they let you act on submission data without modifying the original records.</p>\n<h3>Data Management</h3>\n<h4>Exporting Data</h4>\n<p>Export submissions to work with them outside the CMS:</p>\n<ul>\n<li>Download as CSV for spreadsheet analysis</li>\n<li>Include date ranges for periodic reports</li>\n<li>Select specific fields to include</li>\n<li>Export file attachments in bulk</li>\n</ul>\n<h4>Data Cleanup</h4>\n<p>Keep your submission data organized:</p>\n<ul>\n<li>Archive old submissions</li>\n<li>Monitor storage usage from file uploads</li>\n<li>Watch for spam patterns</li>\n<li>Maintain audit logs</li>\n</ul>\n<h3>Privacy &amp; Security</h3>\n<p>Since form submissions often contain personal data:</p>\n<ul>\n<li>Follow your data retention policy</li>\n<li>Handle personal information according to privacy laws</li>\n<li>Regularly review old submissions for deletion</li>\n<li>Consider automation for data cleanup</li>\n<li>Monitor who has access to submission data</li>\n</ul>"
       },
-      "display": "related-values",
-      "display_options": {
-        "template": "{{collection}}"
-      },
+      "display": null,
+      "display_options": null,
       "readonly": false,
       "hidden": false,
-      "sort": 7,
+      "sort": 1,
       "width": "full",
       "translations": null,
-      "note": "Create and arrange different content blocks (like text, images, or videos) to build your page.",
+      "note": null,
       "conditions": null,
       "required": false,
-      "group": "meta_content",
+      "group": null,
       "validation": null,
       "validation_message": null
     }
   },
   {
-    "collection": "pages",
-    "field": "meta_notice_pagebuilder",
+    "collection": "globals",
+    "field": "divider_logo",
     "type": "alias",
     "schema": null,
     "meta": {
-      "collection": "pages",
-      "field": "meta_notice_pagebuilder",
+      "collection": "globals",
+      "field": "divider_logo",
       "special": [
         "alias",
         "no-data"
       ],
-      "interface": "presentation-notice",
+      "interface": "presentation-divider",
       "options": {
-        "text": "Build dynamic pages quickly using ready-made blocks. <a href=\"https://directus.io/docs/tutorials/getting-started/create-reusable-blocks-with-many-to-any-relationships?ref=simple_cms_notices\" target=\"_blank\">See our documentation to learn more about the Page Builder</a>."
+        "color": "#A2B5CD",
+        "icon": "imagesmode",
+        "inlineTitle": true
       },
       "display": null,
       "display_options": null,
@@ -7785,25 +9106,26 @@
       "note": null,
       "conditions": null,
       "required": false,
-      "group": "meta_content",
+      "group": null,
       "validation": null,
       "validation_message": null
     }
   },
   {
-    "collection": "block_gallery",
-    "field": "items",
+    "collection": "navigation",
+    "field": "meta_notice_navigation",
     "type": "alias",
     "schema": null,
     "meta": {
-      "collection": "block_gallery",
-      "field": "items",
+      "collection": "navigation",
+      "field": "meta_notice_navigation",
       "special": [
-        "files"
+        "alias",
+        "no-data"
       ],
-      "interface": "files",
+      "interface": "presentation-notice",
       "options": {
-        "folder": "ece7bab9-5433-4a63-b9f7-bde8b517d6d9"
+        "text": "Create and manage navigation menus for your website. Each menu can contain multiple links organized into a hierarchy."
       },
       "display": null,
       "display_options": null,
@@ -7812,10 +9134,128 @@
       "sort": 5,
       "width": "full",
       "translations": null,
-      "note": "Images to include in the image gallery.",
+      "note": null,
       "conditions": null,
       "required": false,
       "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "navigation",
+    "field": "items",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "navigation",
+      "field": "items",
+      "special": [
+        "o2m"
+      ],
+      "interface": "list-o2m",
+      "options": {
+        "enableLink": true,
+        "filter": {
+          "_and": [
+            {
+              "_and": [
+                {
+                  "navigation": {
+                    "_null": true
+                  }
+                },
+                {
+                  "parent": {
+                    "navigation": {
+                      "_null": true
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "template": "{{title}} • {{type}}"
+      },
+      "display": "related-values",
+      "display_options": {
+        "template": "{{title}} • {{type}}"
+      },
+      "readonly": false,
+      "hidden": false,
+      "sort": 6,
+      "width": "full",
+      "translations": null,
+      "note": "Links within the menu.",
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "navigation",
+    "field": "meta_header_navigation",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "navigation",
+      "field": "meta_header_navigation",
+      "special": [
+        "alias",
+        "no-data"
+      ],
+      "interface": "super-header",
+      "options": {
+        "title": "{{title}}",
+        "help": "<h2>Understanding Navigation</h2>\n<p>Navigation menus help visitors find their way around your site. You can create multiple menus (like main navigation, footer links, or utility menus) and manage them all from this collection.</p>\n<h3>Navigation Structure</h3>\n<p>Each navigation menu consists of:</p>\n<ol>\n<li>A menu container (Navigation)</li>\n<li>Menu items within it (Navigation Items)</li>\n</ol>\n<h2>Creating Navigation Menus</h2>\n<h3>Menu Settings</h3>\n<h4>Title</h4>\n<p>Internal name for your menu (only visible in admin). Examples:</p>\n<ul>\n<li>\"Main Navigation\"</li>\n<li>\"Footer Links\"</li>\n<li>\"Header Utility Menu\"</li>\n</ul>\n<h4>Active Status</h4>\n<p>Toggle menus on/off without deleting them. Useful for:</p>\n<ul>\n<li>Testing new menu structures</li>\n<li>Seasonal navigation changes</li>\n<li>Temporary menu updates</li>\n</ul>\n<h2>Adding Menu Items</h2>\n<h3>Item Types</h3>\n<h4>Page</h4>\n<ul>\n<li>Link to any page in your site</li>\n<li>Automatically updates if page URL changes</li>\n<li>Maintains internal link structure</li>\n</ul>\n<h4>Post</h4>\n<ul>\n<li>Link to a specific blog post</li>\n<li>Useful for featuring important articles</li>\n<li>Updates automatically if post URL changes</li>\n</ul>\n<h4>URL</h4>\n<ul>\n<li>Link to any external website (e.g., \"<a href=\"https://example.com/\">https://example.com</a>\")</li>\n<li>Create social media links</li>\n<li>Link to specific file downloads</li>\n<li>Add internal anchor links (e.g., \"#contact-section\")</li>\n<li>Point to email addresses (e.g., \"mailto:<a href=\"mailto:contact@example.com\">contact@example.com</a>\")</li>\n<li>Link to phone numbers (e.g., \"tel:+1234567890\")</li>\n</ul>\n<h4>Group</h4>\n<ul>\n<li>Creates a container for other menu items</li>\n<li>Appears as a dropdown menu when hovered</li>\n<li>Can contain any mix of Pages, Posts, URLs, or other Groups</li>\n<li>Perfect for organizing related content (e.g., \"Services\", \"Products\")</li>\n<li>Can be nested to create multi-level navigation</li>\n<li>Doesn't require a URL - acts as a category header</li>\n</ul>\n<p>Examples of Group Usage:</p>\n<div>\n<pre>About (Group) \n└─ Our Story (Page)\n└─ Team (Page)\n└─ Careers (URL - External job board)<br>\nServices (Group) \n└─ Consulting (Page) \n└─ Training (Group) \n└─ Online Courses (URL) \n└─ Workshops (Page) \n└─ Support (Page)\n</pre>\n<h3>Item Settings</h3>\n<h4>Title</h4>\n<p>The text shown to visitors in the menu</p>\n<h4>Parent Item</h4>\n<p>For creating nested navigation:</p>\n<ul>\n<li>Select another item as parent</li>\n<li>Creates dropdown menus</li>\n<li>Builds hierarchical structure</li>\n</ul>\n<h4>Sort Order</h4>\n<p>Control the sequence of menu items:</p>\n<ul>\n<li>Drag and drop to reorder</li>\n<li>Items display in ascending order</li>\n<li>Groups show as dropdowns</li>\n</ul>\n<h2>Best Practices</h2>\n<h3>Structure</h3>\n<ul>\n<li>Keep main navigation simple</li>\n<li>Limit dropdown levels to 2-3</li>\n<li>Group related items logically</li>\n<li>Use clear, concise labels</li>\n</ul>\n<h3>Usability</h3>\n<ul>\n<li>Ensure all items are reachable</li>\n<li>Test on mobile devices</li>\n<li>Review links regularly</li>\n<li>Keep labels brief but descriptive</li>\n</ul>\n</div>"
+      },
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 1,
+      "width": "full",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "globals",
+    "field": "meta_notice_security",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "globals",
+      "field": "meta_notice_security",
+      "special": [
+        "alias",
+        "no-data"
+      ],
+      "interface": "presentation-notice",
+      "options": {
+        "color": "warning",
+        "icon": "warning",
+        "text": "Be careful about changing the access policies and permissions for the `globals` collection so that you don't expose your private API keys."
+      },
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 1,
+      "width": "full",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": "meta_credentials",
       "validation": null,
       "validation_message": null
     }
@@ -7852,13 +9292,13 @@
     }
   },
   {
-    "collection": "block_hero",
-    "field": "meta_divider_block_here",
+    "collection": "globals",
+    "field": "meta_divider_globals",
     "type": "alias",
     "schema": null,
     "meta": {
-      "collection": "block_hero",
-      "field": "meta_divider_block_here",
+      "collection": "globals",
+      "field": "meta_divider_globals",
       "special": [
         "alias",
         "no-data"
@@ -7866,14 +9306,15 @@
       "interface": "presentation-divider",
       "options": {
         "inlineTitle": true,
-        "icon": "image",
+        "icon": "link",
+        "title": null,
         "color": "#A2B5CD"
       },
       "display": null,
       "display_options": null,
       "readonly": false,
       "hidden": false,
-      "sort": 7,
+      "sort": 13,
       "width": "full",
       "translations": null,
       "note": null,
@@ -7960,75 +9401,178 @@
     }
   },
   {
-    "collection": "forms",
-    "field": "meta_notice_form_fields",
+    "collection": "pages",
+    "field": "meta_tabs",
     "type": "alias",
     "schema": null,
     "meta": {
-      "collection": "forms",
-      "field": "meta_notice_form_fields",
+      "collection": "pages",
+      "field": "meta_tabs",
+      "special": [
+        "alias",
+        "no-data",
+        "group"
+      ],
+      "interface": "group-tabs",
+      "options": {
+        "fillWidth": true
+      },
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 4,
+      "width": "full",
+      "translations": [
+        {
+          "language": "en-US",
+          "translation": "Tabs"
+        }
+      ],
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "pages",
+    "field": "meta_header_pages",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "pages",
+      "field": "meta_header_pages",
+      "special": [
+        "alias",
+        "no-data"
+      ],
+      "interface": "super-header",
+      "options": {
+        "title": "{{title}}",
+        "subtitle": "{{status}} • Published At: {{published_at}}",
+        "help": "<h2>Creating and Managing Pages</h2>\n<p>Pages are the foundation of your website, where you'll combine different content blocks to create engaging layouts. Each page can be built using a mix of blocks like Hero sections, Rich Text, Forms, and more.</p>\n<h3>Page Settings</h3>\n<h4>Title</h4>\n<p>The page title appears in browser tabs and search results. Make it clear and descriptive of the page's content. This is what visitors will see when they bookmark your page or share it on social media.</p>\n<h4>URL (Permalink)</h4>\n<ul>\n<li>Always starts with a forward slash (/)</li>\n<li>Use simple, lowercase words separated by hyphens</li>\n<li>Keep it short but descriptive</li>\n<li>Examples:\n<ul>\n<li>/about</li>\n<li>/contact-us</li>\n<li>/services/web-design</li>\n</ul>\n</li>\n</ul>\n<h4>Description</h4>\n<p>A brief summary of the page that appears in search results. Write 1-2 sentences that clearly explain what visitors will find on this page. Good descriptions help with SEO and encourage people to click through to your site.</p>\n<h4>Publishing Options</h4>\n<ul>\n<li><strong>Draft</strong>: Work on the page without making it public</li>\n<li><strong>In Review</strong>: Submit the page for review by other team members</li>\n<li><strong>Published</strong>: Make the page visible to the public</li>\n<li><strong>Schedule</strong>: Set a future publication date</li>\n</ul>\n<p><img src=\"http://localhost:8001/assets/5e93050a-6f17-4314-a7e5-f78bda425fea.png?width=2076&amp;height=1551\" alt=\"Help Blocks Content.png~bak\" loading=\"lazy\"></p>\n<h2>Working with Blocks</h2>\n<p>Your page content is built by adding and arranging blocks. Think of blocks as building pieces that you can stack and rearrange to create your perfect page layout.</p>\n<h4>Tips for Building with Blocks</h4>\n<ul>\n<li>Start with a Hero block for main landing pages</li>\n<li>Use consistent block types for similar content across pages</li>\n<li>Consider the natural flow of information when ordering blocks</li>\n<li>Preview your page on both desktop and mobile before publishing</li>\n<li>You can temporarily hide blocks without deleting them using the \"Hide block\" toggle</li>\n</ul>\n<h4>Block Background Options</h4>\n<p>Each block can have either a light or dark background:</p>\n<ul>\n<li>Default (light): Default option, best for regular content sections</li>\n<li>Dark: Creates visual contrast, good for highlighting important sections</li>\n</ul>\n<h4>General Tips for All Blocks</h4>\n<ul>\n<li>Preview your changes before publishing</li>\n<li>Consider mobile viewing experience</li>\n<li>Keep related content in the same block type for consistency</li>\n<li>Use clear headlines and taglines to guide your visitors</li>\n<li>Make sure images are optimized for web use</li>\n<li>Test all interactive elements like forms and buttons</li>\n</ul>"
+      },
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 3,
+      "width": "fill",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "pages",
+    "field": "meta_divider_content",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "pages",
+      "field": "meta_divider_content",
+      "special": [
+        "alias",
+        "no-data"
+      ],
+      "interface": "presentation-divider",
+      "options": {
+        "icon": "format_paragraph",
+        "color": "#A2B5CD",
+        "inlineTitle": true
+      },
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 5,
+      "width": "full",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": "meta_content",
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "pages",
+    "field": "meta_m2a_button",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "pages",
+      "field": "meta_m2a_button",
+      "special": [
+        "alias",
+        "no-data"
+      ],
+      "interface": "directus-labs-experimental-m2a-interface",
+      "options": {
+        "target": "above"
+      },
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 8,
+      "width": "full",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": "meta_content",
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "pages",
+    "field": "meta_notice_pagebuilder",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "pages",
+      "field": "meta_notice_pagebuilder",
       "special": [
         "alias",
         "no-data"
       ],
       "interface": "presentation-notice",
       "options": {
-        "text": " Create custom forms by adding and configuring your desired input fields below. No coding required."
+        "text": "Build dynamic pages quickly using ready-made blocks. <a href=\"https://directus.io/docs/tutorials/getting-started/create-reusable-blocks-with-many-to-any-relationships?ref=simple_cms_notices\" target=\"_blank\">See our documentation to learn more about the Page Builder</a>."
       },
       "display": null,
       "display_options": null,
       "readonly": false,
       "hidden": false,
-      "sort": 1,
+      "sort": 6,
       "width": "full",
       "translations": null,
       "note": null,
       "conditions": null,
       "required": false,
-      "group": "meta_fields",
+      "group": "meta_content",
       "validation": null,
       "validation_message": null
     }
   },
   {
-    "collection": "forms",
-    "field": "meta_notice_form_emails",
+    "collection": "pages",
+    "field": "meta_content",
     "type": "alias",
     "schema": null,
     "meta": {
-      "collection": "forms",
-      "field": "meta_notice_form_emails",
-      "special": [
-        "alias",
-        "no-data"
-      ],
-      "interface": "presentation-notice",
-      "options": {
-        "text": "Set up automatic emails to notify your team members when forms are submitted, or send confirmation receipts to people who complete your forms."
-      },
-      "display": null,
-      "display_options": null,
-      "readonly": false,
-      "hidden": false,
-      "sort": 1,
-      "width": "full",
-      "translations": null,
-      "note": null,
-      "conditions": null,
-      "required": false,
-      "group": "meta_emails",
-      "validation": null,
-      "validation_message": null
-    }
-  },
-  {
-    "collection": "forms",
-    "field": "meta_emails",
-    "type": "alias",
-    "schema": null,
-    "meta": {
-      "collection": "forms",
-      "field": "meta_emails",
+      "collection": "pages",
+      "field": "meta_content",
       "special": [
         "alias",
         "no-data",
@@ -8040,12 +9584,12 @@
       "display_options": null,
       "readonly": false,
       "hidden": false,
-      "sort": 3,
+      "sort": 1,
       "width": "full",
       "translations": [
         {
           "language": "en-US",
-          "translation": "Emails"
+          "translation": "Content"
         }
       ],
       "note": null,
@@ -8057,77 +9601,13 @@
     }
   },
   {
-    "collection": "forms",
-    "field": "meta_notice_form_responses",
+    "collection": "pages",
+    "field": "meta_seo",
     "type": "alias",
     "schema": null,
     "meta": {
-      "collection": "forms",
-      "field": "meta_notice_form_responses",
-      "special": [
-        "alias",
-        "no-data"
-      ],
-      "interface": "presentation-notice",
-      "options": {
-        "text": "This table displays all responses submitted through this form. Each entry includes the submission timestamp and the values for each form field."
-      },
-      "display": null,
-      "display_options": null,
-      "readonly": false,
-      "hidden": false,
-      "sort": 1,
-      "width": "full",
-      "translations": null,
-      "note": null,
-      "conditions": null,
-      "required": false,
-      "group": "meta_submissions",
-      "validation": null,
-      "validation_message": null
-    }
-  },
-  {
-    "collection": "globals",
-    "field": "meta_notice_security",
-    "type": "alias",
-    "schema": null,
-    "meta": {
-      "collection": "globals",
-      "field": "meta_notice_security",
-      "special": [
-        "alias",
-        "no-data"
-      ],
-      "interface": "presentation-notice",
-      "options": {
-        "color": "warning",
-        "icon": "warning",
-        "text": "Be careful about changing the access policies and permissions for the `globals` collection so that you don't expose your private API keys."
-      },
-      "display": null,
-      "display_options": null,
-      "readonly": false,
-      "hidden": false,
-      "sort": 1,
-      "width": "full",
-      "translations": null,
-      "note": null,
-      "conditions": null,
-      "required": false,
-      "group": "meta_credentials",
-      "validation": null,
-      "validation_message": null
-    }
-  },
-  {
-    "collection": "forms",
-    "field": "meta_submissions",
-    "type": "alias",
-    "schema": null,
-    "meta": {
-      "collection": "forms",
-      "field": "meta_submissions",
+      "collection": "pages",
+      "field": "meta_seo",
       "special": [
         "alias",
         "no-data",
@@ -8144,7 +9624,7 @@
       "translations": [
         {
           "language": "en-US",
-          "translation": "Submissions"
+          "translation": "SEO"
         }
       ],
       "note": null,
@@ -8156,57 +9636,63 @@
     }
   },
   {
-    "collection": "directus_users",
-    "field": "posts",
+    "collection": "pages",
+    "field": "blocks",
     "type": "alias",
     "schema": null,
     "meta": {
-      "collection": "directus_users",
-      "field": "posts",
+      "collection": "pages",
+      "field": "blocks",
       "special": [
-        "o2m"
+        "m2a"
       ],
-      "interface": "list-o2m",
+      "interface": "list-m2a",
       "options": {
-        "template": "{{title}}"
+        "enableSelect": false,
+        "prefix": null
       },
       "display": "related-values",
-      "display_options": null,
+      "display_options": {
+        "template": "{{collection}}"
+      },
       "readonly": false,
       "hidden": false,
-      "sort": 1,
+      "sort": 7,
       "width": "full",
       "translations": null,
-      "note": "Blog posts this user has authored.",
+      "note": "Create and arrange different content blocks (like text, images, or videos) to build your page.",
       "conditions": null,
       "required": false,
-      "group": null,
+      "group": "meta_content",
       "validation": null,
       "validation_message": null
     }
   },
   {
-    "collection": "navigation",
-    "field": "meta_notice_navigation",
+    "collection": "posts",
+    "field": "meta_header_posts",
     "type": "alias",
     "schema": null,
     "meta": {
-      "collection": "navigation",
-      "field": "meta_notice_navigation",
+      "collection": "posts",
+      "field": "meta_header_posts",
       "special": [
         "alias",
         "no-data"
       ],
-      "interface": "presentation-notice",
+      "interface": "super-header",
       "options": {
-        "text": "Create and manage navigation menus for your website. Each menu can contain multiple links organized into a hierarchy."
+        "title": "{{title}}",
+        "subtitle": "{{status}} • Published At: {{published_at}}",
+        "help": "<h2>Managing Blog Posts</h2>\n<p>Blog posts are a powerful way to share your content, news, and updates with your audience. Each post can include rich text content, images, and metadata to help with organization and discovery.</p>\n<h3>Post Settings</h3>\n<h4>Title</h4>\n<p>The main headline of your blog post. This appears at the top of the post and in preview cards across your site. Make it:</p>\n<ul>\n<li>Engaging and descriptive</li>\n<li>Clear about the post's content</li>\n<li>Optimized for search engines (aim for 50-60 characters)</li>\n</ul>\n<h4>Description</h4>\n<p>A brief preview of your post that appears in blog listings and search results. Write 1-2 compelling sentences that:</p>\n<ul>\n<li>Summarize the main point of your article</li>\n<li>Entice readers to click through</li>\n<li>Include relevant keywords naturally</li>\n</ul>\n<h4>Featured Image</h4>\n<p>The main visual for your post that appears:</p>\n<ul>\n<li>At the top of the post</li>\n<li>In preview cards across your site</li>\n<li>When sharing on social media Use high-quality, relevant images that capture attention and support your content.</li>\n</ul>\n<h4>URL Slug</h4>\n<p>The unique portion of the URL for this post. For example, in \"yoursite.com/posts/my-first-post\", \"my-first-post\" is the slug.</p>\n<ul>\n<li>Use lowercase letters and hyphens</li>\n<li>Keep it short but descriptive</li>\n<li>Include relevant keywords when possible</li>\n<li>Avoid special characters</li>\n</ul>\n<h4>Content</h4>\n<p>The main body of your post, supporting rich text formatting including:</p>\n<ul>\n<li>Headings and subheadings</li>\n<li>Paragraphs with formatting (bold, italic, etc.)</li>\n<li>Links to other content</li>\n<li>Bulleted and numbered lists</li>\n<li>Images and media</li>\n</ul>\n<h4>Author</h4>\n<p>Select the team member who wrote the post. This helps:</p>\n<ul>\n<li>Give credit to your writers</li>\n<li>Build authority for your content</li>\n<li>Allow readers to find more posts by the same author</li>\n</ul>\n<h4>Publishing Options</h4>\n<ul>\n<li><strong>Draft</strong>: Work on the post privately</li>\n<li><strong>In Review</strong>: Submit for team review</li>\n<li><strong>Published</strong>: Make the post public</li>\n<li><strong>Schedule</strong>: Set a future publication date and time</li>\n</ul>\n<h3>Best Practices for Blog Posts</h3>\n<h4>Writing Tips</h4>\n<ul>\n<li>Start with a strong opening paragraph</li>\n<li>Use subheadings to break up long content</li>\n<li>Keep paragraphs short (3-4 sentences)</li>\n<li>Include relevant internal and external links</li>\n<li>End with a clear conclusion or call to action</li>\n</ul>\n<h4>SEO Considerations</h4>\n<ul>\n<li>Include your main keyword in the title</li>\n<li>Use descriptive alt text for images</li>\n<li>Write naturally for your audience</li>\n<li>Link to related content on your site</li>\n<li>Use appropriate heading hierarchy</li>\n</ul>\n<h4>Image Guidelines</h4>\n<ul>\n<li>Choose relevant, high-quality featured images</li>\n<li>Optimize images for web performance</li>\n<li>Use consistent image sizes</li>\n<li>Include descriptive alt text</li>\n<li>Consider image placement within content</li>\n</ul>",
+        "icon": null
       },
       "display": null,
       "display_options": null,
       "readonly": false,
       "hidden": false,
-      "sort": 5,
-      "width": "full",
+      "sort": 3,
+      "width": "fill",
       "translations": null,
       "note": null,
       "conditions": null,
@@ -8217,32 +9703,71 @@
     }
   },
   {
-    "collection": "form_submissions",
-    "field": "meta_notice_submissions",
+    "collection": "posts",
+    "field": "meta_tabs",
     "type": "alias",
     "schema": null,
     "meta": {
-      "collection": "form_submissions",
-      "field": "meta_notice_submissions",
+      "collection": "posts",
+      "field": "meta_tabs",
       "special": [
         "alias",
-        "no-data"
+        "no-data",
+        "group"
       ],
-      "interface": "presentation-notice",
+      "interface": "group-tabs",
       "options": {
-        "text": "Form submissions are configured to be read-only for data integrity reasons. But they are a great candidate for use in [Flows](/admin/settings/flows). Directus Flows is a drag and drop, low-code automation builder to simplify tasks like automatic notifications or sending incoming requests to third party services. <a href=\"https://directus.io/docs/guides/automate/flows?ref=simple_website_cms\" target=\"_blank\">Learn more about Flows.</a>"
+        "fillWidth": true
       },
       "display": null,
       "display_options": null,
       "readonly": false,
       "hidden": false,
-      "sort": 6,
+      "sort": 4,
+      "width": "full",
+      "translations": [
+        {
+          "language": "en-US",
+          "translation": "Tabs"
+        }
+      ],
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "posts",
+    "field": "meta_divider_info",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "posts",
+      "field": "meta_divider_info",
+      "special": [
+        "alias",
+        "no-data"
+      ],
+      "interface": "presentation-divider",
+      "options": {
+        "icon": "calendar_month",
+        "color": "#A2B5CD",
+        "inlineTitle": true
+      },
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 3,
       "width": "full",
       "translations": null,
       "note": null,
       "conditions": null,
       "required": false,
-      "group": null,
+      "group": "meta_content",
       "validation": null,
       "validation_message": null
     }
@@ -8288,463 +9813,6 @@
       "conditions": null,
       "required": false,
       "group": "meta_content",
-      "validation": null,
-      "validation_message": null
-    }
-  },
-  {
-    "collection": "navigation",
-    "field": "items",
-    "type": "alias",
-    "schema": null,
-    "meta": {
-      "collection": "navigation",
-      "field": "items",
-      "special": [
-        "o2m"
-      ],
-      "interface": "list-o2m",
-      "options": {
-        "enableLink": true,
-        "filter": {
-          "_and": [
-            {
-              "_and": [
-                {
-                  "navigation": {
-                    "_null": true
-                  }
-                },
-                {
-                  "parent": {
-                    "navigation": {
-                      "_null": true
-                    }
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        "template": "{{title}} • {{type}}"
-      },
-      "display": "related-values",
-      "display_options": {
-        "template": "{{title}} • {{type}}"
-      },
-      "readonly": false,
-      "hidden": false,
-      "sort": 6,
-      "width": "full",
-      "translations": null,
-      "note": "Links within the menu.",
-      "conditions": null,
-      "required": false,
-      "group": null,
-      "validation": null,
-      "validation_message": null
-    }
-  },
-  {
-    "collection": "block_form",
-    "field": "meta_header_block_form",
-    "type": "alias",
-    "schema": null,
-    "meta": {
-      "collection": "block_form",
-      "field": "meta_header_block_form",
-      "special": [
-        "alias",
-        "no-data"
-      ],
-      "interface": "super-header",
-      "options": {
-        "title": "Form Block",
-        "help": "<p>Embed interactive forms to collect information from your visitors. Great for:</p>\n<ul>\n<li>Contact forms</li>\n<li>Newsletter signups</li>\n<li>Event registrations</li>\n<li>Feedback collection</li>\n<li>Lead generation</li>\n</ul>\n<p>When adding a form:</p>\n<ul>\n<li>Choose from your pre-configured form templates</li>\n<li>Add a clear headline explaining the form's purpose</li>\n<li>Consider adding a tagline with extra context or instructions</li>\n<li>Ensure all required fields are clearly marked</li>\n</ul>\n<p>You can create or edit forms outside of this block in the <a href=\"/admin/content/forms\">Forms collection.</a></p>",
-        "icon": "format_shapes"
-      },
-      "display": null,
-      "display_options": null,
-      "readonly": false,
-      "hidden": false,
-      "sort": 2,
-      "width": "full",
-      "translations": null,
-      "note": null,
-      "conditions": null,
-      "required": false,
-      "group": null,
-      "validation": null,
-      "validation_message": null
-    }
-  },
-  {
-    "collection": "block_gallery",
-    "field": "meta_header_block_gallery",
-    "type": "alias",
-    "schema": null,
-    "meta": {
-      "collection": "block_gallery",
-      "field": "meta_header_block_gallery",
-      "special": [
-        "alias",
-        "no-data"
-      ],
-      "interface": "super-header",
-      "options": {
-        "title": "Gallery Block",
-        "icon": "grid_view",
-        "help": "<p>Create visual showcases with multiple images. Ideal for:</p>\n<ul>\n<li>Product portfolios</li>\n<li>Project showcases</li>\n<li>Event photo collections</li>\n<li>Team member galleries</li>\n<li>Before/after demonstrations</li>\n</ul>\n<p>Tips for great galleries:</p>\n<ul>\n<li>Use consistently sized images for the best presentation</li>\n<li>Add descriptive headlines to provide context</li>\n<li>Consider a tagline to explain what visitors are seeing</li>\n<li>Organize images in a logical sequence</li>\n</ul>"
-      },
-      "display": null,
-      "display_options": null,
-      "readonly": false,
-      "hidden": false,
-      "sort": 2,
-      "width": "full",
-      "translations": null,
-      "note": null,
-      "conditions": null,
-      "required": false,
-      "group": null,
-      "validation": null,
-      "validation_message": null
-    }
-  },
-  {
-    "collection": "block_hero",
-    "field": "meta_header_block_hero",
-    "type": "alias",
-    "schema": null,
-    "meta": {
-      "collection": "block_hero",
-      "field": "meta_header_block_hero",
-      "special": [
-        "alias",
-        "no-data"
-      ],
-      "interface": "super-header",
-      "options": {
-        "title": "Hero Block",
-        "icon": "aspect_ratio",
-        "help": "<p>Creates a prominent section at the top of your page that immediately captures attention. Ideal for:</p>\n<ul>\n<li>Main page headers with impactful headlines</li>\n<li>Showcasing key messages with supporting text</li>\n<li>Featuring high-quality images that support your message</li>\n<li>Adding clear call-to-action buttons</li>\n</ul>\n<p>Tips for effective heroes:</p>\n<ul>\n<li>Keep headlines clear and concise (recommended 2-8 words)</li>\n<li>Use high-resolution images that work well with overlay text</li>\n<li>Consider image placement (left/center/right) based on your headline length</li>\n<li>Add a succinct tagline to provide additional context</li>\n</ul>"
-      },
-      "display": null,
-      "display_options": null,
-      "readonly": false,
-      "hidden": false,
-      "sort": 2,
-      "width": "full",
-      "translations": null,
-      "note": null,
-      "conditions": null,
-      "required": false,
-      "group": null,
-      "validation": null,
-      "validation_message": null
-    }
-  },
-  {
-    "collection": "block_posts",
-    "field": "meta_header_block_posts",
-    "type": "alias",
-    "schema": null,
-    "meta": {
-      "collection": "block_posts",
-      "field": "meta_header_block_posts",
-      "special": [
-        "alias",
-        "no-data"
-      ],
-      "interface": "super-header",
-      "options": {
-        "title": "Posts Block",
-        "help": "<p>Automatically displays your most recent blog posts in chronological order. Perfect for:</p>\n<ul>\n<li>Showing latest articles on your homepage</li>\n<li>Keeping your content fresh and up-to-date</li>\n<li>Creating dynamic content sections</li>\n<li>Showcasing your recent writing</li>\n</ul>\n<p>You can:</p>\n<ul>\n<li>Set the number of posts to display</li>\n<li>Add a custom headline and tagline to label the section</li>\n<li>Trust the system to automatically keep your content current</li>\n</ul>\n<p>The posts will automatically update as you publish new content, ensuring your pages always show your latest articles.</p>",
-        "icon": "signpost"
-      },
-      "display": null,
-      "display_options": null,
-      "readonly": false,
-      "hidden": false,
-      "sort": 2,
-      "width": "full",
-      "translations": null,
-      "note": null,
-      "conditions": null,
-      "required": false,
-      "group": null,
-      "validation": null,
-      "validation_message": null
-    }
-  },
-  {
-    "collection": "posts",
-    "field": "meta_header_posts",
-    "type": "alias",
-    "schema": null,
-    "meta": {
-      "collection": "posts",
-      "field": "meta_header_posts",
-      "special": [
-        "alias",
-        "no-data"
-      ],
-      "interface": "super-header",
-      "options": {
-        "title": "{{title}}",
-        "subtitle": "{{status}} • Published At: {{published_at}}",
-        "help": "<h2>Managing Blog Posts</h2>\n<p>Blog posts are a powerful way to share your content, news, and updates with your audience. Each post can include rich text content, images, and metadata to help with organization and discovery.</p>\n<h3>Post Settings</h3>\n<h4>Title</h4>\n<p>The main headline of your blog post. This appears at the top of the post and in preview cards across your site. Make it:</p>\n<ul>\n<li>Engaging and descriptive</li>\n<li>Clear about the post's content</li>\n<li>Optimized for search engines (aim for 50-60 characters)</li>\n</ul>\n<h4>Description</h4>\n<p>A brief preview of your post that appears in blog listings and search results. Write 1-2 compelling sentences that:</p>\n<ul>\n<li>Summarize the main point of your article</li>\n<li>Entice readers to click through</li>\n<li>Include relevant keywords naturally</li>\n</ul>\n<h4>Featured Image</h4>\n<p>The main visual for your post that appears:</p>\n<ul>\n<li>At the top of the post</li>\n<li>In preview cards across your site</li>\n<li>When sharing on social media Use high-quality, relevant images that capture attention and support your content.</li>\n</ul>\n<h4>URL Slug</h4>\n<p>The unique portion of the URL for this post. For example, in \"yoursite.com/posts/my-first-post\", \"my-first-post\" is the slug.</p>\n<ul>\n<li>Use lowercase letters and hyphens</li>\n<li>Keep it short but descriptive</li>\n<li>Include relevant keywords when possible</li>\n<li>Avoid special characters</li>\n</ul>\n<h4>Content</h4>\n<p>The main body of your post, supporting rich text formatting including:</p>\n<ul>\n<li>Headings and subheadings</li>\n<li>Paragraphs with formatting (bold, italic, etc.)</li>\n<li>Links to other content</li>\n<li>Bulleted and numbered lists</li>\n<li>Images and media</li>\n</ul>\n<h4>Author</h4>\n<p>Select the team member who wrote the post. This helps:</p>\n<ul>\n<li>Give credit to your writers</li>\n<li>Build authority for your content</li>\n<li>Allow readers to find more posts by the same author</li>\n</ul>\n<h4>Publishing Options</h4>\n<ul>\n<li><strong>Draft</strong>: Work on the post privately</li>\n<li><strong>In Review</strong>: Submit for team review</li>\n<li><strong>Published</strong>: Make the post public</li>\n<li><strong>Schedule</strong>: Set a future publication date and time</li>\n</ul>\n<h3>Best Practices for Blog Posts</h3>\n<h4>Writing Tips</h4>\n<ul>\n<li>Start with a strong opening paragraph</li>\n<li>Use subheadings to break up long content</li>\n<li>Keep paragraphs short (3-4 sentences)</li>\n<li>Include relevant internal and external links</li>\n<li>End with a clear conclusion or call to action</li>\n</ul>\n<h4>SEO Considerations</h4>\n<ul>\n<li>Include your main keyword in the title</li>\n<li>Use descriptive alt text for images</li>\n<li>Write naturally for your audience</li>\n<li>Link to related content on your site</li>\n<li>Use appropriate heading hierarchy</li>\n</ul>\n<h4>Image Guidelines</h4>\n<ul>\n<li>Choose relevant, high-quality featured images</li>\n<li>Optimize images for web performance</li>\n<li>Use consistent image sizes</li>\n<li>Include descriptive alt text</li>\n<li>Consider image placement within content</li>\n</ul>",
-        "icon": null
-      },
-      "display": null,
-      "display_options": null,
-      "readonly": false,
-      "hidden": false,
-      "sort": 3,
-      "width": "fill",
-      "translations": null,
-      "note": null,
-      "conditions": null,
-      "required": false,
-      "group": null,
-      "validation": null,
-      "validation_message": null
-    }
-  },
-  {
-    "collection": "forms",
-    "field": "meta_header_forms",
-    "type": "alias",
-    "schema": null,
-    "meta": {
-      "collection": "forms",
-      "field": "meta_header_forms",
-      "special": [
-        "alias",
-        "no-data"
-      ],
-      "interface": "super-header",
-      "options": {
-        "title": "{{title}}",
-        "help": "<h2>Understanding Forms</h2>\n<p>Forms are reusable components that you create once and can place anywhere on your site using Form blocks. Think of the Forms collection as your form template library - you build the forms here, then use Form blocks to display them on your pages.</p>\n<h3>The Forms &amp; Form Blocks Relationship</h3>\n<ol>\n<li>First, create and configure your form in the Forms collection</li>\n<li>Then, add a Form block to any page where you want the form to appear</li>\n<li>Select your form from the dropdown in the Form block settings</li>\n<li>Customize the block's headline and tagline to match your page context</li>\n</ol>\n<p>This approach lets you:</p>\n<ul>\n<li>Reuse the same form across multiple pages</li>\n<li>Update the form once to change it everywhere</li>\n<li>Maintain consistent data collection</li>\n<li>Track submissions from all instances of the form</li>\n</ul>\n<h2>Creating Forms</h2>\n<h3>Basic Settings</h3>\n<h4>Form Title</h4>\n<p>Internal name to identify your form in the admin panel. Choose something descriptive like:</p>\n<ul>\n<li>\"Newsletter Signup 2024\"</li>\n<li>\"Contact Form - Main\"</li>\n<li>\"Event Registration Form\"</li>\n</ul>\n<h4>Submit Button</h4>\n<p>Customize the text on your submit button. Use action-oriented phrases like:</p>\n<ul>\n<li>\"Send Message\"</li>\n<li>\"Sign Up Now\"</li>\n<li>\"Register Today\"</li>\n</ul>\n<h4>Success Handling</h4>\n<p>Choose what happens after submission:</p>\n<p><strong>Show Message</strong></p>\n<ul>\n<li>Display a custom thank you message</li>\n<li>Confirm the submission was received</li>\n<li>Set expectations for next steps</li>\n</ul>\n<p><strong>Redirect</strong></p>\n<ul>\n<li>Send users to a specific thank you page</li>\n<li>Guide them to relevant content</li>\n<li>Start the next step in their journey</li>\n</ul>\n<h4>Email Notifications</h4>\n<p>Configure automated emails for form submissions:</p>\n<ul>\n<li>Add multiple recipient email addresses</li>\n<li>Customize subject lines and messages</li>\n<li>Include form submission details in the email</li>\n</ul>\n<h4>Active Status</h4>\n<p>Control form availability:</p>\n<ul>\n<li>Enable/disable without deleting</li>\n<li>Temporarily pause data collection</li>\n<li>Test before making public</li>\n</ul>\n<h3>Building Your Form</h3>\n<h4>Available Field Types</h4>\n<ul>\n<li><strong>Text</strong>: Single line text input</li>\n<li><strong>Textarea</strong>: Multi-line text input</li>\n<li><strong>Checkbox</strong>: Single yes/no option</li>\n<li><strong>Checkbox Group</strong>: Multiple selectable options</li>\n<li><strong>Radio</strong>: Single choice from options</li>\n<li><strong>Select</strong>: Dropdown menu</li>\n<li><strong>File</strong>: File upload capability</li>\n<li><strong>Hidden</strong>: Invisible fields for tracking</li>\n</ul>\n<h4>Field Configuration</h4>\n<p><strong>Label</strong> The visible field name shown to users</p>\n<p><strong>Placeholder</strong> Optional hint text inside empty fields</p>\n<p><strong>Help Text</strong> Additional instructions below the field</p>\n<p><strong>Required Fields</strong> Mark essential fields that must be filled out</p>\n<p><strong>Width Options</strong> Control field layout:</p>\n<ul>\n<li>Full width (100%)</li>\n<li>Two-thirds (67%)</li>\n<li>Half (50%)</li>\n<li>One-third (33%)</li>\n</ul>\n<p><strong>Validation:</strong> Here's the available rules</p>\n<ul>\n<li>Email format: <code>email</code></li>\n<li>URL format: <code>url</code></li>\n<li>Minimum length: <code>min:5</code> (replace 5 with desired length)</li>\n<li>Maximum length: <code>max:20</code> (replace 20 with desired length)</li>\n<li>Exact length: <code>length:10</code> (replace 10 with desired length)</li>\n<li>Required fields: Set \"Required\" toggle to true</li>\n</ul>\n<p>You can combine rules with pipes: <code>email|max:255</code></p>\n<h2>Using Forms with Form Blocks</h2>\n<h3>Adding Forms to Pages</h3>\n<ol>\n<li>Add a Form block to your page</li>\n<li>Select your form from the dropdown</li>\n<li>Add an optional headline and tagline</li>\n<li>Preview to check the layout</li>\n</ol>\n<h3>Form Block Customization</h3>\n<ul>\n<li>Add context with a headline</li>\n<li>Provide instructions in the tagline</li>\n<li>Match the form to your page content</li>\n<li>Ensure the form fits your layout</li>\n</ul>\n<h2>Best Practices</h2>\n<h3>Form Design &amp; Experience</h3>\n<ul>\n<li>Keep forms as short as possible - only include essential fields</li>\n<li>Group related fields together logically</li>\n<li>Use clear labels and mark required fields</li>\n<li>Ensure error messages are helpful and specific</li>\n<li>Test on both desktop and mobile devices</li>\n</ul>\n<h3>Data Collection</h3>\n<ul>\n<li>Only collect information you'll actually use</li>\n<li>Follow data protection guidelines</li>\n<li>Review submissions regularly</li>\n</ul>\n<h2>Managing Form Submissions</h2>\n<p>All submissions are stored in the <a href=\"/admin/content/form_submissions\">Form Submissions collection</a>.</p>\n<ul>\n<li>Export data as needed</li>\n<li>Configure email notifications</li>\n<li>Track submission sources</li>\n<li>Monitor submission trends</li>\n</ul>",
-        "actions": []
-      },
-      "display": null,
-      "display_options": null,
-      "readonly": false,
-      "hidden": false,
-      "sort": 3,
-      "width": "full",
-      "translations": null,
-      "note": null,
-      "conditions": null,
-      "required": false,
-      "group": null,
-      "validation": null,
-      "validation_message": null
-    }
-  },
-  {
-    "collection": "form_submissions",
-    "field": "meta_header_form_submissions",
-    "type": "alias",
-    "schema": null,
-    "meta": {
-      "collection": "form_submissions",
-      "field": "meta_header_form_submissions",
-      "special": [
-        "alias",
-        "no-data"
-      ],
-      "interface": "super-header",
-      "options": {
-        "title": "Form Submission",
-        "subtitle": "Submitted at: {{timestamp}}",
-        "help": "<h2>Form Submissions</h2>\n<p>Form submissions are read-only records of responses received through your site's forms. This ensures data integrity and provides a reliable audit trail of all submitted information.</p>\n<h3>Understanding Submissions</h3>\n<p>Each submission contains:</p>\n<ul>\n<li>Unique submission ID</li>\n<li>Timestamp of submission</li>\n<li>Reference to the parent form</li>\n<li>All submitted field values</li>\n</ul>\n<h3>Automating with Flows</h3>\n<p>While submissions are read-only, you can use Flows to automate actions when new submissions arrive:</p>\n<ul>\n<li>Send custom email notifications</li>\n<li>Push data to external services</li>\n<li>Create records in other collections</li>\n<li>Trigger webhooks</li>\n<li>Format and transform submission data</li>\n</ul>\n<p>Think of Flows as your automation toolkit - they let you act on submission data without modifying the original records.</p>\n<h3>Data Management</h3>\n<h4>Exporting Data</h4>\n<p>Export submissions to work with them outside the CMS:</p>\n<ul>\n<li>Download as CSV for spreadsheet analysis</li>\n<li>Include date ranges for periodic reports</li>\n<li>Select specific fields to include</li>\n<li>Export file attachments in bulk</li>\n</ul>\n<h4>Data Cleanup</h4>\n<p>Keep your submission data organized:</p>\n<ul>\n<li>Archive old submissions</li>\n<li>Monitor storage usage from file uploads</li>\n<li>Watch for spam patterns</li>\n<li>Maintain audit logs</li>\n</ul>\n<h3>Privacy &amp; Security</h3>\n<p>Since form submissions often contain personal data:</p>\n<ul>\n<li>Follow your data retention policy</li>\n<li>Handle personal information according to privacy laws</li>\n<li>Regularly review old submissions for deletion</li>\n<li>Consider automation for data cleanup</li>\n<li>Monitor who has access to submission data</li>\n</ul>"
-      },
-      "display": null,
-      "display_options": null,
-      "readonly": false,
-      "hidden": false,
-      "sort": 1,
-      "width": "full",
-      "translations": null,
-      "note": null,
-      "conditions": null,
-      "required": false,
-      "group": null,
-      "validation": null,
-      "validation_message": null
-    }
-  },
-  {
-    "collection": "navigation",
-    "field": "meta_header_navigation",
-    "type": "alias",
-    "schema": null,
-    "meta": {
-      "collection": "navigation",
-      "field": "meta_header_navigation",
-      "special": [
-        "alias",
-        "no-data"
-      ],
-      "interface": "super-header",
-      "options": {
-        "title": "{{title}}",
-        "help": "<h2>Understanding Navigation</h2>\n<p>Navigation menus help visitors find their way around your site. You can create multiple menus (like main navigation, footer links, or utility menus) and manage them all from this collection.</p>\n<h3>Navigation Structure</h3>\n<p>Each navigation menu consists of:</p>\n<ol>\n<li>A menu container (Navigation)</li>\n<li>Menu items within it (Navigation Items)</li>\n</ol>\n<h2>Creating Navigation Menus</h2>\n<h3>Menu Settings</h3>\n<h4>Title</h4>\n<p>Internal name for your menu (only visible in admin). Examples:</p>\n<ul>\n<li>\"Main Navigation\"</li>\n<li>\"Footer Links\"</li>\n<li>\"Header Utility Menu\"</li>\n</ul>\n<h4>Active Status</h4>\n<p>Toggle menus on/off without deleting them. Useful for:</p>\n<ul>\n<li>Testing new menu structures</li>\n<li>Seasonal navigation changes</li>\n<li>Temporary menu updates</li>\n</ul>\n<h2>Adding Menu Items</h2>\n<h3>Item Types</h3>\n<h4>Page</h4>\n<ul>\n<li>Link to any page in your site</li>\n<li>Automatically updates if page URL changes</li>\n<li>Maintains internal link structure</li>\n</ul>\n<h4>Post</h4>\n<ul>\n<li>Link to a specific blog post</li>\n<li>Useful for featuring important articles</li>\n<li>Updates automatically if post URL changes</li>\n</ul>\n<h4>URL</h4>\n<ul>\n<li>Link to any external website (e.g., \"<a href=\"https://example.com/\">https://example.com</a>\")</li>\n<li>Create social media links</li>\n<li>Link to specific file downloads</li>\n<li>Add internal anchor links (e.g., \"#contact-section\")</li>\n<li>Point to email addresses (e.g., \"mailto:<a href=\"mailto:contact@example.com\">contact@example.com</a>\")</li>\n<li>Link to phone numbers (e.g., \"tel:+1234567890\")</li>\n</ul>\n<h4>Group</h4>\n<ul>\n<li>Creates a container for other menu items</li>\n<li>Appears as a dropdown menu when hovered</li>\n<li>Can contain any mix of Pages, Posts, URLs, or other Groups</li>\n<li>Perfect for organizing related content (e.g., \"Services\", \"Products\")</li>\n<li>Can be nested to create multi-level navigation</li>\n<li>Doesn't require a URL - acts as a category header</li>\n</ul>\n<p>Examples of Group Usage:</p>\n<div>\n<pre>About (Group) \n└─ Our Story (Page)\n└─ Team (Page)\n└─ Careers (URL - External job board)<br>\nServices (Group) \n└─ Consulting (Page) \n└─ Training (Group) \n└─ Online Courses (URL) \n└─ Workshops (Page) \n└─ Support (Page)\n</pre>\n<h3>Item Settings</h3>\n<h4>Title</h4>\n<p>The text shown to visitors in the menu</p>\n<h4>Parent Item</h4>\n<p>For creating nested navigation:</p>\n<ul>\n<li>Select another item as parent</li>\n<li>Creates dropdown menus</li>\n<li>Builds hierarchical structure</li>\n</ul>\n<h4>Sort Order</h4>\n<p>Control the sequence of menu items:</p>\n<ul>\n<li>Drag and drop to reorder</li>\n<li>Items display in ascending order</li>\n<li>Groups show as dropdowns</li>\n</ul>\n<h2>Best Practices</h2>\n<h3>Structure</h3>\n<ul>\n<li>Keep main navigation simple</li>\n<li>Limit dropdown levels to 2-3</li>\n<li>Group related items logically</li>\n<li>Use clear, concise labels</li>\n</ul>\n<h3>Usability</h3>\n<ul>\n<li>Ensure all items are reachable</li>\n<li>Test on mobile devices</li>\n<li>Review links regularly</li>\n<li>Keep labels brief but descriptive</li>\n</ul>\n</div>"
-      },
-      "display": null,
-      "display_options": null,
-      "readonly": false,
-      "hidden": false,
-      "sort": 1,
-      "width": "full",
-      "translations": null,
-      "note": null,
-      "conditions": null,
-      "required": false,
-      "group": null,
-      "validation": null,
-      "validation_message": null
-    }
-  },
-  {
-    "collection": "globals",
-    "field": "meta_header_globals",
-    "type": "alias",
-    "schema": null,
-    "meta": {
-      "collection": "globals",
-      "field": "meta_header_globals",
-      "special": [
-        "alias",
-        "no-data"
-      ],
-      "interface": "super-header",
-      "options": {
-        "title": "{{title}} • Site Settings",
-        "subtitle": "{{url}}",
-        "help": "<h2>Global Settings</h2>\n<p>These settings control site-wide elements that affect your entire website. There's only one global settings record.</p>\n<h3>Site Info</h3>\n<ul>\n<li><strong>Title</strong>: Your website's name, appears in browser tabs and search results</li>\n<li><strong>Tagline</strong>: Short description of your site used in search results</li>\n<li><strong>Description</strong>: Longer site summary for SEO and social sharing</li>\n<li><strong>Website URL</strong>: Your site's public address</li>\n<li><strong>CMS URL</strong>: Address of your admin system</li>\n</ul>\n<h3>Brand Assets</h3>\n<ul>\n<li><strong>Logo</strong>: Main site logo for light backgrounds</li>\n<li><strong>Dark Mode Logo</strong>: Alternate logo for dark themes</li>\n<li><strong>Favicon</strong>: Small icon for browser tabs (max 512&times;512px)</li>\n<li><strong>Accent Color</strong>: Your brand's primary color for buttons and highlights</li>\n</ul>\n<h3>Social Media Links</h3>\n<p>Add URLs for your social profiles:</p>\n<ul>\n<li>Facebook, Instagram, LinkedIn</li>\n<li>Twitter, YouTube, Vimeo</li>\n<li>GitHub, Discord, Docker</li>\n</ul>\n<h3>API Settings</h3>\n<ul>\n<li><strong>OpenAI API Key</strong>: Required for AI-powered features</li>\n</ul>"
-      },
-      "display": null,
-      "display_options": null,
-      "readonly": false,
-      "hidden": false,
-      "sort": 2,
-      "width": "full",
-      "translations": null,
-      "note": null,
-      "conditions": null,
-      "required": false,
-      "group": null,
-      "validation": null,
-      "validation_message": null
-    }
-  },
-  {
-    "collection": "pages",
-    "field": "meta_tabs",
-    "type": "alias",
-    "schema": null,
-    "meta": {
-      "collection": "pages",
-      "field": "meta_tabs",
-      "special": [
-        "alias",
-        "no-data",
-        "group"
-      ],
-      "interface": "group-tabs",
-      "options": {
-        "fillWidth": true
-      },
-      "display": null,
-      "display_options": null,
-      "readonly": false,
-      "hidden": false,
-      "sort": 4,
-      "width": "full",
-      "translations": [
-        {
-          "language": "en-US",
-          "translation": "Tabs"
-        }
-      ],
-      "note": null,
-      "conditions": null,
-      "required": false,
-      "group": null,
-      "validation": null,
-      "validation_message": null
-    }
-  },
-  {
-    "collection": "posts",
-    "field": "meta_content",
-    "type": "alias",
-    "schema": null,
-    "meta": {
-      "collection": "posts",
-      "field": "meta_content",
-      "special": [
-        "alias",
-        "no-data",
-        "group"
-      ],
-      "interface": "group-raw",
-      "options": null,
-      "display": null,
-      "display_options": null,
-      "readonly": false,
-      "hidden": false,
-      "sort": 1,
-      "width": "full",
-      "translations": [
-        {
-          "language": "en-US",
-          "translation": "Content"
-        }
-      ],
-      "note": null,
-      "conditions": null,
-      "required": false,
-      "group": "meta_tabs",
-      "validation": null,
-      "validation_message": null
-    }
-  },
-  {
-    "collection": "posts",
-    "field": "meta_seo",
-    "type": "alias",
-    "schema": null,
-    "meta": {
-      "collection": "posts",
-      "field": "meta_seo",
-      "special": [
-        "alias",
-        "no-data",
-        "group"
-      ],
-      "interface": "group-raw",
-      "options": null,
-      "display": null,
-      "display_options": null,
-      "readonly": false,
-      "hidden": false,
-      "sort": 2,
-      "width": "full",
-      "translations": [
-        {
-          "language": "en-US",
-          "translation": "SEO"
-        }
-      ],
-      "note": null,
-      "conditions": null,
-      "required": false,
-      "group": "meta_tabs",
       "validation": null,
       "validation_message": null
     }
@@ -8796,114 +9864,11 @@
   },
   {
     "collection": "posts",
-    "field": "meta_tabs",
-    "type": "alias",
-    "schema": null,
-    "meta": {
-      "collection": "posts",
-      "field": "meta_tabs",
-      "special": [
-        "alias",
-        "no-data",
-        "group"
-      ],
-      "interface": "group-tabs",
-      "options": {
-        "fillWidth": true
-      },
-      "display": null,
-      "display_options": null,
-      "readonly": false,
-      "hidden": false,
-      "sort": 4,
-      "width": "full",
-      "translations": [
-        {
-          "language": "en-US",
-          "translation": "Tabs"
-        }
-      ],
-      "note": null,
-      "conditions": null,
-      "required": false,
-      "group": null,
-      "validation": null,
-      "validation_message": null
-    }
-  },
-  {
-    "collection": "block_pricing",
-    "field": "meta_header_block_pricing",
-    "type": "alias",
-    "schema": null,
-    "meta": {
-      "collection": "block_pricing",
-      "field": "meta_header_block_pricing",
-      "special": [
-        "alias",
-        "no-data"
-      ],
-      "interface": "super-header",
-      "options": {
-        "help": "<p>Display your product or service pricing options in a clear, comparative format. Use this when:</p>\n<ul>\n<li>Showcasing different service tiers</li>\n<li>Highlighting feature differences between plans</li>\n<li>Promoting special offers or featured plans</li>\n<li>Presenting subscription options</li>\n</ul>\n<p>Best practices:</p>\n<ul>\n<li>Use clear, benefit-focused plan names</li>\n<li>Highlight your recommended or most popular option</li>\n<li>Keep feature lists scannable and easy to compare</li>\n<li>Include clear call-to-action buttons for each plan</li>\n</ul>",
-        "title": "Pricing Block",
-        "icon": "attach_money"
-      },
-      "display": null,
-      "display_options": null,
-      "readonly": false,
-      "hidden": false,
-      "sort": 2,
-      "width": "full",
-      "translations": null,
-      "note": null,
-      "conditions": null,
-      "required": false,
-      "group": null,
-      "validation": null,
-      "validation_message": null
-    }
-  },
-  {
-    "collection": "block_richtext",
-    "field": "meta_header_block_richtext",
-    "type": "alias",
-    "schema": null,
-    "meta": {
-      "collection": "block_richtext",
-      "field": "meta_header_block_richtext",
-      "special": [
-        "alias",
-        "no-data"
-      ],
-      "interface": "super-header",
-      "options": {
-        "title": "Rich Text Block",
-        "help": "<p>Perfect for creating formatted text content with headings, paragraphs, and lists. Use this block when you need to:</p>\n<ul>\n<li>Write longer form content with multiple paragraphs</li>\n<li>Create structured content with headings and subheadings</li>\n<li>Include inline formatting like bold, italic, or links</li>\n<li>Add bulleted or numbered lists</li>\n</ul>",
-        "icon": "format_color_text"
-      },
-      "display": null,
-      "display_options": null,
-      "readonly": false,
-      "hidden": false,
-      "sort": 2,
-      "width": "full",
-      "translations": null,
-      "note": null,
-      "conditions": null,
-      "required": false,
-      "group": null,
-      "validation": null,
-      "validation_message": null
-    }
-  },
-  {
-    "collection": "pages",
     "field": "meta_content",
     "type": "alias",
     "schema": null,
     "meta": {
-      "collection": "pages",
+      "collection": "posts",
       "field": "meta_content",
       "special": [
         "alias",
@@ -8933,12 +9898,12 @@
     }
   },
   {
-    "collection": "pages",
+    "collection": "posts",
     "field": "meta_seo",
     "type": "alias",
     "schema": null,
     "meta": {
-      "collection": "pages",
+      "collection": "posts",
       "field": "meta_seo",
       "special": [
         "alias",
@@ -8968,29 +9933,280 @@
     }
   },
   {
-    "collection": "pages",
-    "field": "meta_header_pages",
+    "collection": "directus_users",
+    "field": "posts",
     "type": "alias",
     "schema": null,
     "meta": {
-      "collection": "pages",
-      "field": "meta_header_pages",
+      "collection": "directus_users",
+      "field": "posts",
+      "special": [
+        "o2m"
+      ],
+      "interface": "list-o2m",
+      "options": {
+        "template": "{{title}}"
+      },
+      "display": "related-values",
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 1,
+      "width": "full",
+      "translations": null,
+      "note": "Blog posts this user has authored.",
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "experiments",
+    "field": "meta_divider_variants",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "experiments",
+      "field": "meta_divider_variants",
+      "special": [
+        "alias",
+        "no-data"
+      ],
+      "interface": "presentation-divider",
+      "options": {
+        "color": "#A2B5CD",
+        "title": null,
+        "icon": "lab_research",
+        "inlineTitle": true
+      },
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 12,
+      "width": "full",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "experiments",
+    "field": "variants",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "experiments",
+      "field": "variants",
+      "special": [
+        "o2m"
+      ],
+      "interface": "list-o2m",
+      "options": {
+        "sort": null,
+        "template": "{{key}}",
+        "enableLink": true
+      },
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 17,
+      "width": "full",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": true,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "page_blocks",
+    "field": "meta_divider_experiment",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "page_blocks",
+      "field": "meta_divider_experiment",
+      "special": [
+        "alias",
+        "no-data"
+      ],
+      "interface": "presentation-divider",
+      "options": {
+        "inlineTitle": true,
+        "color": "#A2B5CD",
+        "icon": "labs"
+      },
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 8,
+      "width": "full",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "globals",
+    "field": "meta_header_globals",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "globals",
+      "field": "meta_header_globals",
       "special": [
         "alias",
         "no-data"
       ],
       "interface": "super-header",
       "options": {
-        "title": "{{title}}",
-        "subtitle": "{{status}} • Published At: {{published_at}}",
-        "help": "<h2>Creating and Managing Pages</h2>\n<p>Pages are the foundation of your website, where you'll combine different content blocks to create engaging layouts. Each page can be built using a mix of blocks like Hero sections, Rich Text, Forms, and more.</p>\n<h3>Page Settings</h3>\n<h4>Title</h4>\n<p>The page title appears in browser tabs and search results. Make it clear and descriptive of the page's content. This is what visitors will see when they bookmark your page or share it on social media.</p>\n<h4>URL (Permalink)</h4>\n<ul>\n<li>Always starts with a forward slash (/)</li>\n<li>Use simple, lowercase words separated by hyphens</li>\n<li>Keep it short but descriptive</li>\n<li>Examples:\n<ul>\n<li>/about</li>\n<li>/contact-us</li>\n<li>/services/web-design</li>\n</ul>\n</li>\n</ul>\n<h4>Description</h4>\n<p>A brief summary of the page that appears in search results. Write 1-2 sentences that clearly explain what visitors will find on this page. Good descriptions help with SEO and encourage people to click through to your site.</p>\n<h4>Publishing Options</h4>\n<ul>\n<li><strong>Draft</strong>: Work on the page without making it public</li>\n<li><strong>In Review</strong>: Submit the page for review by other team members</li>\n<li><strong>Published</strong>: Make the page visible to the public</li>\n<li><strong>Schedule</strong>: Set a future publication date</li>\n</ul>\n<p><img src=\"http://localhost:8001/assets/5e93050a-6f17-4314-a7e5-f78bda425fea.png?width=2076&amp;height=1551\" alt=\"Help Blocks Content.png~bak\" loading=\"lazy\"></p>\n<h2>Working with Blocks</h2>\n<p>Your page content is built by adding and arranging blocks. Think of blocks as building pieces that you can stack and rearrange to create your perfect page layout.</p>\n<h4>Tips for Building with Blocks</h4>\n<ul>\n<li>Start with a Hero block for main landing pages</li>\n<li>Use consistent block types for similar content across pages</li>\n<li>Consider the natural flow of information when ordering blocks</li>\n<li>Preview your page on both desktop and mobile before publishing</li>\n<li>You can temporarily hide blocks without deleting them using the \"Hide block\" toggle</li>\n</ul>\n<h4>Block Background Options</h4>\n<p>Each block can have either a light or dark background:</p>\n<ul>\n<li>Default (light): Default option, best for regular content sections</li>\n<li>Dark: Creates visual contrast, good for highlighting important sections</li>\n</ul>\n<h4>General Tips for All Blocks</h4>\n<ul>\n<li>Preview your changes before publishing</li>\n<li>Consider mobile viewing experience</li>\n<li>Keep related content in the same block type for consistency</li>\n<li>Use clear headlines and taglines to guide your visitors</li>\n<li>Make sure images are optimized for web use</li>\n<li>Test all interactive elements like forms and buttons</li>\n</ul>"
+        "title": "{{title}} • Site Settings",
+        "subtitle": "{{url}}",
+        "help": "<h2>Global Settings</h2>\n<p>These settings control site-wide elements that affect your entire website. There's only one global settings record.</p>\n<h3>Site Info</h3>\n<ul>\n<li><strong>Title</strong>: Your website's name, appears in browser tabs and search results</li>\n<li><strong>Tagline</strong>: Short description of your site used in search results</li>\n<li><strong>Description</strong>: Longer site summary for SEO and social sharing</li>\n<li><strong>Website URL</strong>: Your site's public address</li>\n<li><strong>CMS URL</strong>: Address of your admin system</li>\n</ul>\n<h3>Brand Assets</h3>\n<ul>\n<li><strong>Logo</strong>: Main site logo for light backgrounds</li>\n<li><strong>Dark Mode Logo</strong>: Alternate logo for dark themes</li>\n<li><strong>Favicon</strong>: Small icon for browser tabs (max 512&times;512px)</li>\n<li><strong>Accent Color</strong>: Your brand's primary color for buttons and highlights</li>\n</ul>\n<h3>Social Media Links</h3>\n<p>Add URLs for your social profiles:</p>\n<ul>\n<li>Facebook, Instagram, LinkedIn</li>\n<li>Twitter, YouTube, Vimeo</li>\n<li>GitHub, Discord, Docker</li>\n</ul>\n<h3>API Settings</h3>\n<ul>\n<li><strong>OpenAI API Key</strong>: Required for AI-powered features</li>\n</ul>"
       },
       "display": null,
       "display_options": null,
       "readonly": false,
       "hidden": false,
-      "sort": 3,
-      "width": "fill",
+      "sort": 2,
+      "width": "full",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "experiments",
+    "field": "meta_notice_page_test",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "experiments",
+      "field": "meta_notice_page_test",
+      "special": [
+        "alias",
+        "no-data"
+      ],
+      "interface": "presentation-notice",
+      "options": {
+        "text": "When creating Page (Redirect) tests, the control variant will be the URL you are testing. If you want to split test traffic to the `/pricing` page, make sure the you set that page for the control variant."
+      },
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": true,
+      "sort": 14,
+      "width": "full",
+      "translations": null,
+      "note": null,
+      "conditions": [
+        {
+          "name": "Show If Page",
+          "rule": {
+            "_and": [
+              {
+                "test_type": {
+                  "_eq": "page"
+                }
+              }
+            ]
+          },
+          "hidden": false,
+          "options": {
+            "color": "normal"
+          }
+        }
+      ],
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "experiments",
+    "field": "meta_header_experiment",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "experiments",
+      "field": "meta_header_experiment",
+      "special": [
+        "alias",
+        "no-data"
+      ],
+      "interface": "super-header",
+      "options": {
+        "title": "{{name}}",
+        "actions": [
+          {
+            "label": "Open In PostHog",
+            "icon": "link",
+            "type": "secondary",
+            "actionType": "link",
+            "url": "https://us.posthog.com/project/106781/experiments/{{posthog_experiment_id}}"
+          }
+        ],
+        "help": "<p>This interface allows you to create and manage A/B tests (experiments) for your website content using PostHog.</p>\n<h2>How to use this form</h2>\n<ol>\n<li><strong>Name</strong>: Enter a descriptive title for your experiment (e.g., \"Homepage Headline Test\")</li>\n<li><strong>Feature Flag Key</strong>: This is the unique identifier for PostHog (automatically formatted with hyphens, no spaces)</li>\n<li><strong>Description</strong>: Explain what you're testing and your hypothesis (e.g., \"Testing if a benefit-focused headline increases sign-up rates\")</li>\n</ol>\n<h2>Test Types</h2>\n<ul>\n<li><strong>Page (Redirect)</strong>: Sends users to different URLs to test entire page variations</li>\n<li><strong>Block</strong>: Tests different content blocks within the same page</li>\n</ul>\n<h2>Variants</h2>\n<ul>\n<li>The \"control\" variant is your current version (baseline for comparison)</li>\n<li>Add additional variants with the \"Create New\" or \"Add Existing\" buttons</li>\n<li>Each variant needs a unique name (e.g., \"new-headline\")</li>\n</ul>\n<h2>Important Notes</h2>\n<ul>\n<li>When using Page (Redirect) tests, the control variant uses the URL you're testing</li>\n<li>For the /pricing page example, ensure you set that page as the control variant</li>\n<li>Experiments typically run for 2-4 weeks for statistical significance</li>\n<li>Monitor results in PostHog to determine the winning variant</li>\n</ul>",
+        "subtitle": "Experiment ID: {{posthog_experiment_id}} • Created: {{created_at}}"
+      },
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 6,
+      "width": "full",
+      "translations": null,
+      "note": null,
+      "conditions": null,
+      "required": false,
+      "group": null,
+      "validation": null,
+      "validation_message": null
+    }
+  },
+  {
+    "collection": "experiment_variants",
+    "field": "meta_header_experiment_variant",
+    "type": "alias",
+    "schema": null,
+    "meta": {
+      "collection": "experiment_variants",
+      "field": "meta_header_experiment_variant",
+      "special": [
+        "alias",
+        "no-data"
+      ],
+      "interface": "super-header",
+      "options": {
+        "title": "Experiment Variant: {{key}}",
+        "help": "<h2>About Variants</h2>\n<p>A variant is a specific version of content that you're testing against others in your experiment. Each experiment requires at least two variants: a \"control\" (your current version) and one or more test variants.</p>\n<h2>Completing This Form</h2>\n<h3>Key</h3>\n<p>This is the unique identifier for your variant within PostHog. The control variant should always be named \"control\" and each additional variant needs a unique name (e.g., \"new-headline\" or \"version-b\"). No spaces are allowed.</p>\n<h3>Description</h3>\n<p>Describe the specific changes made in this variant. For example, \"Current homepage headline: 'Streamline Your Workflow'\" for the control, or \"Alternative headline with benefit focus: 'Save 5 Hours Every Week'\" for a test variant.</p>\n<h3>URL</h3>\n<p>For Page (Redirect) tests, enter the URL where you want to send users for this variant. You can use:</p>\n<ul>\n<li>A relative URL (e.g., \"/resources/feature-page\")</li>\n<li>A full URL (e.g., \"<a href=\"https://example.com/landing-page\">https://example.com/landing-page</a>\")</li>\n</ul>\n<p>Make sure PostHog is properly installed on the destination page to track user interactions and conversions accurately.</p>\n<h2>Best Practices</h2>\n<ul>\n<li>Keep variant changes focused on testing one element at a time</li>\n<li>Make sure your control variant accurately represents your current content</li>\n<li>For the control variant in redirect tests, use the original page URL</li>\n<li>Document your changes thoroughly to help with analyzing results later</li>\n</ul>"
+      },
+      "display": null,
+      "display_options": null,
+      "readonly": false,
+      "hidden": false,
+      "sort": 2,
+      "width": "full",
       "translations": null,
       "note": null,
       "conditions": null,

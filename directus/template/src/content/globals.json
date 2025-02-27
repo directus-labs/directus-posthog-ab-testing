@@ -31,5 +31,7 @@
   "openai_api_key": null,
   "directus_url": "http://0.0.0.0:8055",
   "logo_dark_mode": "ae390ba1-fcff-4b99-a445-5f19257095d1",
-  "accent_color": "#6644FF"
+  "accent_color": "#6644FF",
+  "posthog_project_id": "your-posthog-project-id",
+  "posthog_private_api_key": "your-posthog-private-api-key"
 }

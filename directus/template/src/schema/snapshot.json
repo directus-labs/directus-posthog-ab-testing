@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "directus": "11.4.1",
+  "directus": "11.5.0",
   "vendor": "postgres",
   "collections": [
     {
@@ -427,6 +427,62 @@
       }
     },
     {
+      "collection": "experiment_variants",
+      "meta": {
+        "accountability": "all",
+        "archive_app_filter": true,
+        "archive_field": null,
+        "archive_value": null,
+        "collapse": "open",
+        "collection": "experiment_variants",
+        "color": null,
+        "display_template": "{{key}}",
+        "group": "experiments",
+        "hidden": true,
+        "icon": null,
+        "item_duplication_fields": null,
+        "note": null,
+        "preview_url": null,
+        "singleton": false,
+        "sort": 1,
+        "sort_field": null,
+        "translations": null,
+        "unarchive_value": null,
+        "versioning": false
+      },
+      "schema": {
+        "name": "experiment_variants"
+      }
+    },
+    {
+      "collection": "experiments",
+      "meta": {
+        "accountability": "all",
+        "archive_app_filter": true,
+        "archive_field": null,
+        "archive_value": null,
+        "collapse": "open",
+        "collection": "experiments",
+        "color": null,
+        "display_template": null,
+        "group": "website",
+        "hidden": false,
+        "icon": "labs",
+        "item_duplication_fields": null,
+        "note": null,
+        "preview_url": null,
+        "singleton": false,
+        "sort": 7,
+        "sort_field": null,
+        "translations": null,
+        "unarchive_value": null,
+        "versioning": false
+      },
+      "schema": {
+        "name": "experiments"
+      }
+    },
+    {
       "collection": "form_fields",
       "meta": {
         "accountability": "all",
@@ -669,7 +725,7 @@
         "collapse": "open",
         "collection": "page_blocks",
         "color": "#18222F",
-        "display_template": null,
+        "display_template": "{{experiment}}",
         "group": "pages",
         "hidden": true,
         "icon": "code_blocks",
@@ -1838,35 +1894,6 @@
     },
     {
       "collection": "block_gallery",
-      "field": "items",
-      "type": "alias",
-      "meta": {
-        "collection": "block_gallery",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "items",
-        "group": null,
-        "hidden": false,
-        "interface": "files",
-        "note": "Images to include in the image gallery.",
-        "options": {
-          "folder": "ece7bab9-5433-4a63-b9f7-bde8b517d6d9"
-        },
-        "readonly": false,
-        "required": false,
-        "sort": 5,
-        "special": [
-          "files"
-        ],
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      }
-    },
-    {
-      "collection": "block_gallery",
       "field": "tagline",
       "type": "string",
       "meta": {
@@ -1906,6 +1933,35 @@
         "has_auto_increment": false,
         "foreign_key_table": null,
         "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "block_gallery",
+      "field": "items",
+      "type": "alias",
+      "meta": {
+        "collection": "block_gallery",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "items",
+        "group": null,
+        "hidden": false,
+        "interface": "files",
+        "note": "Images to include in the image gallery.",
+        "options": {
+          "folder": "ece7bab9-5433-4a63-b9f7-bde8b517d6d9"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 5,
+        "special": [
+          "files"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
       }
     },
     {
@@ -2122,9 +2178,7 @@
         "collection": "block_hero",
         "conditions": null,
         "display": "raw",
-        "display_options": {
-          "background": "#A2B5CD"
-        },
+        "display_options": null,
         "field": "headline",
         "group": null,
         "hidden": false,
@@ -2405,38 +2459,6 @@
     },
     {
       "collection": "block_hero",
-      "field": "meta_divider_block_here",
-      "type": "alias",
-      "meta": {
-        "collection": "block_hero",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "meta_divider_block_here",
-        "group": null,
-        "hidden": false,
-        "interface": "presentation-divider",
-        "note": null,
-        "options": {
-          "color": "#A2B5CD",
-          "icon": "image",
-          "inlineTitle": true
-        },
-        "readonly": false,
-        "required": false,
-        "sort": 7,
-        "special": [
-          "alias",
-          "no-data"
-        ],
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      }
-    },
-    {
-      "collection": "block_hero",
       "field": "layout",
       "type": "string",
       "meta": {
@@ -2520,6 +2542,38 @@
         "has_auto_increment": false,
         "foreign_key_table": null,
         "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "block_hero",
+      "field": "meta_divider_block_here",
+      "type": "alias",
+      "meta": {
+        "collection": "block_hero",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_divider_block_here",
+        "group": null,
+        "hidden": false,
+        "interface": "presentation-divider",
+        "note": null,
+        "options": {
+          "color": "#A2B5CD",
+          "icon": "image",
+          "inlineTitle": true
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 7,
+        "special": [
+          "alias",
+          "no-data"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
       }
     },
     {
@@ -2922,35 +2976,6 @@
     },
     {
       "collection": "block_pricing",
-      "field": "pricing_cards",
-      "type": "alias",
-      "meta": {
-        "collection": "block_pricing",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "pricing_cards",
-        "group": null,
-        "hidden": false,
-        "interface": "list-o2m",
-        "note": "The individual pricing cards to display.",
-        "options": {
-          "template": "{{title}} • {{price}}"
-        },
-        "readonly": false,
-        "required": false,
-        "sort": 5,
-        "special": [
-          "o2m"
-        ],
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      }
-    },
-    {
-      "collection": "block_pricing",
       "field": "tagline",
       "type": "string",
       "meta": {
@@ -2990,6 +3015,35 @@
         "has_auto_increment": false,
         "foreign_key_table": null,
         "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "block_pricing",
+      "field": "pricing_cards",
+      "type": "alias",
+      "meta": {
+        "collection": "block_pricing",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "pricing_cards",
+        "group": null,
+        "hidden": false,
+        "interface": "list-o2m",
+        "note": "The individual pricing cards to display.",
+        "options": {
+          "template": "{{title}} • {{price}}"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 5,
+        "special": [
+          "o2m"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
       }
     },
     {
@@ -3814,6 +3868,933 @@
         "sort": 1,
         "special": [
           "o2m"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "experiment_variants",
+      "field": "id",
+      "type": "uuid",
+      "meta": {
+        "collection": "experiment_variants",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "id",
+        "group": null,
+        "hidden": true,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "sort": 1,
+        "special": [
+          "uuid"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "id",
+        "table": "experiment_variants",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": true,
+        "is_indexed": false,
+        "is_primary_key": true,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "experiment_variants",
+      "field": "key",
+      "type": "string",
+      "meta": {
+        "collection": "experiment_variants",
+        "conditions": null,
+        "display": "formatted-value",
+        "display_options": {
+          "font": "monospace"
+        },
+        "field": "key",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "Identifier for the variant. No spaces allowed. **Each experiement has to have a `control` variant**.",
+        "options": {
+          "font": "monospace",
+          "placeholder": "control",
+          "slug": true,
+          "template": null
+        },
+        "readonly": false,
+        "required": true,
+        "sort": 3,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "name": "key",
+        "table": "experiment_variants",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "experiment_variants",
+      "field": "description",
+      "type": "text",
+      "meta": {
+        "collection": "experiment_variants",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "description",
+        "group": null,
+        "hidden": false,
+        "interface": "input-multiline",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 4,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "description",
+        "table": "experiment_variants",
+        "data_type": "text",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "experiment_variants",
+      "field": "experiment",
+      "type": "uuid",
+      "meta": {
+        "collection": "experiment_variants",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "experiment",
+        "group": null,
+        "hidden": true,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 5,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "experiment",
+        "table": "experiment_variants",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "experiments",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "experiment_variants",
+      "field": "url",
+      "type": "string",
+      "meta": {
+        "collection": "experiment_variants",
+        "conditions": [
+          {
+            "hidden": false,
+            "name": "Show If URL",
+            "options": {
+              "clear": false,
+              "font": "sans-serif",
+              "masked": false,
+              "slug": false,
+              "trim": false
+            },
+            "rule": {
+              "_and": [
+                {
+                  "url_type": {
+                    "_eq": "url"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "display": "raw",
+        "display_options": null,
+        "field": "url",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "If doing a Page (Redirect) test you need to set a URL to redirect to. This can be a relative url (/resources/matt-is-cool) or a full url (https://docs.directus.io/blog) as long as it has PostHog installed.",
+        "options": {
+          "font": "monospace"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 7,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "name": "url",
+        "table": "experiment_variants",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "experiment_variants",
+      "field": "meta_header_experiment_variant",
+      "type": "alias",
+      "meta": {
+        "collection": "experiment_variants",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_header_experiment_variant",
+        "group": null,
+        "hidden": false,
+        "interface": "super-header",
+        "note": null,
+        "options": {
+          "help": "<h2>About Variants</h2>\n<p>A variant is a specific version of content that you're testing against others in your experiment. Each experiment requires at least two variants: a \"control\" (your current version) and one or more test variants.</p>\n<h2>Completing This Form</h2>\n<h3>Key</h3>\n<p>This is the unique identifier for your variant within PostHog. The control variant should always be named \"control\" and each additional variant needs a unique name (e.g., \"new-headline\" or \"version-b\"). No spaces are allowed.</p>\n<h3>Description</h3>\n<p>Describe the specific changes made in this variant. For example, \"Current homepage headline: 'Streamline Your Workflow'\" for the control, or \"Alternative headline with benefit focus: 'Save 5 Hours Every Week'\" for a test variant.</p>\n<h3>URL</h3>\n<p>For Page (Redirect) tests, enter the URL where you want to send users for this variant. You can use:</p>\n<ul>\n<li>A relative URL (e.g., \"/resources/feature-page\")</li>\n<li>A full URL (e.g., \"<a href=\"https://example.com/landing-page\">https://example.com/landing-page</a>\")</li>\n</ul>\n<p>Make sure PostHog is properly installed on the destination page to track user interactions and conversions accurately.</p>\n<h2>Best Practices</h2>\n<ul>\n<li>Keep variant changes focused on testing one element at a time</li>\n<li>Make sure your control variant accurately represents your current content</li>\n<li>For the control variant in redirect tests, use the original page URL</li>\n<li>Document your changes thoroughly to help with analyzing results later</li>\n</ul>",
+          "title": "Experiment Variant: {{key}}"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 2,
+        "special": [
+          "alias",
+          "no-data"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "experiments",
+      "field": "id",
+      "type": "uuid",
+      "meta": {
+        "collection": "experiments",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "id",
+        "group": null,
+        "hidden": true,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "sort": 1,
+        "special": [
+          "uuid"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "id",
+        "table": "experiments",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": true,
+        "is_indexed": false,
+        "is_primary_key": true,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "experiments",
+      "field": "created_by",
+      "type": "uuid",
+      "meta": {
+        "collection": "experiments",
+        "conditions": null,
+        "display": "user",
+        "display_options": null,
+        "field": "created_by",
+        "group": null,
+        "hidden": true,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": {
+          "template": "{{avatar}} {{first_name}} {{last_name}}"
+        },
+        "readonly": true,
+        "required": false,
+        "sort": 2,
+        "special": [
+          "user-created"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "name": "created_by",
+        "table": "experiments",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "directus_users",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "experiments",
+      "field": "created_at",
+      "type": "timestamp",
+      "meta": {
+        "collection": "experiments",
+        "conditions": null,
+        "display": "datetime",
+        "display_options": {
+          "relative": true
+        },
+        "field": "created_at",
+        "group": null,
+        "hidden": true,
+        "interface": "datetime",
+        "note": null,
+        "options": {
+          "relative": true
+        },
+        "readonly": true,
+        "required": false,
+        "sort": 3,
+        "special": [
+          "date-created"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "name": "created_at",
+        "table": "experiments",
+        "data_type": "timestamp with time zone",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "experiments",
+      "field": "updated_by",
+      "type": "uuid",
+      "meta": {
+        "collection": "experiments",
+        "conditions": null,
+        "display": "user",
+        "display_options": null,
+        "field": "updated_by",
+        "group": null,
+        "hidden": true,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": {
+          "template": "{{avatar}} {{first_name}} {{last_name}}"
+        },
+        "readonly": true,
+        "required": false,
+        "sort": 4,
+        "special": [
+          "user-updated"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "name": "updated_by",
+        "table": "experiments",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "directus_users",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "experiments",
+      "field": "updated_at",
+      "type": "timestamp",
+      "meta": {
+        "collection": "experiments",
+        "conditions": null,
+        "display": "datetime",
+        "display_options": {
+          "relative": true
+        },
+        "field": "updated_at",
+        "group": null,
+        "hidden": true,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "sort": 5,
+        "special": [
+          "date-updated"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "name": "updated_at",
+        "table": "experiments",
+        "data_type": "timestamp with time zone",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "experiments",
+      "field": "name",
+      "type": "string",
+      "meta": {
+        "collection": "experiments",
+        "conditions": null,
+        "display": "raw",
+        "display_options": {
+          "border": true,
+          "color": "#FFA439",
+          "prefix": "A/B"
+        },
+        "field": "name",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "Title of the experiment",
+        "options": null,
+        "readonly": false,
+        "required": true,
+        "sort": 7,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "name": "name",
+        "table": "experiments",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "experiments",
+      "field": "description",
+      "type": "text",
+      "meta": {
+        "collection": "experiments",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "description",
+        "group": null,
+        "hidden": false,
+        "interface": "input-multiline",
+        "note": "Short description of what you're testing and your hypothesis.",
+        "options": {
+          "placeholder": "The goal of this experiment is..."
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 11,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "description",
+        "table": "experiments",
+        "data_type": "text",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "experiments",
+      "field": "test_type",
+      "type": "string",
+      "meta": {
+        "collection": "experiments",
+        "conditions": null,
+        "display": "labels",
+        "display_options": {
+          "choices": [
+            {
+              "description": "Test traffic to different urls",
+              "icon": "directions",
+              "icon_type": "icon",
+              "text": "Page (Redirect)",
+              "value": "page"
+            },
+            {
+              "description": "Test different blocks within one single page",
+              "icon": "code_blocks",
+              "icon_type": "icon",
+              "text": "Block",
+              "value": "block"
+            }
+          ]
+        },
+        "field": "test_type",
+        "group": null,
+        "hidden": false,
+        "interface": "radio-cards-interface",
+        "note": null,
+        "options": {
+          "choices": [
+            {
+              "description": "Test traffic to different urls",
+              "icon": "directions",
+              "icon_type": "icon",
+              "text": "Page (Redirect)",
+              "value": "page"
+            },
+            {
+              "description": "Test different blocks within one single page",
+              "icon": "code_blocks",
+              "icon_type": "icon",
+              "text": "Block",
+              "value": "block"
+            }
+          ],
+          "gridSize": 2
+        },
+        "readonly": false,
+        "required": true,
+        "sort": 13,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "name": "test_type",
+        "table": "experiments",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "experiments",
+      "field": "variants",
+      "type": "alias",
+      "meta": {
+        "collection": "experiments",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "variants",
+        "group": null,
+        "hidden": false,
+        "interface": "list-o2m",
+        "note": null,
+        "options": {
+          "enableLink": true,
+          "sort": null,
+          "template": "{{key}}"
+        },
+        "readonly": false,
+        "required": true,
+        "sort": 17,
+        "special": [
+          "o2m"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "experiments",
+      "field": "posthog_experiment_id",
+      "type": "string",
+      "meta": {
+        "collection": "experiments",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "posthog_experiment_id",
+        "group": null,
+        "hidden": true,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "sort": 18,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "name": "posthog_experiment_id",
+        "table": "experiments",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "experiments",
+      "field": "feature_flag_key",
+      "type": "string",
+      "meta": {
+        "collection": "experiments",
+        "conditions": null,
+        "display": "formatted-value",
+        "display_options": {
+          "font": "monospace"
+        },
+        "field": "feature_flag_key",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "Unique identifier for the experiment. No spaces allowed.",
+        "options": {
+          "font": "monospace",
+          "slug": true,
+          "template": "{{name}}"
+        },
+        "readonly": false,
+        "required": true,
+        "sort": 8,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "name": "feature_flag_key",
+        "table": "experiments",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": true,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "experiments",
+      "field": "meta_header_experiment",
+      "type": "alias",
+      "meta": {
+        "collection": "experiments",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_header_experiment",
+        "group": null,
+        "hidden": false,
+        "interface": "super-header",
+        "note": null,
+        "options": {
+          "actions": [
+            {
+              "actionType": "link",
+              "icon": "link",
+              "label": "Open In PostHog",
+              "type": "secondary",
+              "url": "https://us.posthog.com/project/106781/experiments/{{posthog_experiment_id}}"
+            }
+          ],
+          "help": "<p>This interface allows you to create and manage A/B tests (experiments) for your website content using PostHog.</p>\n<h2>How to use this form</h2>\n<ol>\n<li><strong>Name</strong>: Enter a descriptive title for your experiment (e.g., \"Homepage Headline Test\")</li>\n<li><strong>Feature Flag Key</strong>: This is the unique identifier for PostHog (automatically formatted with hyphens, no spaces)</li>\n<li><strong>Description</strong>: Explain what you're testing and your hypothesis (e.g., \"Testing if a benefit-focused headline increases sign-up rates\")</li>\n</ol>\n<h2>Test Types</h2>\n<ul>\n<li><strong>Page (Redirect)</strong>: Sends users to different URLs to test entire page variations</li>\n<li><strong>Block</strong>: Tests different content blocks within the same page</li>\n</ul>\n<h2>Variants</h2>\n<ul>\n<li>The \"control\" variant is your current version (baseline for comparison)</li>\n<li>Add additional variants with the \"Create New\" or \"Add Existing\" buttons</li>\n<li>Each variant needs a unique name (e.g., \"new-headline\")</li>\n</ul>\n<h2>Important Notes</h2>\n<ul>\n<li>When using Page (Redirect) tests, the control variant uses the URL you're testing</li>\n<li>For the /pricing page example, ensure you set that page as the control variant</li>\n<li>Experiments typically run for 2-4 weeks for statistical significance</li>\n<li>Monitor results in PostHog to determine the winning variant</li>\n</ul>",
+          "subtitle": "Experiment ID: {{posthog_experiment_id}} • Created: {{created_at}}",
+          "title": "{{name}}"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 6,
+        "special": [
+          "alias",
+          "no-data"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "experiments",
+      "field": "meta_divider_variants",
+      "type": "alias",
+      "meta": {
+        "collection": "experiments",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_divider_variants",
+        "group": null,
+        "hidden": false,
+        "interface": "presentation-divider",
+        "note": null,
+        "options": {
+          "color": "#A2B5CD",
+          "icon": "lab_research",
+          "inlineTitle": true,
+          "title": null
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 12,
+        "special": [
+          "alias",
+          "no-data"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "experiments",
+      "field": "meta_notice_page_test",
+      "type": "alias",
+      "meta": {
+        "collection": "experiments",
+        "conditions": [
+          {
+            "hidden": false,
+            "name": "Show If Page",
+            "options": {
+              "color": "normal"
+            },
+            "rule": {
+              "_and": [
+                {
+                  "test_type": {
+                    "_eq": "page"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "display": null,
+        "display_options": null,
+        "field": "meta_notice_page_test",
+        "group": null,
+        "hidden": true,
+        "interface": "presentation-notice",
+        "note": null,
+        "options": {
+          "text": "When creating Page (Redirect) tests, the control variant will be the URL you are testing. If you want to split test traffic to the `/pricing` page, make sure the you set that page for the control variant."
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 14,
+        "special": [
+          "alias",
+          "no-data"
         ],
         "translations": null,
         "validation": null,
@@ -5128,6 +6109,213 @@
     },
     {
       "collection": "forms",
+      "field": "sort",
+      "type": "integer",
+      "meta": {
+        "collection": "forms",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "sort",
+        "group": null,
+        "hidden": true,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 2,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "sort",
+        "table": "forms",
+        "data_type": "integer",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": 32,
+        "numeric_scale": 0,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "forms",
+      "field": "title",
+      "type": "string",
+      "meta": {
+        "collection": "forms",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "title",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "Form name (for internal reference).",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 4,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "name": "title",
+        "table": "forms",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "forms",
+      "field": "is_active",
+      "type": "boolean",
+      "meta": {
+        "collection": "forms",
+        "conditions": null,
+        "display": "boolean",
+        "display_options": {
+          "labelOff": "Inactive",
+          "labelOn": "Active"
+        },
+        "field": "is_active",
+        "group": null,
+        "hidden": false,
+        "interface": "boolean",
+        "note": "Show or hide this form from the site.",
+        "options": {
+          "label": "Active"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 5,
+        "special": [
+          "cast-boolean"
+        ],
+        "translations": [
+          {
+            "language": "en-US",
+            "translation": "Active"
+          }
+        ],
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "name": "is_active",
+        "table": "forms",
+        "data_type": "boolean",
+        "default_value": true,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "forms",
+      "field": "meta_tabs",
+      "type": "alias",
+      "meta": {
+        "collection": "forms",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_tabs",
+        "group": null,
+        "hidden": false,
+        "interface": "group-tabs",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 6,
+        "special": [
+          "alias",
+          "no-data",
+          "group"
+        ],
+        "translations": [
+          {
+            "language": "en-US",
+            "translation": "Tabs"
+          }
+        ],
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "forms",
+      "field": "meta_header_forms",
+      "type": "alias",
+      "meta": {
+        "collection": "forms",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_header_forms",
+        "group": null,
+        "hidden": false,
+        "interface": "super-header",
+        "note": null,
+        "options": {
+          "actions": [],
+          "help": "<h2>Understanding Forms</h2>\n<p>Forms are reusable components that you create once and can place anywhere on your site using Form blocks. Think of the Forms collection as your form template library - you build the forms here, then use Form blocks to display them on your pages.</p>\n<h3>The Forms &amp; Form Blocks Relationship</h3>\n<ol>\n<li>First, create and configure your form in the Forms collection</li>\n<li>Then, add a Form block to any page where you want the form to appear</li>\n<li>Select your form from the dropdown in the Form block settings</li>\n<li>Customize the block's headline and tagline to match your page context</li>\n</ol>\n<p>This approach lets you:</p>\n<ul>\n<li>Reuse the same form across multiple pages</li>\n<li>Update the form once to change it everywhere</li>\n<li>Maintain consistent data collection</li>\n<li>Track submissions from all instances of the form</li>\n</ul>\n<h2>Creating Forms</h2>\n<h3>Basic Settings</h3>\n<h4>Form Title</h4>\n<p>Internal name to identify your form in the admin panel. Choose something descriptive like:</p>\n<ul>\n<li>\"Newsletter Signup 2024\"</li>\n<li>\"Contact Form - Main\"</li>\n<li>\"Event Registration Form\"</li>\n</ul>\n<h4>Submit Button</h4>\n<p>Customize the text on your submit button. Use action-oriented phrases like:</p>\n<ul>\n<li>\"Send Message\"</li>\n<li>\"Sign Up Now\"</li>\n<li>\"Register Today\"</li>\n</ul>\n<h4>Success Handling</h4>\n<p>Choose what happens after submission:</p>\n<p><strong>Show Message</strong></p>\n<ul>\n<li>Display a custom thank you message</li>\n<li>Confirm the submission was received</li>\n<li>Set expectations for next steps</li>\n</ul>\n<p><strong>Redirect</strong></p>\n<ul>\n<li>Send users to a specific thank you page</li>\n<li>Guide them to relevant content</li>\n<li>Start the next step in their journey</li>\n</ul>\n<h4>Email Notifications</h4>\n<p>Configure automated emails for form submissions:</p>\n<ul>\n<li>Add multiple recipient email addresses</li>\n<li>Customize subject lines and messages</li>\n<li>Include form submission details in the email</li>\n</ul>\n<h4>Active Status</h4>\n<p>Control form availability:</p>\n<ul>\n<li>Enable/disable without deleting</li>\n<li>Temporarily pause data collection</li>\n<li>Test before making public</li>\n</ul>\n<h3>Building Your Form</h3>\n<h4>Available Field Types</h4>\n<ul>\n<li><strong>Text</strong>: Single line text input</li>\n<li><strong>Textarea</strong>: Multi-line text input</li>\n<li><strong>Checkbox</strong>: Single yes/no option</li>\n<li><strong>Checkbox Group</strong>: Multiple selectable options</li>\n<li><strong>Radio</strong>: Single choice from options</li>\n<li><strong>Select</strong>: Dropdown menu</li>\n<li><strong>File</strong>: File upload capability</li>\n<li><strong>Hidden</strong>: Invisible fields for tracking</li>\n</ul>\n<h4>Field Configuration</h4>\n<p><strong>Label</strong> The visible field name shown to users</p>\n<p><strong>Placeholder</strong> Optional hint text inside empty fields</p>\n<p><strong>Help Text</strong> Additional instructions below the field</p>\n<p><strong>Required Fields</strong> Mark essential fields that must be filled out</p>\n<p><strong>Width Options</strong> Control field layout:</p>\n<ul>\n<li>Full width (100%)</li>\n<li>Two-thirds (67%)</li>\n<li>Half (50%)</li>\n<li>One-third (33%)</li>\n</ul>\n<p><strong>Validation:</strong> Here's the available rules</p>\n<ul>\n<li>Email format: <code>email</code></li>\n<li>URL format: <code>url</code></li>\n<li>Minimum length: <code>min:5</code> (replace 5 with desired length)</li>\n<li>Maximum length: <code>max:20</code> (replace 20 with desired length)</li>\n<li>Exact length: <code>length:10</code> (replace 10 with desired length)</li>\n<li>Required fields: Set \"Required\" toggle to true</li>\n</ul>\n<p>You can combine rules with pipes: <code>email|max:255</code></p>\n<h2>Using Forms with Form Blocks</h2>\n<h3>Adding Forms to Pages</h3>\n<ol>\n<li>Add a Form block to your page</li>\n<li>Select your form from the dropdown</li>\n<li>Add an optional headline and tagline</li>\n<li>Preview to check the layout</li>\n</ol>\n<h3>Form Block Customization</h3>\n<ul>\n<li>Add context with a headline</li>\n<li>Provide instructions in the tagline</li>\n<li>Match the form to your page content</li>\n<li>Ensure the form fits your layout</li>\n</ul>\n<h2>Best Practices</h2>\n<h3>Form Design &amp; Experience</h3>\n<ul>\n<li>Keep forms as short as possible - only include essential fields</li>\n<li>Group related fields together logically</li>\n<li>Use clear labels and mark required fields</li>\n<li>Ensure error messages are helpful and specific</li>\n<li>Test on both desktop and mobile devices</li>\n</ul>\n<h3>Data Collection</h3>\n<ul>\n<li>Only collect information you'll actually use</li>\n<li>Follow data protection guidelines</li>\n<li>Review submissions regularly</li>\n</ul>\n<h2>Managing Form Submissions</h2>\n<p>All submissions are stored in the <a href=\"/admin/content/form_submissions\">Form Submissions collection</a>.</p>\n<ul>\n<li>Export data as needed</li>\n<li>Configure email notifications</li>\n<li>Track submission sources</li>\n<li>Monitor submission trends</li>\n</ul>",
+          "title": "{{title}}"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 3,
+        "special": [
+          "alias",
+          "no-data"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "forms",
       "field": "on_success",
       "type": "string",
       "meta": {
@@ -5182,49 +6370,6 @@
         "max_length": 255,
         "numeric_precision": null,
         "numeric_scale": null,
-        "is_nullable": true,
-        "is_unique": false,
-        "is_indexed": false,
-        "is_primary_key": false,
-        "is_generated": false,
-        "generation_expression": null,
-        "has_auto_increment": false,
-        "foreign_key_table": null,
-        "foreign_key_column": null
-      }
-    },
-    {
-      "collection": "forms",
-      "field": "sort",
-      "type": "integer",
-      "meta": {
-        "collection": "forms",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "sort",
-        "group": null,
-        "hidden": true,
-        "interface": "input",
-        "note": null,
-        "options": null,
-        "readonly": false,
-        "required": false,
-        "sort": 2,
-        "special": null,
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      },
-      "schema": {
-        "name": "sort",
-        "table": "forms",
-        "data_type": "integer",
-        "default_value": null,
-        "max_length": null,
-        "numeric_precision": 32,
-        "numeric_scale": 0,
         "is_nullable": true,
         "is_unique": false,
         "is_indexed": false,
@@ -5365,49 +6510,6 @@
     },
     {
       "collection": "forms",
-      "field": "title",
-      "type": "string",
-      "meta": {
-        "collection": "forms",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "title",
-        "group": null,
-        "hidden": false,
-        "interface": "input",
-        "note": "Form name (for internal reference).",
-        "options": null,
-        "readonly": false,
-        "required": false,
-        "sort": 4,
-        "special": null,
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "half"
-      },
-      "schema": {
-        "name": "title",
-        "table": "forms",
-        "data_type": "character varying",
-        "default_value": null,
-        "max_length": 255,
-        "numeric_precision": null,
-        "numeric_scale": null,
-        "is_nullable": true,
-        "is_unique": false,
-        "is_indexed": false,
-        "is_primary_key": false,
-        "is_generated": false,
-        "generation_expression": null,
-        "has_auto_increment": false,
-        "foreign_key_table": null,
-        "foreign_key_column": null
-      }
-    },
-    {
-      "collection": "forms",
       "field": "success_redirect_url",
       "type": "string",
       "meta": {
@@ -5507,167 +6609,32 @@
     },
     {
       "collection": "forms",
-      "field": "submissions",
+      "field": "meta_notice_form_fields",
       "type": "alias",
       "meta": {
         "collection": "forms",
         "conditions": null,
-        "display": "related-values",
-        "display_options": {
-          "template": "{{values.value}}"
-        },
-        "field": "submissions",
-        "group": "meta_submissions",
+        "display": null,
+        "display_options": null,
+        "field": "meta_notice_form_fields",
+        "group": "meta_fields",
         "hidden": false,
-        "interface": "list-o2m",
-        "note": "Received form responses.",
+        "interface": "presentation-notice",
+        "note": null,
         "options": {
-          "enableCreate": false,
-          "enableLink": true,
-          "enableSearchFilter": true,
-          "enableSelect": false,
-          "fields": [
-            "timestamp",
-            "values.value",
-            "values.field.name"
-          ],
-          "layout": "table",
-          "limit": 25,
-          "sort": "timestamp"
+          "text": " Create custom forms by adding and configuring your desired input fields below. No coding required."
         },
-        "readonly": true,
-        "required": false,
-        "sort": 2,
-        "special": [
-          "o2m"
-        ],
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "fill"
-      }
-    },
-    {
-      "collection": "forms",
-      "field": "meta_tabs",
-      "type": "alias",
-      "meta": {
-        "collection": "forms",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "meta_tabs",
-        "group": null,
-        "hidden": false,
-        "interface": "group-tabs",
-        "note": null,
-        "options": null,
-        "readonly": false,
-        "required": false,
-        "sort": 6,
-        "special": [
-          "alias",
-          "no-data",
-          "group"
-        ],
-        "translations": [
-          {
-            "language": "en-US",
-            "translation": "Tabs"
-          }
-        ],
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      }
-    },
-    {
-      "collection": "forms",
-      "field": "meta_fields",
-      "type": "alias",
-      "meta": {
-        "collection": "forms",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "meta_fields",
-        "group": "meta_tabs",
-        "hidden": false,
-        "interface": "group-raw",
-        "note": null,
-        "options": null,
         "readonly": false,
         "required": false,
         "sort": 1,
         "special": [
           "alias",
-          "no-data",
-          "group"
+          "no-data"
         ],
-        "translations": [
-          {
-            "language": "en-US",
-            "translation": "Form Fields"
-          }
-        ],
+        "translations": null,
         "validation": null,
         "validation_message": null,
         "width": "full"
-      }
-    },
-    {
-      "collection": "forms",
-      "field": "is_active",
-      "type": "boolean",
-      "meta": {
-        "collection": "forms",
-        "conditions": null,
-        "display": "boolean",
-        "display_options": {
-          "labelOff": "Inactive",
-          "labelOn": "Active"
-        },
-        "field": "is_active",
-        "group": null,
-        "hidden": false,
-        "interface": "boolean",
-        "note": "Show or hide this form from the site.",
-        "options": {
-          "label": "Active"
-        },
-        "readonly": false,
-        "required": false,
-        "sort": 5,
-        "special": [
-          "cast-boolean"
-        ],
-        "translations": [
-          {
-            "language": "en-US",
-            "translation": "Active"
-          }
-        ],
-        "validation": null,
-        "validation_message": null,
-        "width": "half"
-      },
-      "schema": {
-        "name": "is_active",
-        "table": "forms",
-        "data_type": "boolean",
-        "default_value": true,
-        "max_length": null,
-        "numeric_precision": null,
-        "numeric_scale": null,
-        "is_nullable": true,
-        "is_unique": false,
-        "is_indexed": false,
-        "is_primary_key": false,
-        "is_generated": false,
-        "generation_expression": null,
-        "has_auto_increment": false,
-        "foreign_key_table": null,
-        "foreign_key_column": null
       }
     },
     {
@@ -5795,14 +6762,116 @@
     },
     {
       "collection": "forms",
-      "field": "meta_submissions",
+      "field": "meta_notice_form_emails",
       "type": "alias",
       "meta": {
         "collection": "forms",
         "conditions": null,
         "display": null,
         "display_options": null,
-        "field": "meta_submissions",
+        "field": "meta_notice_form_emails",
+        "group": "meta_emails",
+        "hidden": false,
+        "interface": "presentation-notice",
+        "note": null,
+        "options": {
+          "text": "Set up automatic emails to notify your team members when forms are submitted, or send confirmation receipts to people who complete your forms."
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 1,
+        "special": [
+          "alias",
+          "no-data"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "forms",
+      "field": "submissions",
+      "type": "alias",
+      "meta": {
+        "collection": "forms",
+        "conditions": null,
+        "display": "related-values",
+        "display_options": {
+          "template": "{{values.value}}"
+        },
+        "field": "submissions",
+        "group": "meta_submissions",
+        "hidden": false,
+        "interface": "list-o2m",
+        "note": "Received form responses.",
+        "options": {
+          "enableCreate": false,
+          "enableLink": true,
+          "enableSearchFilter": true,
+          "enableSelect": false,
+          "fields": [
+            "timestamp",
+            "values.value",
+            "values.field.name"
+          ],
+          "layout": "table",
+          "limit": 25,
+          "sort": "timestamp"
+        },
+        "readonly": true,
+        "required": false,
+        "sort": 2,
+        "special": [
+          "o2m"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "fill"
+      }
+    },
+    {
+      "collection": "forms",
+      "field": "meta_notice_form_responses",
+      "type": "alias",
+      "meta": {
+        "collection": "forms",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_notice_form_responses",
+        "group": "meta_submissions",
+        "hidden": false,
+        "interface": "presentation-notice",
+        "note": null,
+        "options": {
+          "text": "This table displays all responses submitted through this form. Each entry includes the submission timestamp and the values for each form field."
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 1,
+        "special": [
+          "alias",
+          "no-data"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "forms",
+      "field": "meta_fields",
+      "type": "alias",
+      "meta": {
+        "collection": "forms",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_fields",
         "group": "meta_tabs",
         "hidden": false,
         "interface": "group-raw",
@@ -5810,7 +6879,7 @@
         "options": null,
         "readonly": false,
         "required": false,
-        "sort": 2,
+        "sort": 1,
         "special": [
           "alias",
           "no-data",
@@ -5819,7 +6888,7 @@
         "translations": [
           {
             "language": "en-US",
-            "translation": "Submissions"
+            "translation": "Form Fields"
           }
         ],
         "validation": null,
@@ -5863,169 +6932,36 @@
     },
     {
       "collection": "forms",
-      "field": "meta_notice_form_fields",
+      "field": "meta_submissions",
       "type": "alias",
       "meta": {
         "collection": "forms",
         "conditions": null,
         "display": null,
         "display_options": null,
-        "field": "meta_notice_form_fields",
-        "group": "meta_fields",
+        "field": "meta_submissions",
+        "group": "meta_tabs",
         "hidden": false,
-        "interface": "presentation-notice",
-        "note": null,
-        "options": {
-          "text": " Create custom forms by adding and configuring your desired input fields below. No coding required."
-        },
-        "readonly": false,
-        "required": false,
-        "sort": 1,
-        "special": [
-          "alias",
-          "no-data"
-        ],
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      }
-    },
-    {
-      "collection": "forms",
-      "field": "meta_notice_form_responses",
-      "type": "alias",
-      "meta": {
-        "collection": "forms",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "meta_notice_form_responses",
-        "group": "meta_submissions",
-        "hidden": false,
-        "interface": "presentation-notice",
-        "note": null,
-        "options": {
-          "text": "This table displays all responses submitted through this form. Each entry includes the submission timestamp and the values for each form field."
-        },
-        "readonly": false,
-        "required": false,
-        "sort": 1,
-        "special": [
-          "alias",
-          "no-data"
-        ],
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      }
-    },
-    {
-      "collection": "forms",
-      "field": "meta_notice_form_emails",
-      "type": "alias",
-      "meta": {
-        "collection": "forms",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "meta_notice_form_emails",
-        "group": "meta_emails",
-        "hidden": false,
-        "interface": "presentation-notice",
-        "note": null,
-        "options": {
-          "text": "Set up automatic emails to notify your team members when forms are submitted, or send confirmation receipts to people who complete your forms."
-        },
-        "readonly": false,
-        "required": false,
-        "sort": 1,
-        "special": [
-          "alias",
-          "no-data"
-        ],
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      }
-    },
-    {
-      "collection": "forms",
-      "field": "meta_header_forms",
-      "type": "alias",
-      "meta": {
-        "collection": "forms",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "meta_header_forms",
-        "group": null,
-        "hidden": false,
-        "interface": "super-header",
-        "note": null,
-        "options": {
-          "actions": [],
-          "help": "<h2>Understanding Forms</h2>\n<p>Forms are reusable components that you create once and can place anywhere on your site using Form blocks. Think of the Forms collection as your form template library - you build the forms here, then use Form blocks to display them on your pages.</p>\n<h3>The Forms &amp; Form Blocks Relationship</h3>\n<ol>\n<li>First, create and configure your form in the Forms collection</li>\n<li>Then, add a Form block to any page where you want the form to appear</li>\n<li>Select your form from the dropdown in the Form block settings</li>\n<li>Customize the block's headline and tagline to match your page context</li>\n</ol>\n<p>This approach lets you:</p>\n<ul>\n<li>Reuse the same form across multiple pages</li>\n<li>Update the form once to change it everywhere</li>\n<li>Maintain consistent data collection</li>\n<li>Track submissions from all instances of the form</li>\n</ul>\n<h2>Creating Forms</h2>\n<h3>Basic Settings</h3>\n<h4>Form Title</h4>\n<p>Internal name to identify your form in the admin panel. Choose something descriptive like:</p>\n<ul>\n<li>\"Newsletter Signup 2024\"</li>\n<li>\"Contact Form - Main\"</li>\n<li>\"Event Registration Form\"</li>\n</ul>\n<h4>Submit Button</h4>\n<p>Customize the text on your submit button. Use action-oriented phrases like:</p>\n<ul>\n<li>\"Send Message\"</li>\n<li>\"Sign Up Now\"</li>\n<li>\"Register Today\"</li>\n</ul>\n<h4>Success Handling</h4>\n<p>Choose what happens after submission:</p>\n<p><strong>Show Message</strong></p>\n<ul>\n<li>Display a custom thank you message</li>\n<li>Confirm the submission was received</li>\n<li>Set expectations for next steps</li>\n</ul>\n<p><strong>Redirect</strong></p>\n<ul>\n<li>Send users to a specific thank you page</li>\n<li>Guide them to relevant content</li>\n<li>Start the next step in their journey</li>\n</ul>\n<h4>Email Notifications</h4>\n<p>Configure automated emails for form submissions:</p>\n<ul>\n<li>Add multiple recipient email addresses</li>\n<li>Customize subject lines and messages</li>\n<li>Include form submission details in the email</li>\n</ul>\n<h4>Active Status</h4>\n<p>Control form availability:</p>\n<ul>\n<li>Enable/disable without deleting</li>\n<li>Temporarily pause data collection</li>\n<li>Test before making public</li>\n</ul>\n<h3>Building Your Form</h3>\n<h4>Available Field Types</h4>\n<ul>\n<li><strong>Text</strong>: Single line text input</li>\n<li><strong>Textarea</strong>: Multi-line text input</li>\n<li><strong>Checkbox</strong>: Single yes/no option</li>\n<li><strong>Checkbox Group</strong>: Multiple selectable options</li>\n<li><strong>Radio</strong>: Single choice from options</li>\n<li><strong>Select</strong>: Dropdown menu</li>\n<li><strong>File</strong>: File upload capability</li>\n<li><strong>Hidden</strong>: Invisible fields for tracking</li>\n</ul>\n<h4>Field Configuration</h4>\n<p><strong>Label</strong> The visible field name shown to users</p>\n<p><strong>Placeholder</strong> Optional hint text inside empty fields</p>\n<p><strong>Help Text</strong> Additional instructions below the field</p>\n<p><strong>Required Fields</strong> Mark essential fields that must be filled out</p>\n<p><strong>Width Options</strong> Control field layout:</p>\n<ul>\n<li>Full width (100%)</li>\n<li>Two-thirds (67%)</li>\n<li>Half (50%)</li>\n<li>One-third (33%)</li>\n</ul>\n<p><strong>Validation:</strong> Here's the available rules</p>\n<ul>\n<li>Email format: <code>email</code></li>\n<li>URL format: <code>url</code></li>\n<li>Minimum length: <code>min:5</code> (replace 5 with desired length)</li>\n<li>Maximum length: <code>max:20</code> (replace 20 with desired length)</li>\n<li>Exact length: <code>length:10</code> (replace 10 with desired length)</li>\n<li>Required fields: Set \"Required\" toggle to true</li>\n</ul>\n<p>You can combine rules with pipes: <code>email|max:255</code></p>\n<h2>Using Forms with Form Blocks</h2>\n<h3>Adding Forms to Pages</h3>\n<ol>\n<li>Add a Form block to your page</li>\n<li>Select your form from the dropdown</li>\n<li>Add an optional headline and tagline</li>\n<li>Preview to check the layout</li>\n</ol>\n<h3>Form Block Customization</h3>\n<ul>\n<li>Add context with a headline</li>\n<li>Provide instructions in the tagline</li>\n<li>Match the form to your page content</li>\n<li>Ensure the form fits your layout</li>\n</ul>\n<h2>Best Practices</h2>\n<h3>Form Design &amp; Experience</h3>\n<ul>\n<li>Keep forms as short as possible - only include essential fields</li>\n<li>Group related fields together logically</li>\n<li>Use clear labels and mark required fields</li>\n<li>Ensure error messages are helpful and specific</li>\n<li>Test on both desktop and mobile devices</li>\n</ul>\n<h3>Data Collection</h3>\n<ul>\n<li>Only collect information you'll actually use</li>\n<li>Follow data protection guidelines</li>\n<li>Review submissions regularly</li>\n</ul>\n<h2>Managing Form Submissions</h2>\n<p>All submissions are stored in the <a href=\"/admin/content/form_submissions\">Form Submissions collection</a>.</p>\n<ul>\n<li>Export data as needed</li>\n<li>Configure email notifications</li>\n<li>Track submission sources</li>\n<li>Monitor submission trends</li>\n</ul>",
-          "title": "{{title}}"
-        },
-        "readonly": false,
-        "required": false,
-        "sort": 3,
-        "special": [
-          "alias",
-          "no-data"
-        ],
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      }
-    },
-    {
-      "collection": "globals",
-      "field": "id",
-      "type": "uuid",
-      "meta": {
-        "collection": "globals",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "id",
-        "group": null,
-        "hidden": true,
-        "interface": "input",
+        "interface": "group-raw",
         "note": null,
         "options": null,
-        "readonly": true,
+        "readonly": false,
         "required": false,
-        "sort": 1,
+        "sort": 2,
         "special": [
-          "uuid"
+          "alias",
+          "no-data",
+          "group"
         ],
-        "translations": null,
+        "translations": [
+          {
+            "language": "en-US",
+            "translation": "Submissions"
+          }
+        ],
         "validation": null,
         "validation_message": null,
         "width": "full"
-      },
-      "schema": {
-        "name": "id",
-        "table": "globals",
-        "data_type": "uuid",
-        "default_value": null,
-        "max_length": null,
-        "numeric_precision": null,
-        "numeric_scale": null,
-        "is_nullable": false,
-        "is_unique": true,
-        "is_indexed": false,
-        "is_primary_key": true,
-        "is_generated": false,
-        "generation_expression": null,
-        "has_auto_increment": false,
-        "foreign_key_table": null,
-        "foreign_key_column": null
       }
     },
     {
@@ -6075,126 +7011,42 @@
     },
     {
       "collection": "globals",
-      "field": "tagline",
-      "type": "string",
+      "field": "id",
+      "type": "uuid",
       "meta": {
         "collection": "globals",
         "conditions": null,
         "display": null,
         "display_options": null,
-        "field": "tagline",
+        "field": "id",
         "group": null,
-        "hidden": false,
+        "hidden": true,
         "interface": "input",
-        "note": "Short phrase describing the site.",
+        "note": null,
         "options": null,
-        "readonly": false,
+        "readonly": true,
         "required": false,
-        "sort": 11,
-        "special": null,
+        "sort": 1,
+        "special": [
+          "uuid"
+        ],
         "translations": null,
         "validation": null,
         "validation_message": null,
         "width": "full"
       },
       "schema": {
-        "name": "tagline",
+        "name": "id",
         "table": "globals",
-        "data_type": "character varying",
+        "data_type": "uuid",
         "default_value": null,
-        "max_length": 255,
+        "max_length": null,
         "numeric_precision": null,
         "numeric_scale": null,
-        "is_nullable": true,
-        "is_unique": false,
+        "is_nullable": false,
+        "is_unique": true,
         "is_indexed": false,
-        "is_primary_key": false,
-        "is_generated": false,
-        "generation_expression": null,
-        "has_auto_increment": false,
-        "foreign_key_table": null,
-        "foreign_key_column": null
-      }
-    },
-    {
-      "collection": "globals",
-      "field": "title",
-      "type": "string",
-      "meta": {
-        "collection": "globals",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "title",
-        "group": null,
-        "hidden": false,
-        "interface": "input",
-        "note": "Main site title",
-        "options": null,
-        "readonly": false,
-        "required": false,
-        "sort": 4,
-        "special": null,
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "half"
-      },
-      "schema": {
-        "name": "title",
-        "table": "globals",
-        "data_type": "character varying",
-        "default_value": null,
-        "max_length": 255,
-        "numeric_precision": null,
-        "numeric_scale": null,
-        "is_nullable": true,
-        "is_unique": false,
-        "is_indexed": false,
-        "is_primary_key": false,
-        "is_generated": false,
-        "generation_expression": null,
-        "has_auto_increment": false,
-        "foreign_key_table": null,
-        "foreign_key_column": null
-      }
-    },
-    {
-      "collection": "globals",
-      "field": "url",
-      "type": "string",
-      "meta": {
-        "collection": "globals",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "url",
-        "group": null,
-        "hidden": false,
-        "interface": "input",
-        "note": "Public URL for the website",
-        "options": null,
-        "readonly": false,
-        "required": false,
-        "sort": 5,
-        "special": null,
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "half"
-      },
-      "schema": {
-        "name": "url",
-        "table": "globals",
-        "data_type": "character varying",
-        "default_value": null,
-        "max_length": 255,
-        "numeric_precision": null,
-        "numeric_scale": null,
-        "is_nullable": true,
-        "is_unique": false,
-        "is_indexed": false,
-        "is_primary_key": false,
+        "is_primary_key": true,
         "is_generated": false,
         "generation_expression": null,
         "has_auto_increment": false,
@@ -6382,35 +7234,131 @@
     },
     {
       "collection": "globals",
-      "field": "meta_divider_globals",
-      "type": "alias",
+      "field": "tagline",
+      "type": "string",
       "meta": {
         "collection": "globals",
         "conditions": null,
         "display": null,
         "display_options": null,
-        "field": "meta_divider_globals",
+        "field": "tagline",
         "group": null,
         "hidden": false,
-        "interface": "presentation-divider",
-        "note": null,
-        "options": {
-          "color": "#A2B5CD",
-          "icon": "link",
-          "inlineTitle": true,
-          "title": null
-        },
+        "interface": "input",
+        "note": "Short phrase describing the site.",
+        "options": null,
         "readonly": false,
         "required": false,
-        "sort": 13,
-        "special": [
-          "alias",
-          "no-data"
-        ],
+        "sort": 11,
+        "special": null,
         "translations": null,
         "validation": null,
         "validation_message": null,
         "width": "full"
+      },
+      "schema": {
+        "name": "tagline",
+        "table": "globals",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "globals",
+      "field": "title",
+      "type": "string",
+      "meta": {
+        "collection": "globals",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "title",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "Main site title",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 4,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "name": "title",
+        "table": "globals",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "globals",
+      "field": "url",
+      "type": "string",
+      "meta": {
+        "collection": "globals",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "url",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": "Public URL for the website",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 5,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "name": "url",
+        "table": "globals",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
       }
     },
     {
@@ -6511,229 +7459,6 @@
     },
     {
       "collection": "globals",
-      "field": "divider_logo",
-      "type": "alias",
-      "meta": {
-        "collection": "globals",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "divider_logo",
-        "group": null,
-        "hidden": false,
-        "interface": "presentation-divider",
-        "note": null,
-        "options": {
-          "color": "#A2B5CD",
-          "icon": "imagesmode",
-          "inlineTitle": true
-        },
-        "readonly": false,
-        "required": false,
-        "sort": 6,
-        "special": [
-          "alias",
-          "no-data"
-        ],
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      }
-    },
-    {
-      "collection": "globals",
-      "field": "openai_api_key",
-      "type": "string",
-      "meta": {
-        "collection": "globals",
-        "conditions": null,
-        "display": "formatted-value",
-        "display_options": {
-          "masked": true
-        },
-        "field": "openai_api_key",
-        "group": "meta_credentials",
-        "hidden": false,
-        "interface": "input",
-        "note": "Secret OpenAI API key. Don't share with anyone outside your team.",
-        "options": {
-          "iconLeft": "vpn_key_alert",
-          "masked": true,
-          "trim": true
-        },
-        "readonly": false,
-        "required": false,
-        "sort": 2,
-        "special": null,
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "half"
-      },
-      "schema": {
-        "name": "openai_api_key",
-        "table": "globals",
-        "data_type": "character varying",
-        "default_value": null,
-        "max_length": 255,
-        "numeric_precision": null,
-        "numeric_scale": null,
-        "is_nullable": true,
-        "is_unique": false,
-        "is_indexed": false,
-        "is_primary_key": false,
-        "is_generated": false,
-        "generation_expression": null,
-        "has_auto_increment": false,
-        "foreign_key_table": null,
-        "foreign_key_column": null
-      }
-    },
-    {
-      "collection": "globals",
-      "field": "directus_url",
-      "type": "string",
-      "meta": {
-        "collection": "globals",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "directus_url",
-        "group": "meta_credentials",
-        "hidden": false,
-        "interface": "input",
-        "note": "The public URL for this Directus instance. Used in Flows.",
-        "options": null,
-        "readonly": false,
-        "required": false,
-        "sort": 3,
-        "special": null,
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "half"
-      },
-      "schema": {
-        "name": "directus_url",
-        "table": "globals",
-        "data_type": "character varying",
-        "default_value": null,
-        "max_length": 255,
-        "numeric_precision": null,
-        "numeric_scale": null,
-        "is_nullable": true,
-        "is_unique": false,
-        "is_indexed": false,
-        "is_primary_key": false,
-        "is_generated": false,
-        "generation_expression": null,
-        "has_auto_increment": false,
-        "foreign_key_table": null,
-        "foreign_key_column": null
-      }
-    },
-    {
-      "collection": "globals",
-      "field": "meta_credentials",
-      "type": "alias",
-      "meta": {
-        "collection": "globals",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "meta_credentials",
-        "group": null,
-        "hidden": false,
-        "interface": "group-detail",
-        "note": null,
-        "options": {
-          "headerIcon": "warning",
-          "start": "closed"
-        },
-        "readonly": false,
-        "required": false,
-        "sort": 15,
-        "special": [
-          "alias",
-          "no-data",
-          "group"
-        ],
-        "translations": [
-          {
-            "language": "en-US",
-            "translation": "Credentials"
-          }
-        ],
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      }
-    },
-    {
-      "collection": "globals",
-      "field": "meta_notice_globals",
-      "type": "alias",
-      "meta": {
-        "collection": "globals",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "meta_notice_globals",
-        "group": null,
-        "hidden": false,
-        "interface": "presentation-notice",
-        "note": null,
-        "options": {
-          "text": "Globals are settings that are applied across your entire site. Globals use what we call a `singleton` collection type. <a href=\"https://directus.io/features/global-settings\" target=\"_blank\">Learn more about globals and singletons.</a>"
-        },
-        "readonly": false,
-        "required": false,
-        "sort": 3,
-        "special": [
-          "alias",
-          "no-data"
-        ],
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      }
-    },
-    {
-      "collection": "globals",
-      "field": "meta_notice_security",
-      "type": "alias",
-      "meta": {
-        "collection": "globals",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "meta_notice_security",
-        "group": "meta_credentials",
-        "hidden": false,
-        "interface": "presentation-notice",
-        "note": null,
-        "options": {
-          "color": "warning",
-          "icon": "warning",
-          "text": "Be careful about changing the access policies and permissions for the `globals` collection so that you don't expose your private API keys."
-        },
-        "readonly": false,
-        "required": false,
-        "sort": 1,
-        "special": [
-          "alias",
-          "no-data"
-        ],
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      }
-    },
-    {
-      "collection": "globals",
       "field": "logo_dark_mode",
       "type": "uuid",
       "meta": {
@@ -6830,6 +7555,138 @@
     },
     {
       "collection": "globals",
+      "field": "divider_logo",
+      "type": "alias",
+      "meta": {
+        "collection": "globals",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "divider_logo",
+        "group": null,
+        "hidden": false,
+        "interface": "presentation-divider",
+        "note": null,
+        "options": {
+          "color": "#A2B5CD",
+          "icon": "imagesmode",
+          "inlineTitle": true
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 6,
+        "special": [
+          "alias",
+          "no-data"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "globals",
+      "field": "meta_credentials",
+      "type": "alias",
+      "meta": {
+        "collection": "globals",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_credentials",
+        "group": null,
+        "hidden": false,
+        "interface": "group-detail",
+        "note": null,
+        "options": {
+          "headerIcon": "warning",
+          "start": "closed"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 15,
+        "special": [
+          "alias",
+          "no-data",
+          "group"
+        ],
+        "translations": [
+          {
+            "language": "en-US",
+            "translation": "Credentials"
+          }
+        ],
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "globals",
+      "field": "meta_divider_globals",
+      "type": "alias",
+      "meta": {
+        "collection": "globals",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_divider_globals",
+        "group": null,
+        "hidden": false,
+        "interface": "presentation-divider",
+        "note": null,
+        "options": {
+          "color": "#A2B5CD",
+          "icon": "link",
+          "inlineTitle": true,
+          "title": null
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 13,
+        "special": [
+          "alias",
+          "no-data"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "globals",
+      "field": "meta_notice_globals",
+      "type": "alias",
+      "meta": {
+        "collection": "globals",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_notice_globals",
+        "group": null,
+        "hidden": false,
+        "interface": "presentation-notice",
+        "note": null,
+        "options": {
+          "text": "Globals are settings that are applied across your entire site. Globals use what we call a `singleton` collection type. <a href=\"https://directus.io/features/global-settings\" target=\"_blank\">Learn more about globals and singletons.</a>"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 3,
+        "special": [
+          "alias",
+          "no-data"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "globals",
       "field": "meta_header_globals",
       "type": "alias",
       "meta": {
@@ -6858,6 +7715,216 @@
         "validation": null,
         "validation_message": null,
         "width": "full"
+      }
+    },
+    {
+      "collection": "globals",
+      "field": "openai_api_key",
+      "type": "string",
+      "meta": {
+        "collection": "globals",
+        "conditions": null,
+        "display": "formatted-value",
+        "display_options": {
+          "masked": true
+        },
+        "field": "openai_api_key",
+        "group": "meta_credentials",
+        "hidden": false,
+        "interface": "input",
+        "note": "Secret OpenAI API key. Don't share with anyone outside your team.",
+        "options": {
+          "iconLeft": "vpn_key_alert",
+          "masked": true,
+          "trim": true
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 4,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "name": "openai_api_key",
+        "table": "globals",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "globals",
+      "field": "directus_url",
+      "type": "string",
+      "meta": {
+        "collection": "globals",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "directus_url",
+        "group": "meta_credentials",
+        "hidden": false,
+        "interface": "input",
+        "note": "The public URL for this Directus instance. Used in Flows.",
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 5,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "name": "directus_url",
+        "table": "globals",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "globals",
+      "field": "meta_notice_security",
+      "type": "alias",
+      "meta": {
+        "collection": "globals",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_notice_security",
+        "group": "meta_credentials",
+        "hidden": false,
+        "interface": "presentation-notice",
+        "note": null,
+        "options": {
+          "color": "warning",
+          "icon": "warning",
+          "text": "Be careful about changing the access policies and permissions for the `globals` collection so that you don't expose your private API keys."
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 1,
+        "special": [
+          "alias",
+          "no-data"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "globals",
+      "field": "posthog_project_id",
+      "type": "string",
+      "meta": {
+        "collection": "globals",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "posthog_project_id",
+        "group": "meta_credentials",
+        "hidden": false,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 2,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "name": "posthog_project_id",
+        "table": "globals",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "globals",
+      "field": "posthog_private_api_key",
+      "type": "string",
+      "meta": {
+        "collection": "globals",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "posthog_private_api_key",
+        "group": "meta_credentials",
+        "hidden": false,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 3,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "name": "posthog_private_api_key",
+        "table": "globals",
+        "data_type": "character varying",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
       }
     },
     {
@@ -6950,58 +8017,6 @@
     },
     {
       "collection": "navigation",
-      "field": "items",
-      "type": "alias",
-      "meta": {
-        "collection": "navigation",
-        "conditions": null,
-        "display": "related-values",
-        "display_options": {
-          "template": "{{title}} • {{type}}"
-        },
-        "field": "items",
-        "group": null,
-        "hidden": false,
-        "interface": "list-o2m",
-        "note": "Links within the menu.",
-        "options": {
-          "enableLink": true,
-          "filter": {
-            "_and": [
-              {
-                "_and": [
-                  {
-                    "navigation": {
-                      "_null": true
-                    }
-                  },
-                  {
-                    "parent": {
-                      "navigation": {
-                        "_null": true
-                      }
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          "template": "{{title}} • {{type}}"
-        },
-        "readonly": false,
-        "required": false,
-        "sort": 6,
-        "special": [
-          "o2m"
-        ],
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      }
-    },
-    {
-      "collection": "navigation",
       "field": "is_active",
       "type": "boolean",
       "meta": {
@@ -7078,6 +8093,58 @@
         "special": [
           "alias",
           "no-data"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "navigation",
+      "field": "items",
+      "type": "alias",
+      "meta": {
+        "collection": "navigation",
+        "conditions": null,
+        "display": "related-values",
+        "display_options": {
+          "template": "{{title}} • {{type}}"
+        },
+        "field": "items",
+        "group": null,
+        "hidden": false,
+        "interface": "list-o2m",
+        "note": "Links within the menu.",
+        "options": {
+          "enableLink": true,
+          "filter": {
+            "_and": [
+              {
+                "_and": [
+                  {
+                    "navigation": {
+                      "_null": true
+                    }
+                  },
+                  {
+                    "parent": {
+                      "navigation": {
+                        "_null": true
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "template": "{{title}} • {{type}}"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 6,
+        "special": [
+          "o2m"
         ],
         "translations": null,
         "validation": null,
@@ -7615,6 +8682,71 @@
     },
     {
       "collection": "navigation_items",
+      "field": "post",
+      "type": "uuid",
+      "meta": {
+        "collection": "navigation_items",
+        "conditions": [
+          {
+            "hidden": false,
+            "name": "Show If Type = Post",
+            "options": {
+              "enableCreate": true,
+              "enableSelect": true
+            },
+            "rule": {
+              "_and": [
+                {
+                  "type": {
+                    "_eq": "post"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "display": null,
+        "display_options": null,
+        "field": "post",
+        "group": null,
+        "hidden": true,
+        "interface": "select-dropdown-m2o",
+        "note": "The internal post to link to.",
+        "options": {
+          "template": "{{title}}"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 7,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "post",
+        "table": "navigation_items",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "posts",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "navigation_items",
       "field": "children",
       "type": "alias",
       "meta": {
@@ -7685,71 +8817,6 @@
         "validation": null,
         "validation_message": null,
         "width": "full"
-      }
-    },
-    {
-      "collection": "navigation_items",
-      "field": "post",
-      "type": "uuid",
-      "meta": {
-        "collection": "navigation_items",
-        "conditions": [
-          {
-            "hidden": false,
-            "name": "Show If Type = Post",
-            "options": {
-              "enableCreate": true,
-              "enableSelect": true
-            },
-            "rule": {
-              "_and": [
-                {
-                  "type": {
-                    "_eq": "post"
-                  }
-                }
-              ]
-            }
-          }
-        ],
-        "display": null,
-        "display_options": null,
-        "field": "post",
-        "group": null,
-        "hidden": true,
-        "interface": "select-dropdown-m2o",
-        "note": "The internal post to link to.",
-        "options": {
-          "template": "{{title}}"
-        },
-        "readonly": false,
-        "required": false,
-        "sort": 7,
-        "special": [
-          "m2o"
-        ],
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      },
-      "schema": {
-        "name": "post",
-        "table": "navigation_items",
-        "data_type": "uuid",
-        "default_value": null,
-        "max_length": null,
-        "numeric_precision": null,
-        "numeric_scale": null,
-        "is_nullable": true,
-        "is_unique": false,
-        "is_indexed": false,
-        "is_primary_key": false,
-        "is_generated": false,
-        "generation_expression": null,
-        "has_auto_increment": false,
-        "foreign_key_table": "posts",
-        "foreign_key_column": "id"
       }
     },
     {
@@ -7933,7 +9000,7 @@
       "meta": {
         "collection": "page_blocks",
         "conditions": null,
-        "display": "labels",
+        "display": "formatted-value",
         "display_options": {
           "border": true,
           "color": "#18222F",
@@ -7942,7 +9009,7 @@
         "field": "collection",
         "group": null,
         "hidden": true,
-        "interface": null,
+        "interface": "input",
         "note": "The collection (type of block).",
         "options": null,
         "readonly": false,
@@ -7990,7 +9057,7 @@
         "options": null,
         "readonly": false,
         "required": false,
-        "sort": 7,
+        "sort": 6,
         "special": [
           "cast-boolean"
         ],
@@ -8048,7 +9115,7 @@
         },
         "readonly": false,
         "required": false,
-        "sort": 8,
+        "sort": 7,
         "special": null,
         "translations": null,
         "validation": null,
@@ -8072,6 +9139,165 @@
         "has_auto_increment": false,
         "foreign_key_table": null,
         "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "page_blocks",
+      "field": "experiment",
+      "type": "uuid",
+      "meta": {
+        "collection": "page_blocks",
+        "conditions": null,
+        "display": "related-values",
+        "display_options": {
+          "template": "{{name}}"
+        },
+        "field": "experiment",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": "Add this block to a PostHog A/B experiment.",
+        "options": {
+          "enableLink": true,
+          "filter": {
+            "_and": [
+              {
+                "test_type": {
+                  "_eq": "block"
+                }
+              }
+            ]
+          },
+          "template": "{{name}}"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 9,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "name": "experiment",
+        "table": "page_blocks",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "experiments",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "page_blocks",
+      "field": "experiment_variant",
+      "type": "uuid",
+      "meta": {
+        "collection": "page_blocks",
+        "conditions": null,
+        "display": "related-values",
+        "display_options": {
+          "template": "{{key}}"
+        },
+        "field": "experiment_variant",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": "The experiment variant linked to this block. Will display this block if a visitor or user matches this variant.",
+        "options": {
+          "enableLink": true,
+          "filter": {
+            "_and": [
+              {
+                "experiment": {
+                  "id": {
+                    "_eq": "{{experiment}}"
+                  }
+                }
+              },
+              {
+                "experiment": {
+                  "test_type": {
+                    "_eq": "block"
+                  }
+                }
+              }
+            ]
+          },
+          "template": "{{key}}"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 10,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "name": "experiment_variant",
+        "table": "page_blocks",
+        "data_type": "uuid",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "experiment_variants",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "page_blocks",
+      "field": "meta_divider_experiment",
+      "type": "alias",
+      "meta": {
+        "collection": "page_blocks",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_divider_experiment",
+        "group": null,
+        "hidden": false,
+        "interface": "presentation-divider",
+        "note": null,
+        "options": {
+          "color": "#A2B5CD",
+          "icon": "labs",
+          "inlineTitle": true
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 8,
+        "special": [
+          "alias",
+          "no-data"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
       }
     },
     {
@@ -8160,6 +9386,74 @@
         "has_auto_increment": false,
         "foreign_key_table": null,
         "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "pages",
+      "field": "meta_tabs",
+      "type": "alias",
+      "meta": {
+        "collection": "pages",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_tabs",
+        "group": null,
+        "hidden": false,
+        "interface": "group-tabs",
+        "note": null,
+        "options": {
+          "fillWidth": true
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 4,
+        "special": [
+          "alias",
+          "no-data",
+          "group"
+        ],
+        "translations": [
+          {
+            "language": "en-US",
+            "translation": "Tabs"
+          }
+        ],
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "pages",
+      "field": "meta_header_pages",
+      "type": "alias",
+      "meta": {
+        "collection": "pages",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_header_pages",
+        "group": null,
+        "hidden": false,
+        "interface": "super-header",
+        "note": null,
+        "options": {
+          "help": "<h2>Creating and Managing Pages</h2>\n<p>Pages are the foundation of your website, where you'll combine different content blocks to create engaging layouts. Each page can be built using a mix of blocks like Hero sections, Rich Text, Forms, and more.</p>\n<h3>Page Settings</h3>\n<h4>Title</h4>\n<p>The page title appears in browser tabs and search results. Make it clear and descriptive of the page's content. This is what visitors will see when they bookmark your page or share it on social media.</p>\n<h4>URL (Permalink)</h4>\n<ul>\n<li>Always starts with a forward slash (/)</li>\n<li>Use simple, lowercase words separated by hyphens</li>\n<li>Keep it short but descriptive</li>\n<li>Examples:\n<ul>\n<li>/about</li>\n<li>/contact-us</li>\n<li>/services/web-design</li>\n</ul>\n</li>\n</ul>\n<h4>Description</h4>\n<p>A brief summary of the page that appears in search results. Write 1-2 sentences that clearly explain what visitors will find on this page. Good descriptions help with SEO and encourage people to click through to your site.</p>\n<h4>Publishing Options</h4>\n<ul>\n<li><strong>Draft</strong>: Work on the page without making it public</li>\n<li><strong>In Review</strong>: Submit the page for review by other team members</li>\n<li><strong>Published</strong>: Make the page visible to the public</li>\n<li><strong>Schedule</strong>: Set a future publication date</li>\n</ul>\n<p><img src=\"http://localhost:8001/assets/5e93050a-6f17-4314-a7e5-f78bda425fea.png?width=2076&amp;height=1551\" alt=\"Help Blocks Content.png~bak\" loading=\"lazy\"></p>\n<h2>Working with Blocks</h2>\n<p>Your page content is built by adding and arranging blocks. Think of blocks as building pieces that you can stack and rearrange to create your perfect page layout.</p>\n<h4>Tips for Building with Blocks</h4>\n<ul>\n<li>Start with a Hero block for main landing pages</li>\n<li>Use consistent block types for similar content across pages</li>\n<li>Consider the natural flow of information when ordering blocks</li>\n<li>Preview your page on both desktop and mobile before publishing</li>\n<li>You can temporarily hide blocks without deleting them using the \"Hide block\" toggle</li>\n</ul>\n<h4>Block Background Options</h4>\n<p>Each block can have either a light or dark background:</p>\n<ul>\n<li>Default (light): Default option, best for regular content sections</li>\n<li>Dark: Creates visual contrast, good for highlighting important sections</li>\n</ul>\n<h4>General Tips for All Blocks</h4>\n<ul>\n<li>Preview your changes before publishing</li>\n<li>Consider mobile viewing experience</li>\n<li>Keep related content in the same block type for consistency</li>\n<li>Use clear headlines and taglines to guide your visitors</li>\n<li>Make sure images are optimized for web use</li>\n<li>Test all interactive elements like forms and buttons</li>\n</ul>",
+          "subtitle": "{{status}} • Published At: {{published_at}}",
+          "title": "{{title}}"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 3,
+        "special": [
+          "alias",
+          "no-data"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "fill"
       }
     },
     {
@@ -8266,38 +9560,6 @@
     },
     {
       "collection": "pages",
-      "field": "blocks",
-      "type": "alias",
-      "meta": {
-        "collection": "pages",
-        "conditions": null,
-        "display": "related-values",
-        "display_options": {
-          "template": "{{collection}}"
-        },
-        "field": "blocks",
-        "group": "meta_content",
-        "hidden": false,
-        "interface": "list-m2a",
-        "note": "Create and arrange different content blocks (like text, images, or videos) to build your page.",
-        "options": {
-          "enableSelect": false,
-          "prefix": null
-        },
-        "readonly": false,
-        "required": false,
-        "sort": 7,
-        "special": [
-          "m2a"
-        ],
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      }
-    },
-    {
-      "collection": "pages",
       "field": "status",
       "type": "string",
       "meta": {
@@ -8383,68 +9645,6 @@
     },
     {
       "collection": "pages",
-      "field": "meta_m2a_button",
-      "type": "alias",
-      "meta": {
-        "collection": "pages",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "meta_m2a_button",
-        "group": "meta_content",
-        "hidden": false,
-        "interface": "directus-labs-experimental-m2a-interface",
-        "note": null,
-        "options": {
-          "target": "above"
-        },
-        "readonly": false,
-        "required": false,
-        "sort": 8,
-        "special": [
-          "alias",
-          "no-data"
-        ],
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      }
-    },
-    {
-      "collection": "pages",
-      "field": "meta_divider_content",
-      "type": "alias",
-      "meta": {
-        "collection": "pages",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "meta_divider_content",
-        "group": "meta_content",
-        "hidden": false,
-        "interface": "presentation-divider",
-        "note": null,
-        "options": {
-          "color": "#A2B5CD",
-          "icon": "format_paragraph",
-          "inlineTitle": true
-        },
-        "readonly": false,
-        "required": false,
-        "sort": 5,
-        "special": [
-          "alias",
-          "no-data"
-        ],
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      }
-    },
-    {
-      "collection": "pages",
       "field": "published_at",
       "type": "timestamp",
       "meta": {
@@ -8510,6 +9710,100 @@
     },
     {
       "collection": "pages",
+      "field": "meta_divider_content",
+      "type": "alias",
+      "meta": {
+        "collection": "pages",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_divider_content",
+        "group": "meta_content",
+        "hidden": false,
+        "interface": "presentation-divider",
+        "note": null,
+        "options": {
+          "color": "#A2B5CD",
+          "icon": "format_paragraph",
+          "inlineTitle": true
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 5,
+        "special": [
+          "alias",
+          "no-data"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "pages",
+      "field": "meta_m2a_button",
+      "type": "alias",
+      "meta": {
+        "collection": "pages",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_m2a_button",
+        "group": "meta_content",
+        "hidden": false,
+        "interface": "directus-labs-experimental-m2a-interface",
+        "note": null,
+        "options": {
+          "target": "above"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 8,
+        "special": [
+          "alias",
+          "no-data"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "pages",
+      "field": "blocks",
+      "type": "alias",
+      "meta": {
+        "collection": "pages",
+        "conditions": null,
+        "display": "related-values",
+        "display_options": {
+          "template": "{{collection}}"
+        },
+        "field": "blocks",
+        "group": "meta_content",
+        "hidden": false,
+        "interface": "list-m2a",
+        "note": "Create and arrange different content blocks (like text, images, or videos) to build your page.",
+        "options": {
+          "enableSelect": false,
+          "prefix": null
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 7,
+        "special": [
+          "m2a"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "pages",
       "field": "meta_notice_pagebuilder",
       "type": "alias",
       "meta": {
@@ -8540,70 +9834,52 @@
     },
     {
       "collection": "pages",
-      "field": "meta_header_pages",
-      "type": "alias",
+      "field": "seo",
+      "type": "json",
       "meta": {
         "collection": "pages",
         "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "meta_header_pages",
-        "group": null,
+        "display": "seo-display",
+        "display_options": {
+          "showSearchPreview": true
+        },
+        "field": "seo",
+        "group": "meta_seo",
         "hidden": false,
-        "interface": "super-header",
+        "interface": "seo-interface",
         "note": null,
         "options": {
-          "help": "<h2>Creating and Managing Pages</h2>\n<p>Pages are the foundation of your website, where you'll combine different content blocks to create engaging layouts. Each page can be built using a mix of blocks like Hero sections, Rich Text, Forms, and more.</p>\n<h3>Page Settings</h3>\n<h4>Title</h4>\n<p>The page title appears in browser tabs and search results. Make it clear and descriptive of the page's content. This is what visitors will see when they bookmark your page or share it on social media.</p>\n<h4>URL (Permalink)</h4>\n<ul>\n<li>Always starts with a forward slash (/)</li>\n<li>Use simple, lowercase words separated by hyphens</li>\n<li>Keep it short but descriptive</li>\n<li>Examples:\n<ul>\n<li>/about</li>\n<li>/contact-us</li>\n<li>/services/web-design</li>\n</ul>\n</li>\n</ul>\n<h4>Description</h4>\n<p>A brief summary of the page that appears in search results. Write 1-2 sentences that clearly explain what visitors will find on this page. Good descriptions help with SEO and encourage people to click through to your site.</p>\n<h4>Publishing Options</h4>\n<ul>\n<li><strong>Draft</strong>: Work on the page without making it public</li>\n<li><strong>In Review</strong>: Submit the page for review by other team members</li>\n<li><strong>Published</strong>: Make the page visible to the public</li>\n<li><strong>Schedule</strong>: Set a future publication date</li>\n</ul>\n<p><img src=\"http://localhost:8001/assets/5e93050a-6f17-4314-a7e5-f78bda425fea.png?width=2076&amp;height=1551\" alt=\"Help Blocks Content.png~bak\" loading=\"lazy\"></p>\n<h2>Working with Blocks</h2>\n<p>Your page content is built by adding and arranging blocks. Think of blocks as building pieces that you can stack and rearrange to create your perfect page layout.</p>\n<h4>Tips for Building with Blocks</h4>\n<ul>\n<li>Start with a Hero block for main landing pages</li>\n<li>Use consistent block types for similar content across pages</li>\n<li>Consider the natural flow of information when ordering blocks</li>\n<li>Preview your page on both desktop and mobile before publishing</li>\n<li>You can temporarily hide blocks without deleting them using the \"Hide block\" toggle</li>\n</ul>\n<h4>Block Background Options</h4>\n<p>Each block can have either a light or dark background:</p>\n<ul>\n<li>Default (light): Default option, best for regular content sections</li>\n<li>Dark: Creates visual contrast, good for highlighting important sections</li>\n</ul>\n<h4>General Tips for All Blocks</h4>\n<ul>\n<li>Preview your changes before publishing</li>\n<li>Consider mobile viewing experience</li>\n<li>Keep related content in the same block type for consistency</li>\n<li>Use clear headlines and taglines to guide your visitors</li>\n<li>Make sure images are optimized for web use</li>\n<li>Test all interactive elements like forms and buttons</li>\n</ul>",
-          "subtitle": "{{status}} • Published At: {{published_at}}",
-          "title": "{{title}}"
+          "showSearchControls": true,
+          "titleTemplate": "{{title}}"
         },
         "readonly": false,
         "required": false,
-        "sort": 3,
+        "sort": 1,
         "special": [
-          "alias",
-          "no-data"
+          "cast-json"
         ],
         "translations": null,
         "validation": null,
         "validation_message": null,
-        "width": "fill"
-      }
-    },
-    {
-      "collection": "pages",
-      "field": "meta_tabs",
-      "type": "alias",
-      "meta": {
-        "collection": "pages",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "meta_tabs",
-        "group": null,
-        "hidden": false,
-        "interface": "group-tabs",
-        "note": null,
-        "options": {
-          "fillWidth": true
-        },
-        "readonly": false,
-        "required": false,
-        "sort": 4,
-        "special": [
-          "alias",
-          "no-data",
-          "group"
-        ],
-        "translations": [
-          {
-            "language": "en-US",
-            "translation": "Tabs"
-          }
-        ],
-        "validation": null,
-        "validation_message": null,
         "width": "full"
+      },
+      "schema": {
+        "name": "seo",
+        "table": "pages",
+        "data_type": "json",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
       }
     },
     {
@@ -8675,30 +9951,25 @@
       }
     },
     {
-      "collection": "pages",
-      "field": "seo",
-      "type": "json",
+      "collection": "posts",
+      "field": "id",
+      "type": "uuid",
       "meta": {
-        "collection": "pages",
+        "collection": "posts",
         "conditions": null,
-        "display": "seo-display",
-        "display_options": {
-          "showSearchPreview": true
-        },
-        "field": "seo",
-        "group": "meta_seo",
-        "hidden": false,
-        "interface": "seo-interface",
+        "display": null,
+        "display_options": null,
+        "field": "id",
+        "group": null,
+        "hidden": true,
+        "interface": "input",
         "note": null,
-        "options": {
-          "showSearchControls": true,
-          "titleTemplate": "{{title}}"
-        },
-        "readonly": false,
+        "options": null,
+        "readonly": true,
         "required": false,
         "sort": 1,
         "special": [
-          "cast-json"
+          "uuid"
         ],
         "translations": null,
         "validation": null,
@@ -8706,13 +9977,56 @@
         "width": "full"
       },
       "schema": {
-        "name": "seo",
-        "table": "pages",
-        "data_type": "json",
+        "name": "id",
+        "table": "posts",
+        "data_type": "uuid",
         "default_value": null,
         "max_length": null,
         "numeric_precision": null,
         "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": true,
+        "is_indexed": false,
+        "is_primary_key": true,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "posts",
+      "field": "sort",
+      "type": "integer",
+      "meta": {
+        "collection": "posts",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "sort",
+        "group": null,
+        "hidden": true,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 2,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "sort",
+        "table": "posts",
+        "data_type": "integer",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": 32,
+        "numeric_scale": 0,
         "is_nullable": true,
         "is_unique": false,
         "is_indexed": false,
@@ -8722,6 +10036,75 @@
         "has_auto_increment": false,
         "foreign_key_table": null,
         "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "posts",
+      "field": "meta_header_posts",
+      "type": "alias",
+      "meta": {
+        "collection": "posts",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_header_posts",
+        "group": null,
+        "hidden": false,
+        "interface": "super-header",
+        "note": null,
+        "options": {
+          "help": "<h2>Managing Blog Posts</h2>\n<p>Blog posts are a powerful way to share your content, news, and updates with your audience. Each post can include rich text content, images, and metadata to help with organization and discovery.</p>\n<h3>Post Settings</h3>\n<h4>Title</h4>\n<p>The main headline of your blog post. This appears at the top of the post and in preview cards across your site. Make it:</p>\n<ul>\n<li>Engaging and descriptive</li>\n<li>Clear about the post's content</li>\n<li>Optimized for search engines (aim for 50-60 characters)</li>\n</ul>\n<h4>Description</h4>\n<p>A brief preview of your post that appears in blog listings and search results. Write 1-2 compelling sentences that:</p>\n<ul>\n<li>Summarize the main point of your article</li>\n<li>Entice readers to click through</li>\n<li>Include relevant keywords naturally</li>\n</ul>\n<h4>Featured Image</h4>\n<p>The main visual for your post that appears:</p>\n<ul>\n<li>At the top of the post</li>\n<li>In preview cards across your site</li>\n<li>When sharing on social media Use high-quality, relevant images that capture attention and support your content.</li>\n</ul>\n<h4>URL Slug</h4>\n<p>The unique portion of the URL for this post. For example, in \"yoursite.com/posts/my-first-post\", \"my-first-post\" is the slug.</p>\n<ul>\n<li>Use lowercase letters and hyphens</li>\n<li>Keep it short but descriptive</li>\n<li>Include relevant keywords when possible</li>\n<li>Avoid special characters</li>\n</ul>\n<h4>Content</h4>\n<p>The main body of your post, supporting rich text formatting including:</p>\n<ul>\n<li>Headings and subheadings</li>\n<li>Paragraphs with formatting (bold, italic, etc.)</li>\n<li>Links to other content</li>\n<li>Bulleted and numbered lists</li>\n<li>Images and media</li>\n</ul>\n<h4>Author</h4>\n<p>Select the team member who wrote the post. This helps:</p>\n<ul>\n<li>Give credit to your writers</li>\n<li>Build authority for your content</li>\n<li>Allow readers to find more posts by the same author</li>\n</ul>\n<h4>Publishing Options</h4>\n<ul>\n<li><strong>Draft</strong>: Work on the post privately</li>\n<li><strong>In Review</strong>: Submit for team review</li>\n<li><strong>Published</strong>: Make the post public</li>\n<li><strong>Schedule</strong>: Set a future publication date and time</li>\n</ul>\n<h3>Best Practices for Blog Posts</h3>\n<h4>Writing Tips</h4>\n<ul>\n<li>Start with a strong opening paragraph</li>\n<li>Use subheadings to break up long content</li>\n<li>Keep paragraphs short (3-4 sentences)</li>\n<li>Include relevant internal and external links</li>\n<li>End with a clear conclusion or call to action</li>\n</ul>\n<h4>SEO Considerations</h4>\n<ul>\n<li>Include your main keyword in the title</li>\n<li>Use descriptive alt text for images</li>\n<li>Write naturally for your audience</li>\n<li>Link to related content on your site</li>\n<li>Use appropriate heading hierarchy</li>\n</ul>\n<h4>Image Guidelines</h4>\n<ul>\n<li>Choose relevant, high-quality featured images</li>\n<li>Optimize images for web performance</li>\n<li>Use consistent image sizes</li>\n<li>Include descriptive alt text</li>\n<li>Consider image placement within content</li>\n</ul>",
+          "icon": null,
+          "subtitle": "{{status}} • Published At: {{published_at}}",
+          "title": "{{title}}"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 3,
+        "special": [
+          "alias",
+          "no-data"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "fill"
+      }
+    },
+    {
+      "collection": "posts",
+      "field": "meta_tabs",
+      "type": "alias",
+      "meta": {
+        "collection": "posts",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "meta_tabs",
+        "group": null,
+        "hidden": false,
+        "interface": "group-tabs",
+        "note": null,
+        "options": {
+          "fillWidth": true
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 4,
+        "special": [
+          "alias",
+          "no-data",
+          "group"
+        ],
+        "translations": [
+          {
+            "language": "en-US",
+            "translation": "Tabs"
+          }
+        ],
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
       }
     },
     {
@@ -8784,51 +10167,6 @@
         "is_unique": false,
         "is_indexed": false,
         "is_primary_key": false,
-        "is_generated": false,
-        "generation_expression": null,
-        "has_auto_increment": false,
-        "foreign_key_table": null,
-        "foreign_key_column": null
-      }
-    },
-    {
-      "collection": "posts",
-      "field": "id",
-      "type": "uuid",
-      "meta": {
-        "collection": "posts",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "id",
-        "group": null,
-        "hidden": true,
-        "interface": "input",
-        "note": null,
-        "options": null,
-        "readonly": true,
-        "required": false,
-        "sort": 1,
-        "special": [
-          "uuid"
-        ],
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      },
-      "schema": {
-        "name": "id",
-        "table": "posts",
-        "data_type": "uuid",
-        "default_value": null,
-        "max_length": null,
-        "numeric_precision": null,
-        "numeric_scale": null,
-        "is_nullable": false,
-        "is_unique": true,
-        "is_indexed": false,
-        "is_primary_key": true,
         "is_generated": false,
         "generation_expression": null,
         "has_auto_increment": false,
@@ -8922,49 +10260,6 @@
         "max_length": 255,
         "numeric_precision": null,
         "numeric_scale": null,
-        "is_nullable": true,
-        "is_unique": false,
-        "is_indexed": false,
-        "is_primary_key": false,
-        "is_generated": false,
-        "generation_expression": null,
-        "has_auto_increment": false,
-        "foreign_key_table": null,
-        "foreign_key_column": null
-      }
-    },
-    {
-      "collection": "posts",
-      "field": "sort",
-      "type": "integer",
-      "meta": {
-        "collection": "posts",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "sort",
-        "group": null,
-        "hidden": true,
-        "interface": "input",
-        "note": null,
-        "options": null,
-        "readonly": false,
-        "required": false,
-        "sort": 2,
-        "special": null,
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      },
-      "schema": {
-        "name": "sort",
-        "table": "posts",
-        "data_type": "integer",
-        "default_value": null,
-        "max_length": null,
-        "numeric_precision": 32,
-        "numeric_scale": 0,
         "is_nullable": true,
         "is_unique": false,
         "is_indexed": false,
@@ -9299,50 +10594,6 @@
     },
     {
       "collection": "posts",
-      "field": "meta_header_content",
-      "type": "alias",
-      "meta": {
-        "collection": "posts",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "meta_header_content",
-        "group": "meta_content",
-        "hidden": false,
-        "interface": "super-header",
-        "note": null,
-        "options": {
-          "actions": [
-            {
-              "actionType": "flow",
-              "flow": {
-                "collection": "directus_flows",
-                "key": "5915dd55-fff8-4d47-b48c-a0e42e5033c1"
-              },
-              "icon": "text_increase",
-              "label": "AI Ghostwriter",
-              "type": "normal"
-            }
-          ],
-          "help": "<p><strong>Need inspiration?</strong> Use Flows like AI Ghostwriter to help draft your content.</p>\n<p><em>Note: This uses OpenAI so you'll need to add your API key in the&nbsp;<a href=\"/admin/content/globals\">Globals</a> collection first.</em></p>",
-          "icon": "text_snippet",
-          "title": "Content"
-        },
-        "readonly": false,
-        "required": false,
-        "sort": 10,
-        "special": [
-          "alias",
-          "no-data"
-        ],
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      }
-    },
-    {
-      "collection": "posts",
       "field": "meta_header_image",
       "type": "alias",
       "meta": {
@@ -9387,27 +10638,38 @@
     },
     {
       "collection": "posts",
-      "field": "meta_header_posts",
+      "field": "meta_header_content",
       "type": "alias",
       "meta": {
         "collection": "posts",
         "conditions": null,
         "display": null,
         "display_options": null,
-        "field": "meta_header_posts",
-        "group": null,
+        "field": "meta_header_content",
+        "group": "meta_content",
         "hidden": false,
         "interface": "super-header",
         "note": null,
         "options": {
-          "help": "<h2>Managing Blog Posts</h2>\n<p>Blog posts are a powerful way to share your content, news, and updates with your audience. Each post can include rich text content, images, and metadata to help with organization and discovery.</p>\n<h3>Post Settings</h3>\n<h4>Title</h4>\n<p>The main headline of your blog post. This appears at the top of the post and in preview cards across your site. Make it:</p>\n<ul>\n<li>Engaging and descriptive</li>\n<li>Clear about the post's content</li>\n<li>Optimized for search engines (aim for 50-60 characters)</li>\n</ul>\n<h4>Description</h4>\n<p>A brief preview of your post that appears in blog listings and search results. Write 1-2 compelling sentences that:</p>\n<ul>\n<li>Summarize the main point of your article</li>\n<li>Entice readers to click through</li>\n<li>Include relevant keywords naturally</li>\n</ul>\n<h4>Featured Image</h4>\n<p>The main visual for your post that appears:</p>\n<ul>\n<li>At the top of the post</li>\n<li>In preview cards across your site</li>\n<li>When sharing on social media Use high-quality, relevant images that capture attention and support your content.</li>\n</ul>\n<h4>URL Slug</h4>\n<p>The unique portion of the URL for this post. For example, in \"yoursite.com/posts/my-first-post\", \"my-first-post\" is the slug.</p>\n<ul>\n<li>Use lowercase letters and hyphens</li>\n<li>Keep it short but descriptive</li>\n<li>Include relevant keywords when possible</li>\n<li>Avoid special characters</li>\n</ul>\n<h4>Content</h4>\n<p>The main body of your post, supporting rich text formatting including:</p>\n<ul>\n<li>Headings and subheadings</li>\n<li>Paragraphs with formatting (bold, italic, etc.)</li>\n<li>Links to other content</li>\n<li>Bulleted and numbered lists</li>\n<li>Images and media</li>\n</ul>\n<h4>Author</h4>\n<p>Select the team member who wrote the post. This helps:</p>\n<ul>\n<li>Give credit to your writers</li>\n<li>Build authority for your content</li>\n<li>Allow readers to find more posts by the same author</li>\n</ul>\n<h4>Publishing Options</h4>\n<ul>\n<li><strong>Draft</strong>: Work on the post privately</li>\n<li><strong>In Review</strong>: Submit for team review</li>\n<li><strong>Published</strong>: Make the post public</li>\n<li><strong>Schedule</strong>: Set a future publication date and time</li>\n</ul>\n<h3>Best Practices for Blog Posts</h3>\n<h4>Writing Tips</h4>\n<ul>\n<li>Start with a strong opening paragraph</li>\n<li>Use subheadings to break up long content</li>\n<li>Keep paragraphs short (3-4 sentences)</li>\n<li>Include relevant internal and external links</li>\n<li>End with a clear conclusion or call to action</li>\n</ul>\n<h4>SEO Considerations</h4>\n<ul>\n<li>Include your main keyword in the title</li>\n<li>Use descriptive alt text for images</li>\n<li>Write naturally for your audience</li>\n<li>Link to related content on your site</li>\n<li>Use appropriate heading hierarchy</li>\n</ul>\n<h4>Image Guidelines</h4>\n<ul>\n<li>Choose relevant, high-quality featured images</li>\n<li>Optimize images for web performance</li>\n<li>Use consistent image sizes</li>\n<li>Include descriptive alt text</li>\n<li>Consider image placement within content</li>\n</ul>",
-          "icon": null,
-          "subtitle": "{{status}} • Published At: {{published_at}}",
-          "title": "{{title}}"
+          "actions": [
+            {
+              "actionType": "flow",
+              "flow": {
+                "collection": "directus_flows",
+                "key": "5915dd55-fff8-4d47-b48c-a0e42e5033c1"
+              },
+              "icon": "text_increase",
+              "label": "AI Ghostwriter",
+              "type": "normal"
+            }
+          ],
+          "help": "<p><strong>Need inspiration?</strong> Use Flows like AI Ghostwriter to help draft your content.</p>\n<p><em>Note: This uses OpenAI so you'll need to add your API key in the&nbsp;<a href=\"/admin/content/globals\">Globals</a> collection first.</em></p>",
+          "icon": "text_snippet",
+          "title": "Content"
         },
         "readonly": false,
         "required": false,
-        "sort": 3,
+        "sort": 10,
         "special": [
           "alias",
           "no-data"
@@ -9415,43 +10677,58 @@
         "translations": null,
         "validation": null,
         "validation_message": null,
-        "width": "fill"
+        "width": "full"
       }
     },
     {
       "collection": "posts",
-      "field": "meta_tabs",
-      "type": "alias",
+      "field": "seo",
+      "type": "json",
       "meta": {
         "collection": "posts",
         "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "meta_tabs",
-        "group": null,
+        "display": "seo-display",
+        "display_options": {
+          "showSearchPreview": true
+        },
+        "field": "seo",
+        "group": "meta_seo",
         "hidden": false,
-        "interface": "group-tabs",
+        "interface": "seo-interface",
         "note": null,
         "options": {
-          "fillWidth": true
+          "additionalFields": null,
+          "descriptionTemplate": "{{description}}",
+          "titleTemplate": "{{title}}"
         },
         "readonly": false,
         "required": false,
-        "sort": 4,
+        "sort": 1,
         "special": [
-          "alias",
-          "no-data",
-          "group"
+          "cast-json"
         ],
-        "translations": [
-          {
-            "language": "en-US",
-            "translation": "Tabs"
-          }
-        ],
+        "translations": null,
         "validation": null,
         "validation_message": null,
         "width": "full"
+      },
+      "schema": {
+        "name": "seo",
+        "table": "posts",
+        "data_type": "json",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_indexed": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
       }
     },
     {
@@ -9521,85 +10798,9 @@
         "validation_message": null,
         "width": "full"
       }
-    },
-    {
-      "collection": "posts",
-      "field": "seo",
-      "type": "json",
-      "meta": {
-        "collection": "posts",
-        "conditions": null,
-        "display": "seo-display",
-        "display_options": {
-          "showSearchPreview": true
-        },
-        "field": "seo",
-        "group": "meta_seo",
-        "hidden": false,
-        "interface": "seo-interface",
-        "note": null,
-        "options": {
-          "additionalFields": null,
-          "descriptionTemplate": "{{description}}",
-          "titleTemplate": "{{title}}"
-        },
-        "readonly": false,
-        "required": false,
-        "sort": 1,
-        "special": [
-          "cast-json"
-        ],
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      },
-      "schema": {
-        "name": "seo",
-        "table": "posts",
-        "data_type": "json",
-        "default_value": null,
-        "max_length": null,
-        "numeric_precision": null,
-        "numeric_scale": null,
-        "is_nullable": true,
-        "is_unique": false,
-        "is_indexed": false,
-        "is_primary_key": false,
-        "is_generated": false,
-        "generation_expression": null,
-        "has_auto_increment": false,
-        "foreign_key_table": null,
-        "foreign_key_column": null
-      }
     }
   ],
   "relations": [
-    {
-      "collection": "block_button",
-      "field": "page",
-      "related_collection": "pages",
-      "meta": {
-        "junction_field": null,
-        "many_collection": "block_button",
-        "many_field": "page",
-        "one_allowed_collections": null,
-        "one_collection": "pages",
-        "one_collection_field": null,
-        "one_deselect_action": "nullify",
-        "one_field": null,
-        "sort_field": null
-      },
-      "schema": {
-        "table": "block_button",
-        "column": "page",
-        "foreign_key_table": "pages",
-        "foreign_key_column": "id",
-        "constraint_name": "block_button_page_foreign",
-        "on_update": "NO ACTION",
-        "on_delete": "SET NULL"
-      }
-    },
     {
       "collection": "block_button",
       "field": "post",
@@ -9621,6 +10822,31 @@
         "foreign_key_table": "posts",
         "foreign_key_column": "id",
         "constraint_name": "block_button_post_foreign",
+        "on_update": "NO ACTION",
+        "on_delete": "SET NULL"
+      }
+    },
+    {
+      "collection": "block_button",
+      "field": "page",
+      "related_collection": "pages",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "block_button",
+        "many_field": "page",
+        "one_allowed_collections": null,
+        "one_collection": "pages",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "schema": {
+        "table": "block_button",
+        "column": "page",
+        "foreign_key_table": "pages",
+        "foreign_key_column": "id",
+        "constraint_name": "block_button_page_foreign",
         "on_update": "NO ACTION",
         "on_delete": "SET NULL"
       }
@@ -9677,31 +10903,6 @@
     },
     {
       "collection": "block_gallery_items",
-      "field": "directus_file",
-      "related_collection": "directus_files",
-      "meta": {
-        "junction_field": "block_gallery",
-        "many_collection": "block_gallery_items",
-        "many_field": "directus_file",
-        "one_allowed_collections": null,
-        "one_collection": "directus_files",
-        "one_collection_field": null,
-        "one_deselect_action": "nullify",
-        "one_field": null,
-        "sort_field": null
-      },
-      "schema": {
-        "table": "block_gallery_items",
-        "column": "directus_file",
-        "foreign_key_table": "directus_files",
-        "foreign_key_column": "id",
-        "constraint_name": "block_gallery_items_directus_file_foreign",
-        "on_update": "NO ACTION",
-        "on_delete": "CASCADE"
-      }
-    },
-    {
-      "collection": "block_gallery_items",
       "field": "block_gallery",
       "related_collection": "block_gallery",
       "meta": {
@@ -9721,6 +10922,31 @@
         "foreign_key_table": "block_gallery",
         "foreign_key_column": "id",
         "constraint_name": "block_gallery_items_block_gallery_foreign",
+        "on_update": "NO ACTION",
+        "on_delete": "CASCADE"
+      }
+    },
+    {
+      "collection": "block_gallery_items",
+      "field": "directus_file",
+      "related_collection": "directus_files",
+      "meta": {
+        "junction_field": "block_gallery",
+        "many_collection": "block_gallery_items",
+        "many_field": "directus_file",
+        "one_allowed_collections": null,
+        "one_collection": "directus_files",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "schema": {
+        "table": "block_gallery_items",
+        "column": "directus_file",
+        "foreign_key_table": "directus_files",
+        "foreign_key_column": "id",
+        "constraint_name": "block_gallery_items_directus_file_foreign",
         "on_update": "NO ACTION",
         "on_delete": "CASCADE"
       }
@@ -9826,6 +11052,81 @@
       }
     },
     {
+      "collection": "experiment_variants",
+      "field": "experiment",
+      "related_collection": "experiments",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "experiment_variants",
+        "many_field": "experiment",
+        "one_allowed_collections": null,
+        "one_collection": "experiments",
+        "one_collection_field": null,
+        "one_deselect_action": "delete",
+        "one_field": "variants",
+        "sort_field": null
+      },
+      "schema": {
+        "table": "experiment_variants",
+        "column": "experiment",
+        "foreign_key_table": "experiments",
+        "foreign_key_column": "id",
+        "constraint_name": "experiment_variants_experiment_foreign",
+        "on_update": "NO ACTION",
+        "on_delete": "CASCADE"
+      }
+    },
+    {
+      "collection": "experiments",
+      "field": "updated_by",
+      "related_collection": "directus_users",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "experiments",
+        "many_field": "updated_by",
+        "one_allowed_collections": null,
+        "one_collection": "directus_users",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "schema": {
+        "table": "experiments",
+        "column": "updated_by",
+        "foreign_key_table": "directus_users",
+        "foreign_key_column": "id",
+        "constraint_name": "experiments_updated_by_foreign",
+        "on_update": "NO ACTION",
+        "on_delete": "NO ACTION"
+      }
+    },
+    {
+      "collection": "experiments",
+      "field": "created_by",
+      "related_collection": "directus_users",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "experiments",
+        "many_field": "created_by",
+        "one_allowed_collections": null,
+        "one_collection": "directus_users",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "schema": {
+        "table": "experiments",
+        "column": "created_by",
+        "foreign_key_table": "directus_users",
+        "foreign_key_column": "id",
+        "constraint_name": "experiments_created_by_foreign",
+        "on_update": "NO ACTION",
+        "on_delete": "NO ACTION"
+      }
+    },
+    {
       "collection": "form_fields",
       "field": "form",
       "related_collection": "forms",
@@ -9846,31 +11147,6 @@
         "foreign_key_table": "forms",
         "foreign_key_column": "id",
         "constraint_name": "form_fields_form_foreign",
-        "on_update": "NO ACTION",
-        "on_delete": "CASCADE"
-      }
-    },
-    {
-      "collection": "form_submission_values",
-      "field": "form_submission",
-      "related_collection": "form_submissions",
-      "meta": {
-        "junction_field": null,
-        "many_collection": "form_submission_values",
-        "many_field": "form_submission",
-        "one_allowed_collections": null,
-        "one_collection": "form_submissions",
-        "one_collection_field": null,
-        "one_deselect_action": "delete",
-        "one_field": "values",
-        "sort_field": "sort"
-      },
-      "schema": {
-        "table": "form_submission_values",
-        "column": "form_submission",
-        "foreign_key_table": "form_submissions",
-        "foreign_key_column": "id",
-        "constraint_name": "form_submission_values_form_submission_foreign",
         "on_update": "NO ACTION",
         "on_delete": "CASCADE"
       }
@@ -9898,6 +11174,31 @@
         "constraint_name": "form_submission_values_field_foreign",
         "on_update": "NO ACTION",
         "on_delete": "SET NULL"
+      }
+    },
+    {
+      "collection": "form_submission_values",
+      "field": "form_submission",
+      "related_collection": "form_submissions",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "form_submission_values",
+        "many_field": "form_submission",
+        "one_allowed_collections": null,
+        "one_collection": "form_submissions",
+        "one_collection_field": null,
+        "one_deselect_action": "delete",
+        "one_field": "values",
+        "sort_field": "sort"
+      },
+      "schema": {
+        "table": "form_submission_values",
+        "column": "form_submission",
+        "foreign_key_table": "form_submissions",
+        "foreign_key_column": "id",
+        "constraint_name": "form_submission_values_form_submission_foreign",
+        "on_update": "NO ACTION",
+        "on_delete": "CASCADE"
       }
     },
     {
@@ -9952,31 +11253,6 @@
     },
     {
       "collection": "globals",
-      "field": "favicon",
-      "related_collection": "directus_files",
-      "meta": {
-        "junction_field": null,
-        "many_collection": "globals",
-        "many_field": "favicon",
-        "one_allowed_collections": null,
-        "one_collection": "directus_files",
-        "one_collection_field": null,
-        "one_deselect_action": "nullify",
-        "one_field": null,
-        "sort_field": null
-      },
-      "schema": {
-        "table": "globals",
-        "column": "favicon",
-        "foreign_key_table": "directus_files",
-        "foreign_key_column": "id",
-        "constraint_name": "globals_favicon_foreign",
-        "on_update": "NO ACTION",
-        "on_delete": "SET NULL"
-      }
-    },
-    {
-      "collection": "globals",
       "field": "logo",
       "related_collection": "directus_files",
       "meta": {
@@ -9996,6 +11272,31 @@
         "foreign_key_table": "directus_files",
         "foreign_key_column": "id",
         "constraint_name": "globals_logo_foreign",
+        "on_update": "NO ACTION",
+        "on_delete": "SET NULL"
+      }
+    },
+    {
+      "collection": "globals",
+      "field": "favicon",
+      "related_collection": "directus_files",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "globals",
+        "many_field": "favicon",
+        "one_allowed_collections": null,
+        "one_collection": "directus_files",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "schema": {
+        "table": "globals",
+        "column": "favicon",
+        "foreign_key_table": "directus_files",
+        "foreign_key_column": "id",
+        "constraint_name": "globals_favicon_foreign",
         "on_update": "NO ACTION",
         "on_delete": "SET NULL"
       }
@@ -10027,39 +11328,14 @@
     },
     {
       "collection": "navigation_items",
-      "field": "navigation",
-      "related_collection": "navigation",
+      "field": "post",
+      "related_collection": "posts",
       "meta": {
         "junction_field": null,
         "many_collection": "navigation_items",
-        "many_field": "navigation",
+        "many_field": "post",
         "one_allowed_collections": null,
-        "one_collection": "navigation",
-        "one_collection_field": null,
-        "one_deselect_action": "nullify",
-        "one_field": "items",
-        "sort_field": "sort"
-      },
-      "schema": {
-        "table": "navigation_items",
-        "column": "navigation",
-        "foreign_key_table": "navigation",
-        "foreign_key_column": "id",
-        "constraint_name": "navigation_items_navigation_foreign",
-        "on_update": "NO ACTION",
-        "on_delete": "SET NULL"
-      }
-    },
-    {
-      "collection": "navigation_items",
-      "field": "page",
-      "related_collection": "pages",
-      "meta": {
-        "junction_field": null,
-        "many_collection": "navigation_items",
-        "many_field": "page",
-        "one_allowed_collections": null,
-        "one_collection": "pages",
+        "one_collection": "posts",
         "one_collection_field": null,
         "one_deselect_action": "nullify",
         "one_field": null,
@@ -10067,10 +11343,10 @@
       },
       "schema": {
         "table": "navigation_items",
-        "column": "page",
-        "foreign_key_table": "pages",
+        "column": "post",
+        "foreign_key_table": "posts",
         "foreign_key_column": "id",
-        "constraint_name": "navigation_items_page_foreign",
+        "constraint_name": "navigation_items_post_foreign",
         "on_update": "NO ACTION",
         "on_delete": "SET NULL"
       }
@@ -10102,14 +11378,14 @@
     },
     {
       "collection": "navigation_items",
-      "field": "post",
-      "related_collection": "posts",
+      "field": "page",
+      "related_collection": "pages",
       "meta": {
         "junction_field": null,
         "many_collection": "navigation_items",
-        "many_field": "post",
+        "many_field": "page",
         "one_allowed_collections": null,
-        "one_collection": "posts",
+        "one_collection": "pages",
         "one_collection_field": null,
         "one_deselect_action": "nullify",
         "one_field": null,
@@ -10117,10 +11393,35 @@
       },
       "schema": {
         "table": "navigation_items",
-        "column": "post",
-        "foreign_key_table": "posts",
+        "column": "page",
+        "foreign_key_table": "pages",
         "foreign_key_column": "id",
-        "constraint_name": "navigation_items_post_foreign",
+        "constraint_name": "navigation_items_page_foreign",
+        "on_update": "NO ACTION",
+        "on_delete": "SET NULL"
+      }
+    },
+    {
+      "collection": "navigation_items",
+      "field": "navigation",
+      "related_collection": "navigation",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "navigation_items",
+        "many_field": "navigation",
+        "one_allowed_collections": null,
+        "one_collection": "navigation",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": "items",
+        "sort_field": "sort"
+      },
+      "schema": {
+        "table": "navigation_items",
+        "column": "navigation",
+        "foreign_key_table": "navigation",
+        "foreign_key_column": "id",
+        "constraint_name": "navigation_items_navigation_foreign",
         "on_update": "NO ACTION",
         "on_delete": "SET NULL"
       }
@@ -10145,7 +11446,7 @@
         "column": "page",
         "foreign_key_table": "pages",
         "foreign_key_column": "id",
-        "constraint_name": "page_blocks_pages_id_foreign",
+        "constraint_name": "page_blocks_page_foreign",
         "on_update": "NO ACTION",
         "on_delete": "SET NULL"
       }
@@ -10171,6 +11472,56 @@
         "one_deselect_action": "nullify",
         "one_field": null,
         "sort_field": null
+      }
+    },
+    {
+      "collection": "page_blocks",
+      "field": "experiment",
+      "related_collection": "experiments",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "page_blocks",
+        "many_field": "experiment",
+        "one_allowed_collections": null,
+        "one_collection": "experiments",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "schema": {
+        "table": "page_blocks",
+        "column": "experiment",
+        "foreign_key_table": "experiments",
+        "foreign_key_column": "id",
+        "constraint_name": "page_blocks_experiment_foreign",
+        "on_update": "NO ACTION",
+        "on_delete": "SET NULL"
+      }
+    },
+    {
+      "collection": "page_blocks",
+      "field": "experiment_variant",
+      "related_collection": "experiment_variants",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "page_blocks",
+        "many_field": "experiment_variant",
+        "one_allowed_collections": null,
+        "one_collection": "experiment_variants",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "schema": {
+        "table": "page_blocks",
+        "column": "experiment_variant",
+        "foreign_key_table": "experiment_variants",
+        "foreign_key_column": "id",
+        "constraint_name": "page_blocks_experiment_variant_foreign",
+        "on_update": "NO ACTION",
+        "on_delete": "SET NULL"
       }
     },
     {

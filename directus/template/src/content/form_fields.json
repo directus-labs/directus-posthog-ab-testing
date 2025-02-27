@@ -2,7 +2,7 @@
   {
     "id": "0f3deba1-9d6b-44a0-aa87-a9b38e834beb",
     "name": "first-name",
-    "type": "textarea",
+    "type": "text",
     "label": "First Name",
     "placeholder": null,
     "help": null,

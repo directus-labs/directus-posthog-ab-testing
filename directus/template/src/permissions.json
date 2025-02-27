@@ -1709,5 +1709,27 @@
       "id"
     ],
     "policy": "307380fe-195e-44cc-9cc0-6993aeee9428"
+  },
+  {
+    "collection": "experiment_variants",
+    "action": "read",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "abf8a154-5b1c-4a46-ac9c-7300570f4f17"
+  },
+  {
+    "collection": "experiments",
+    "action": "read",
+    "permissions": null,
+    "validation": null,
+    "presets": null,
+    "fields": [
+      "*"
+    ],
+    "policy": "abf8a154-5b1c-4a46-ac9c-7300570f4f17"
   }
 ]

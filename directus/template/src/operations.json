@@ -16,8 +16,32 @@
     "resolve": "c0f67e21-7332-4803-a1ae-f9a295b7e48e",
     "reject": null,
     "flow": "52fa6db4-a8ec-4bfc-9b36-d52f5a189620",
-    "date_created": "2025-02-20T22:10:11.714Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0"
+    "date_created": "2025-02-21T14:38:20.481Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
+  },
+  {
+    "id": "060785b5-4cf0-4642-b827-ebeb0386c9e6",
+    "name": "Update Feature Flag",
+    "key": "update_feature_flag",
+    "type": "request",
+    "position_x": 73,
+    "position_y": 20,
+    "options": {
+      "method": "PATCH",
+      "url": "https://app.posthog.com/api/projects/{{globals.posthog_project_id}}/feature_flags/{{format_feature_flag.id}}",
+      "headers": [
+        {
+          "header": "Authorization",
+          "value": "Bearer {{ globals.posthog_private_api_key }}"
+        }
+      ],
+      "body": "{{format_feature_flag.payload}}"
+    },
+    "resolve": "0d5a94c2-d15a-4789-bfba-ffd6014a3772",
+    "reject": null,
+    "flow": "1f777e78-d089-4b8a-95a7-07fa8182030e",
+    "date_created": "2025-02-27T12:56:09.009Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
   },
   {
     "id": "0beeeb1a-2338-4ab4-95f5-0757bf3e43be",
@@ -32,8 +56,8 @@
     "resolve": null,
     "reject": null,
     "flow": "7c8732cd-9d9e-44be-a3f6-89c0d42c7687",
-    "date_created": "2024-12-19T15:26:30.553Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0"
+    "date_created": "2025-02-21T14:38:20.485Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
   },
   {
     "id": "0cf30253-f9ed-413f-ac27-7a0ecffa9ee4",
@@ -48,8 +72,40 @@
     "resolve": "5df25cf8-b407-4fef-9d3b-c328f89f1561",
     "reject": null,
     "flow": "d4bbac48-a444-49e0-aedb-9af5273b88df",
-    "date_created": "2024-09-13T04:12:38.641Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0"
+    "date_created": "2025-02-21T14:38:20.493Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
+  },
+  {
+    "id": "0d5a94c2-d15a-4789-bfba-ffd6014a3772",
+    "name": "Transform Directus Payload",
+    "key": "transform_directus_payload",
+    "type": "exec",
+    "position_x": 91,
+    "position_y": 20,
+    "options": {
+      "code": "module.exports = function(data) {\n\treturn {\n        ...data.$trigger.payload,\n        posthog_experiment_id: data.create_experiment.data.id\n    };\n}"
+    },
+    "resolve": null,
+    "reject": null,
+    "flow": "1f777e78-d089-4b8a-95a7-07fa8182030e",
+    "date_created": "2025-02-21T15:10:35.994Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
+  },
+  {
+    "id": "15e2f497-bc51-4fdc-8ca7-20e7e3ef2182",
+    "name": "Format Feature Flag",
+    "key": "format_feature_flag",
+    "type": "exec",
+    "position_x": 55,
+    "position_y": 20,
+    "options": {
+      "code": "/**\n * Takes a PostHog experiment response and formats the feature flag payload\n * with proper variant payloads based on experiment type\n */\nfunction formatFeatureFlagPayload(posthogResponse, directusPayload) {\n  try {\n    const experimentData = posthogResponse.data;\n    const directusData = directusPayload.payload;\n    const testType = directusData.test_type;\n\n    // Create a lookup map for variant URLs from the directus payload\n    const variantUrlMap = {};\n    if (directusData.variants && directusData.variants.create) {\n      directusData.variants.create.forEach(variant => {\n        if (variant.url) {\n          variantUrlMap[variant.key] = variant.url;\n        }\n      });\n    }\n\n    // Find control URL\n    const controlVariant = directusData.variants.create.find(v => v.key === 'control');\n    const controlPath = controlVariant && controlVariant.url ? controlVariant.url : '/';\n\n    // Format variants for the multivariate section\n    const variants = experimentData.parameters.feature_flag_variants.map(variant => ({\n      key: variant.key,\n      description: variant.description,\n      rollout_percentage: variant.rollout_percentage,\n    }));\n\n    // Create payloads object based on experiment type\n    const payloads = {};\n    experimentData.parameters.feature_flag_variants.forEach(variant => {\n      if (testType === 'page') {\n        // For page experiments, include path information using URLs from directus payload\n        if (variant.key === 'control') {\n          // For control variant, include both control_path and path (its own path)\n          payloads[variant.key] = JSON.stringify({\n            experiment_type: 'page',\n            control_path: controlPath,\n            path: variantUrlMap[variant.key] || '/'\n          });\n        } else {\n          // For non-control variants\n          payloads[variant.key] = JSON.stringify({\n            experiment_type: 'page',\n            control_path: controlPath,\n            path: variantUrlMap[variant.key] || '/'\n          });\n        }\n      } else {\n        // For block experiments, use empty JSON\n        payloads[variant.key] = \"{}\";\n      }\n    });\n\n    // Create the formatted PostHog payload structure\n    return {\n      name: experimentData.feature_flag.name,\n      key: experimentData.feature_flag_key,\n      filters: {\n        groups: [\n          {\n            properties: [],\n            rollout_percentage: 100\n          }\n        ],\n        multivariate: {\n          variants: variants\n        },\n        holdout_groups: null,\n        aggregation_group_type_index: null,\n        payloads: payloads\n      }\n    };\n  } catch (error) {\n    console.error('Error formatting feature flag payload:', error.message);\n    throw error;\n  }\n}\n\nmodule.exports = function(data) {\n  try {\n    const posthogResponse = data.create_experiment;\n    const directusPayload = data.$trigger;\n    const featureFlagPayload = formatFeatureFlagPayload(posthogResponse, directusPayload);\n    return {\n      id: posthogResponse.data.feature_flag.id,\n      payload: featureFlagPayload\n    };\n  }\n  catch(error) {\n    throw new Error(error.message);\n  }\n}\n"
+    },
+    "resolve": "060785b5-4cf0-4642-b827-ebeb0386c9e6",
+    "reject": null,
+    "flow": "1f777e78-d089-4b8a-95a7-07fa8182030e",
+    "date_created": "2025-02-27T12:56:09.028Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
   },
   {
     "id": "2adf33da-7fd7-42f7-a6fe-48409463d51b",
@@ -69,8 +125,8 @@
     "resolve": null,
     "reject": null,
     "flow": "d4bbac48-a444-49e0-aedb-9af5273b88df",
-    "date_created": "2024-09-13T04:12:38.606Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0"
+    "date_created": "2025-02-21T14:38:20.503Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
   },
   {
     "id": "3b7d004a-1dba-43c4-b902-a44fd71602ae",
@@ -85,8 +141,8 @@
     "resolve": "e6c50f84-e229-4f15-8119-c7708256e825",
     "reject": null,
     "flow": "5915dd55-fff8-4d47-b48c-a0e42e5033c1",
-    "date_created": "2024-09-13T03:52:01.503Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0"
+    "date_created": "2025-02-21T14:38:20.512Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
   },
   {
     "id": "599b80e4-7c74-4496-b243-da198c8613d9",
@@ -111,8 +167,8 @@
     "resolve": "dff1a702-bcc0-4528-905e-309feb880111",
     "reject": null,
     "flow": "61757ab0-b139-4079-b5eb-4e05bb8142ac",
-    "date_created": "2024-09-13T03:30:58.055Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0"
+    "date_created": "2025-02-21T14:38:20.523Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
   },
   {
     "id": "5d667ac5-2594-4f16-a863-3847d8917caa",
@@ -127,8 +183,8 @@
     "resolve": "89125be2-8205-4ad0-a77f-bd3e984202b3",
     "reject": null,
     "flow": "5915dd55-fff8-4d47-b48c-a0e42e5033c1",
-    "date_created": "2024-09-13T02:39:32.169Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0"
+    "date_created": "2025-02-21T14:38:20.533Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
   },
   {
     "id": "5df25cf8-b407-4fef-9d3b-c328f89f1561",
@@ -149,8 +205,8 @@
     "resolve": "d6f73e98-19ef-47d6-8d1f-99d77137d36b",
     "reject": null,
     "flow": "d4bbac48-a444-49e0-aedb-9af5273b88df",
-    "date_created": "2024-09-13T04:12:38.633Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0"
+    "date_created": "2025-02-21T14:38:20.542Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
   },
   {
     "id": "6efe1572-6cdd-4c80-a063-eb71b7f1e519",
@@ -171,8 +227,32 @@
     "resolve": "8673740a-f7f8-44dd-9abd-5a714e0d6c74",
     "reject": "0beeeb1a-2338-4ab4-95f5-0757bf3e43be",
     "flow": "7c8732cd-9d9e-44be-a3f6-89c0d42c7687",
-    "date_created": "2024-12-19T15:26:30.564Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0"
+    "date_created": "2025-02-21T14:38:20.550Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
+  },
+  {
+    "id": "7d8ee1d4-f56f-4d94-9d26-a84ea6ebdcd5",
+    "name": "Create Experiment",
+    "key": "create_experiment",
+    "type": "request",
+    "position_x": 55,
+    "position_y": 1,
+    "options": {
+      "method": "POST",
+      "url": "https://us.posthog.com/api/projects/{{globals.posthog_project_id}}/experiments",
+      "headers": [
+        {
+          "header": "Authorization",
+          "value": "Bearer {{ globals.posthog_private_api_key }}"
+        }
+      ],
+      "body": "{{format_experiment}}"
+    },
+    "resolve": "15e2f497-bc51-4fdc-8ca7-20e7e3ef2182",
+    "reject": null,
+    "flow": "1f777e78-d089-4b8a-95a7-07fa8182030e",
+    "date_created": "2025-02-21T15:10:36.004Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
   },
   {
     "id": "8673740a-f7f8-44dd-9abd-5a714e0d6c74",
@@ -190,8 +270,8 @@
     "resolve": null,
     "reject": null,
     "flow": "7c8732cd-9d9e-44be-a3f6-89c0d42c7687",
-    "date_created": "2024-09-25T13:08:40.529Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0"
+    "date_created": "2025-02-21T14:38:20.559Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
   },
   {
     "id": "89125be2-8205-4ad0-a77f-bd3e984202b3",
@@ -214,8 +294,40 @@
     "resolve": "3b7d004a-1dba-43c4-b902-a44fd71602ae",
     "reject": null,
     "flow": "5915dd55-fff8-4d47-b48c-a0e42e5033c1",
-    "date_created": "2024-09-13T03:52:01.514Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0"
+    "date_created": "2025-02-21T14:38:20.570Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
+  },
+  {
+    "id": "8e778674-7440-49f8-9811-7ec2101bf4a1",
+    "name": "Format Experiment",
+    "key": "format_experiment",
+    "type": "exec",
+    "position_x": 37,
+    "position_y": 1,
+    "options": {
+      "code": "/**\n * Expected payload from Directus filter.items.create\n * {\n  \"payload\": {\n    \"name\": \"About Us Page test\",\n    \"feature_flag_key\": \"about-us-test\",\n    \"test_type\": \"page,\n    \"variants\": {\n      \"create\": [\n        {\n          \"key\": \"control\",\n          \"url\": \"/control\"\n        },\n        {\n          \"key\": \"new-about-page\",\n          \"url\": /new-about-page\"\n        }\n      ],\n      \"update\": [],\n      \"delete\": []\n    }\n  },\n  \"event\": \"experiments.items.create\",\n  \"collection\": \"experiments\"\n}\n */\n\nfunction transformDirectusToPosthog(directusPayload) {\n    try {\n      // Parse the Directus payload if it's a string\n      const directusData = typeof directusPayload === 'string' ? JSON.parse(directusPayload) : directusPayload;\n\n      // Validate the structure of the input\n      if (!directusData || !directusData.payload) {\n        throw new Error('Invalid Directus payload structure');\n      }\n\n      const experimentData = directusData.payload;\n\n      // Validate required fields\n      if (!experimentData.name || !experimentData.feature_flag_key || !experimentData.variants) {\n        throw new Error('Missing required fields in experiment data. Each experiment must have a name, feature_flag_key, and variants.');\n      }\n\n      // Validate there's a control variant\n      if (!experimentData.variants.create.find(variant => variant.key === 'control')) {\n        throw new Error('Missing control variant. Each experiment must have a control variant.');\n      }\n\n    // If the test is a page test, validate that we have a url for each variant\n    if (experimentData.test_type === 'page') {\n      if (!experimentData.variants.create.every(variant => variant.url)) {\n        throw new Error('Missing URL for variants. For page (redirect) tests, each variant must have a url.');\n      }\n    }\n\n      // Create the PostHog payload structure\n      const posthogPayload = {\n        name: experimentData.name,\n        description: experimentData?.description,\n        feature_flag_key: experimentData.feature_flag_key,\n        parameters: {\n          feature_flag_variants: []\n        },\n      };\n\n      // Validate variants\n      if (!Array.isArray(experimentData.variants.create) || experimentData.variants.create.length === 0) {\n        throw new Error('No variants provided or invalid variants structure');\n      }\n\n      // Calculate the rollout percentage\n      const variantCount = experimentData.variants.create.length;\n      const rolloutPercentage = Math.floor(100 / variantCount);\n\n      // Add variants to the PostHog payload\n      experimentData.variants.create.forEach(variant => {\n        if (!variant.key) {\n          throw new Error('Invalid variant: missing key');\n        }\n        posthogPayload.parameters.feature_flag_variants.push({\n          key: variant.key,\n          description: variant?.description,\n          rollout_percentage: rolloutPercentage\n        });\n      });\n\n      return posthogPayload;\n    } catch (error) {\n      console.error('Error transforming Directus payload to PostHog format:', error.message);\n      throw error; // Re-throw the error for the caller to handle\n    }\n  }\n  \n  module.exports = function(data) {\n      try {\n          const payload = transformDirectusToPosthog(data.$trigger)\n          return payload\n      }\n      catch(error) {\n          throw new Error(error.message)\n      }\n  }\n"
+    },
+    "resolve": "7d8ee1d4-f56f-4d94-9d26-a84ea6ebdcd5",
+    "reject": null,
+    "flow": "1f777e78-d089-4b8a-95a7-07fa8182030e",
+    "date_created": "2025-02-21T15:00:21.433Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
+  },
+  {
+    "id": "b28d64ae-dffc-447e-9f90-0eafda30a406",
+    "name": "Globals",
+    "key": "globals",
+    "type": "trigger",
+    "position_x": 19,
+    "position_y": 1,
+    "options": {
+      "flow": "69e87d0b-df14-4779-bdc8-abc05f2f1e97"
+    },
+    "resolve": "8e778674-7440-49f8-9811-7ec2101bf4a1",
+    "reject": null,
+    "flow": "1f777e78-d089-4b8a-95a7-07fa8182030e",
+    "date_created": "2025-02-27T03:28:42.062Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
   },
   {
     "id": "bb1b1e3f-032e-48b7-b260-1cf3af4a116c",
@@ -231,8 +343,8 @@
     "resolve": "fd271542-fac2-42d8-aa10-a02520c3753f",
     "reject": null,
     "flow": "69e87d0b-df14-4779-bdc8-abc05f2f1e97",
-    "date_created": "2024-02-26T13:03:38.721Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0"
+    "date_created": "2025-02-21T14:38:20.580Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
   },
   {
     "id": "bc71ca4e-d979-4ef9-a449-af100a7e1b3b",
@@ -255,8 +367,8 @@
     "resolve": "2adf33da-7fd7-42f7-a6fe-48409463d51b",
     "reject": null,
     "flow": "d4bbac48-a444-49e0-aedb-9af5273b88df",
-    "date_created": "2024-09-13T04:12:38.612Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0"
+    "date_created": "2025-02-21T14:38:20.591Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
   },
   {
     "id": "c0f67e21-7332-4803-a1ae-f9a295b7e48e",
@@ -278,8 +390,8 @@
     "resolve": "faffc005-c291-4be0-b0c8-38413b0a8446",
     "reject": null,
     "flow": "52fa6db4-a8ec-4bfc-9b36-d52f5a189620",
-    "date_created": "2025-02-20T22:10:11.730Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0"
+    "date_created": "2025-02-21T14:38:20.599Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
   },
   {
     "id": "c846f644-e7c1-43c9-8bb7-81181de0cd60",
@@ -298,8 +410,8 @@
     "resolve": "edc5e1ae-a3ed-45af-ae77-10409a66cd03",
     "reject": null,
     "flow": "5429ccb0-7e97-4ef5-9d65-2bbcf964f9a6",
-    "date_created": "2024-09-25T13:15:05.717Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0"
+    "date_created": "2025-02-21T14:38:20.608Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
   },
   {
     "id": "d6f73e98-19ef-47d6-8d1f-99d77137d36b",
@@ -317,8 +429,8 @@
     "resolve": "bc71ca4e-d979-4ef9-a449-af100a7e1b3b",
     "reject": null,
     "flow": "d4bbac48-a444-49e0-aedb-9af5273b88df",
-    "date_created": "2024-09-13T04:12:38.623Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0"
+    "date_created": "2025-02-21T14:38:20.618Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
   },
   {
     "id": "dff1a702-bcc0-4528-905e-309feb880111",
@@ -333,8 +445,8 @@
     "resolve": "fbf696ea-c6af-4230-8f62-c663beebd6d9",
     "reject": null,
     "flow": "61757ab0-b139-4079-b5eb-4e05bb8142ac",
-    "date_created": "2024-09-13T03:41:36.144Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0"
+    "date_created": "2025-02-21T14:38:20.628Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
   },
   {
     "id": "e12b95db-a408-4e7e-b30b-264f7fa8baa3",
@@ -350,8 +462,8 @@
     "resolve": null,
     "reject": null,
     "flow": "61757ab0-b139-4079-b5eb-4e05bb8142ac",
-    "date_created": "2024-09-25T13:33:39.709Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0"
+    "date_created": "2025-02-21T14:38:20.638Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
   },
   {
     "id": "e6c50f84-e229-4f15-8119-c7708256e825",
@@ -371,8 +483,8 @@
     "resolve": null,
     "reject": null,
     "flow": "5915dd55-fff8-4d47-b48c-a0e42e5033c1",
-    "date_created": "2024-09-13T03:52:01.490Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0"
+    "date_created": "2025-02-21T14:38:20.648Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
   },
   {
     "id": "edc5e1ae-a3ed-45af-ae77-10409a66cd03",
@@ -387,8 +499,8 @@
     "resolve": null,
     "reject": null,
     "flow": "5429ccb0-7e97-4ef5-9d65-2bbcf964f9a6",
-    "date_created": "2024-09-25T13:31:35.265Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0"
+    "date_created": "2025-02-21T14:38:20.657Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
   },
   {
     "id": "faffc005-c291-4be0-b0c8-38413b0a8446",
@@ -405,8 +517,8 @@
     "resolve": null,
     "reject": null,
     "flow": "52fa6db4-a8ec-4bfc-9b36-d52f5a189620",
-    "date_created": "2025-02-20T22:42:05.810Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0"
+    "date_created": "2025-02-21T14:38:20.665Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
   },
   {
     "id": "fbf696ea-c6af-4230-8f62-c663beebd6d9",
@@ -422,8 +534,8 @@
     "resolve": "e12b95db-a408-4e7e-b30b-264f7fa8baa3",
     "reject": null,
     "flow": "61757ab0-b139-4079-b5eb-4e05bb8142ac",
-    "date_created": "2024-09-25T13:29:26.743Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0"
+    "date_created": "2025-02-21T14:38:20.676Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
   },
   {
     "id": "fd271542-fac2-42d8-aa10-a02520c3753f",
@@ -438,7 +550,7 @@
     "resolve": null,
     "reject": null,
     "flow": "69e87d0b-df14-4779-bdc8-abc05f2f1e97",
-    "date_created": "2024-02-26T13:03:38.753Z",
-    "user_created": "d56956bf-6ed0-465e-bb4a-ec9bde65c5f0"
+    "date_created": "2025-02-21T14:38:20.685Z",
+    "user_created": "59715078-e712-41b8-a761-45606e5d1ab2"
   }
 ]

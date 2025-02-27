@@ -1,0 +1,30 @@
+[
+  {
+    "id": "3626e60b-1cda-438e-9280-bb0c58507a42",
+    "key": "control",
+    "description": null,
+    "experiment": "3404df5b-1456-40ef-b34d-ebbd4f1e7567",
+    "url": null
+  },
+  {
+    "id": "50204e9d-201a-4660-8b27-90e12d77a612",
+    "key": "new-headline",
+    "description": null,
+    "experiment": "3404df5b-1456-40ef-b34d-ebbd4f1e7567",
+    "url": null
+  },
+  {
+    "id": "9a4cf9fc-5c72-4ae1-830c-25d8426e01d0",
+    "key": "control",
+    "description": null,
+    "experiment": "a8bfcdfc-3134-4d85-a976-30303eee9b75",
+    "url": "/pricing"
+  },
+  {
+    "id": "ed73d424-7075-4af4-81fe-3f6b647cf744",
+    "key": "higher-pricing",
+    "description": null,
+    "experiment": "a8bfcdfc-3134-4d85-a976-30303eee9b75",
+    "url": "/new-pricing"
+  }
+]

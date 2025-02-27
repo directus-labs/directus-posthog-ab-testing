@@ -14,6 +14,7 @@
     },
     "blocks": [
       "7fbc3a13-852d-4120-86ad-0b2c674e2407",
+      "14687355-5d62-4221-ab5a-fab11085d0fb",
       "2d9abe8f-a7ad-480d-8fc7-603c712e2f40",
       "529e6408-7372-4195-b82d-e444c06ac492",
       "39d02b18-18d2-4c29-9268-038f72ea05fe",
@@ -79,6 +80,30 @@
     },
     "blocks": [
       "bc826e30-4988-4035-98bd-5ffc4799e5fc"
+    ]
+  },
+  {
+    "id": "4f17a015-882f-4951-bc37-abcf2b1e8ff5",
+    "sort": null,
+    "title": "Pricing",
+    "permalink": "/pricing",
+    "status": "published",
+    "published_at": "2025-02-25T17:00:00.000Z",
+    "seo": null,
+    "blocks": [
+      "5add93ba-0116-4d76-8769-aceb4fd697b2"
+    ]
+  },
+  {
+    "id": "fb64c7ed-a556-4921-a827-fada59045079",
+    "sort": null,
+    "title": "New Pricing",
+    "permalink": "/new-pricing",
+    "status": "published",
+    "published_at": "2025-02-25T17:00:00.000Z",
+    "seo": null,
+    "blocks": [
+      "1c814caf-cf0a-4b4e-bbe0-d46b09d2b23a"
     ]
   }
 ]
