@@ -22,7 +22,7 @@ A production-ready template demonstrating how to integrate PostHog with Directus
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/directus-labs/directus-posthog-ab-testing.git
 cd posthog-ab-testing
 ```
 
@@ -37,23 +37,7 @@ cp .env.example .env
 
 Edit the `.env` file to configure your Directus installation:
 
-```
-# Database Configuration
-DB_USER=directus
-DB_PASSWORD=directus
-DB_DATABASE=directus
-
-# Directus Configuration
-DIRECTUS_PORT=8055
-DIRECTUS_KEY=<generate-a-unique-key>
-DIRECTUS_SECRET=<generate-a-unique-secret>
-
-# Admin Configuration
-ADMIN_EMAIL=admin@example.com
-ADMIN_PASSWORD=<choose-a-secure-password>
-```
-
-Start the Directus stack:
+Start the Directus instance:
 
 ```bash
 docker compose up -d
@@ -136,9 +120,8 @@ Content editors can create experiments directly in Directus:
 1. Navigate to the "Experiments" collection in Directus
 2. Create a new experiment with:
    - Name: The experiment name
-   - Control Path: URL path for the control version
-   - Variant Path: URL path for the test variant
-   - Roll-out Percentage: Percentage of users to include in the test
+   - Feature Flag Key: Unique identifier for the underlying feature flag
+   - Variants: Every experiement has to have a control variant, but you can add as many other variants as you like
 
 The Directus flow will automatically create the corresponding feature flag in PostHog with the correct payload structure.
 
@@ -146,12 +129,13 @@ The Directus flow will automatically create the corresponding feature flag in Po
 
 For manual configuration:
 
-1. In PostHog, navigate to Feature Flags
-2. Create a new feature flag:
+1. In PostHog, navigate to Experiments
+2. Create a new experiment
    - Name: `your-experiment-name`
    - Key: `your-experiment-key`
    - Roll out to: Select a percentage of users
-   - Add Payload:
+   - Configure variants
+3. For Page (Redirect) tests, add a payload for the feature flags:
    ```json
    {
      "experiment_type": "page",
@@ -228,14 +212,6 @@ The Directus template includes a base schema for managing content. You can exten
 
 2. Deploy to your preferred hosting platform (Vercel, Netlify, etc.).
 
-## Troubleshooting
-
-### Common Issues
-
-- **CORS Errors**: Ensure your CORS settings in Directus are properly configured to allow requests from your Next.js application.
-- **PostHog Connection Issues**: Check that your PostHog API key is correct and that the PostHog host is properly configured.
-- **Type Generation Errors**: Run `pnpm generate:types` in the Next.js directory to regenerate TypeScript types from Directus.
-- **Experiment Flow Issues**: Verify that the PostHog project ID and private API key are correctly set in Directus global variables.
 
 ## Contributing
 
