@@ -1,6 +1,9 @@
-# Directus with PostHog A/B Testing Integration
+<a href="https://directus.io" target="_blank">
+  <img alt=" Directus with PostHog A/B Testing Integration" src="./public/posthog-directus.png">
+  <h1 align="center">Directus with PostHog A/B Testing Integration</h1>
+</a>
 
-A production-ready template demonstrating how to integrate PostHog with Directus for implementing A/B testing in Next.js applications. This template provides a complete setup for content management with Directus and feature flagging/A/B testing with PostHog.
+A production-ready template demonstrating how to integrate PostHog with Directus for implementing A/B testing in Next.js applications. This template provides a complete setup for content management with Directus and A/B testing with PostHog.
 
 ## Features
 
