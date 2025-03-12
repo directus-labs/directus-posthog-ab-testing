@@ -7,17 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "directus:template": {
-    "name": "Simple CMS",
-    "description": "A simple CMS template for Directus",
+    "name": "PostHog AB Testing",
+    "description": "Directus + Next.js setup with PostHog integration",
     "template": "./directus/template",
     "frontends": {
       "nextjs": {
         "name": "Next.js",
         "path": "./nextjs"
-      },
-      "nuxt": {
-        "name": "Nuxt.js",
-        "path": "./nuxt"
       }
     }
   },
